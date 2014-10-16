@@ -1,10 +1,12 @@
-var express = require('express')
+var gzippo = require('gzippo');
+var express = require('express');
+var morgan = require('morgan');
 var app = express();
-//var cool = require('cool-ascii-faces');
+
+app.use(morgan('dev'));
+app.use(gzippo.staticGzip("" + __dirname + "/dist"));
 
 app.set('port', (process.env.PORT || 5000))
-app.use(express.static("dist"));
-console.log("!!!!!!!!!!! " + __dirname + " !!!!!!!!!!!!!!!!!")
 app.listen(app.get('port'), function() {
   console.log("Express server listening on port: " + app.get('port'))
 })
