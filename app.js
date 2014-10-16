@@ -16,9 +16,9 @@ if ('development' == env){
 }
 
 app.set('port', process.env.PORT || 5000);
-app.set('views', __dirname + '/views');
+app.set('views', 'dist/views');
 //app.set('view engine', 'jade');
-app.use(favicon(__dirname + "/favicon.ico"));
+app.use(favicon("dist/favicon.ico"));
 app.use(morgan('dev'));
 app.use(bodyParser());
 app.use(methodOverride());
