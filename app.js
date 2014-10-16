@@ -18,13 +18,13 @@ if ('development' == env){
 app.set('port', process.env.PORT || 5000);
 app.set('views', __dirname + '/views');
 //app.set('view engine', 'jade');
-app.use(favicon("" + __dirname + "/dist/favicon.ico"));
+app.use(favicon(__dirname + "favicon.ico"));
 app.use(morgan('dev'));
 app.use(bodyParser());
 app.use(methodOverride());
-app.use(gzippo.staticGzip("" + __dirname + "/dist"));
+app.use(gzippo.staticGzip("dist"));
 
-app.use(express.static(path.join(__dirname, 'dist')));
+//app.use(express.static(path.join(__dirname, 'dist')));
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
