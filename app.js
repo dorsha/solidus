@@ -1,11 +1,10 @@
 var express = require('express'),
     morgan = require('morgan'),
-    bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     errorHandler = require('errorhandler'),
     http = require('http'),
     path = require('path'),
-    bodyParser = require('gzippo');
+    gzippo = require('gzippo');
 
 var app = express();
 
@@ -18,7 +17,6 @@ app.set('port', process.env.PORT || 5000);
 app.set('views', 'dist/views');
 //app.set('view engine', 'jade');
 app.use(morgan('dev'));
-app.use(bodyParser());
 app.use(methodOverride());
 app.use(gzippo.staticGzip("dist"));
 
