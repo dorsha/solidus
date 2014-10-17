@@ -1,0 +1,20 @@
+- Investment screen
+- Tracking screen
+
+Investment
+Infa - sync - Tomer & Doron
+- Wizard skeleton
+- Menu (header)
+- Next button
+- Scrolling animation
+- Notification bar
+
+Components - async
+- Sum to invest slider - Meir
+- Selected ETF view
+- Summary ETF view
+- Icons - Meir
+
+Tracking
+- Pie chart
+- ETF details view
