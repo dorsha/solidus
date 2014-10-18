@@ -20,8 +20,12 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-          templateUrl: 'views/main.html',
+          templateUrl: 'views/invest.html',
           controller: 'MainCtrl'
+      })
+      .when('/invest', {
+          templateUrl: 'views/invest.html',
+          controller: 'InvestCtrl'
       })
       .when('/track', {
         templateUrl: 'views/track.html',
