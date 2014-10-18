@@ -21,19 +21,15 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div>
+        <div ng-controller="MainCtrl">
             <div class="header">
                 <div class="main-nav">
                     <div>
-                        <!--<div class="navbar-header">-->
-                            <!--<a href="./" class="navbar-brand">-->
-                                <!--<h2>Solidus</h2>-->
-                            <!--</a>-->
-                        <!--</div>-->
                         <div class="row">
-                            <div class="col-xs-6 col-sm-4 menuitem"><a ng-href="/#/invest">{{$root.appmessages.balance}}</a></div>
-                            <div class="col-xs-6 col-sm-4 menuitem"><a ng-href="/#/track">{{$root.appmessages.trackHeader}}</a></div>
-                            <div class="col-xs-6 col-sm-4 menuitem"><a ng-href="/#/">{{$root.appmessages.investHeader}}</a></div>
+                            <div ng-click="itemSelected(item)" ng-repeat="item in toolbarItems.slice().reverse()"
+                                 ng-class="{active: selected.id == item.id }" class="col-xs-6 col-sm-4 menuitem">
+                                <a ng-href="/#/{{item.id}}">{{item.title}}</a>
+                            </div>
                         </div>
                     </div>
                 </div>

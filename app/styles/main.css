@@ -31,9 +31,14 @@ body {
     line-height: 100px;
 }
 
+.main-nav .active {
+    background-color: #812262;
+    color: #FFFFFF;
+}
+
 .main-nav .menuitem:hover {
-    background-color: #FFFFFF;
-    color: #AB2688;
+    background-color: #9e2a7e;
+    color: #FFFFFF;
 }
 
 .content {
