@@ -6,7 +6,8 @@ body {
     min-height: 100px;
     position: relative;
     overflow: hidden;
-    background-color: #ab2688;
+    background-color: #AB2688;
+    color: #FFFFFF;
 }
 
 .main-nav {
@@ -17,25 +18,21 @@ body {
 }
 
 .main-nav a {
-    color: #FFFFFF;
     font-size: 30px;
     line-height: 100px;
-}
-
-.main-nav a {
-    color: #FFFFFF;
-    font-size: 30px;
-    line-height: 100px;
+    text-decoration: none !important;
+    color: inherit;
 }
 
 .main-nav .menuitem {
     text-align: center;
     border-right: 1px solid rgb(209, 209, 209);
+    cursor: pointer;
 }
 
 .main-nav .menuitem:hover {
     background-color: #FFFFFF;
-    color: #ab2688;
+    color: #AB2688;
 }
 
 .content {
