@@ -32,12 +32,12 @@ body {
 }
 
 .main-nav .active {
-    background-color: #812262;
+    background-color: #6A104D;
     color: #FFFFFF;
 }
 
 .main-nav .menuitem:hover {
-    background-color: #9e2a7e;
+    background-color: #812262;
     color: #FFFFFF;
 }
 
@@ -99,5 +99,5 @@ input[type='range']::-webkit-slider-thumb {
 
 /*  For mobile / tablets / small resolutions */
 @media (max-width: 767px) {
-    
+
 }
