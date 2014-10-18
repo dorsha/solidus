@@ -24,12 +24,10 @@
         <div ng-controller="MainCtrl">
             <div class="header">
                 <div class="main-nav">
-                    <div>
-                        <div class="row">
-                            <div ng-click="itemSelected(item)" ng-repeat="item in toolbarItems.slice().reverse()"
-                                 ng-class="{active: selected.id == item.id }" class="col-xs-6 col-sm-4 menuitem">
-                                <a ng-href="/#/{{item.id}}">{{item.title}}</a>
-                            </div>
+                    <div class="row">
+                        <div ng-click="itemSelected(item)" ng-repeat="item in toolbarItems.slice().reverse()"
+                             ng-class="{active: selected.id == item.id }" class="col-xs-6 col-sm-4 menuitem">
+                            <a ng-href="/#/{{item.id}}">{{item.title}}</a>
                         </div>
                     </div>
                 </div>
@@ -77,6 +75,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/invest.js"></script>
         <script src="scripts/controllers/track.js"></script>
+        <script src="scripts/controllers/balance.js"></script>
         <!-- endbuild -->
     </body>
 </html>

@@ -33,7 +33,7 @@ angular
             })
             .when('/balance', {
                 templateUrl: 'views/balance.html',
-                controller: 'BalacneCtrl'
+                controller: 'BalanceCtrl'
             })
             .otherwise({
                 redirectTo: '/'

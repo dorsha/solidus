@@ -28,6 +28,7 @@ body {
     cursor: pointer;
     font-size: 30px;
     line-height: 100px;
+    width: 33.33%;
 }
 
 .main-nav .active {
@@ -94,4 +95,9 @@ input[type='range']::-webkit-slider-thumb {
 
 .investSection {
     height: 400px;
+}
+
+/*  For mobile / tablets / small resolutions */
+@media (max-width: 767px) {
+    
 }
