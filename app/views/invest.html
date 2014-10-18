@@ -1,7 +1,18 @@
-<p>Invest...</p>
-<section id="amount"></section>
-<section id="fundCoin"></section>
-<section id="fundGold"></section>
-<section id="fundStock"></section>
-<section id="fundDebenture"></section>
-<section id="summary"></section>
+<p class="h3" dir="rtl">{{$root.appmessages.welcome}}</p>
+<br>
+<br>
+<br>
+<section id="amount">
+    <input type="range" ng-model="amount" min="0" max="{{totalCash}}" step="1" class="amountSlider">
+    <br>
+    <div class="input-group amountDisplay">
+        <span class="input-group-addon">₪</span>
+        <input type="text" ng-model="amount" class="form-control">
+        <span class="input-group-addon">.00</span>
+    </div>
+</section>
+<section class="investSection" id="fundCoin"></section>
+<section class="investSection" id="fundGold"></section>
+<section class="investSection" id="fundStock"></section>
+<section class="investSection" id="fundDebenture"></section>
+<section class="investSection" id="summary"></section>

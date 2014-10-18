@@ -31,6 +31,10 @@ angular
                 templateUrl: 'views/track.html',
                 controller: 'TrackCtrl'
             })
+            .when('/balance', {
+                templateUrl: 'views/balance.html',
+                controller: 'BalacneCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });
