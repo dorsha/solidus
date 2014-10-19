@@ -30,7 +30,7 @@ angular.module('solidusApp')
                         var element = $('#' + scope.currentSection.id);
                         if (element.length) {
                             $('html, body').animate({
-                                scrollTop: element.offset().top
+                                scrollTop: element.offset().top - 140
                             }, 1000);
                         }
                     });
