@@ -5,10 +5,21 @@ angular.module('solidusApp')
 
         // App labels
         $rootScope.appmessages = {
-            investHeader: "השקעה",
-            trackHeader: "מעקב",
-            balance: "איזון",
-            welcome: "שלום משה, בחר סכום להשקעה:"
+            investHeader: 'השקעה',
+            trackHeader: 'מעקב',
+            balance: 'איזון',
+            welcome: 'שלום משה, בחר סכום להשקעה:',
+            submitAmountSection: 'בוא נשקיע',
+            submitFundCoinSection: 'בוא נמשיך',
+            submitFundGoldSection: 'בוא נמשיך',
+            submitFundStockSection: 'בוא נמשיך',
+            submitFundDebentureSection: 'בוא נראה מה יש לנו',
+            submitSummary: 'מאשר רכישה',
+            fundCoinSectionHeader: 'קרן שיקלית',
+            fundGoldSectionHeader: 'קרן סחורות',
+            fundStockSectionHeader: 'קרן מניות',
+            fundDebentureSectionHeader: 'קרן אגרות חוב',
+            summarySectionHeader: 'וואו! איזה תיק השקעות!'
         };
 
         $scope.amount = 0;
@@ -22,5 +33,5 @@ angular.module('solidusApp')
         $scope.selected = $scope.toolbarItems[0];
         $scope.itemSelected = function(item) {
             $scope.selected = item;
-        }
+        };
     });

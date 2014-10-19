@@ -56,6 +56,10 @@ body {
     padding-left: 20px;
 }
 
+.amountPicker {
+    margin-bottom: 80px;
+}
+
 .amountSlider {
     height: 100px;
 }
@@ -94,7 +98,17 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .investSection {
-    height: 400px;
+    height: 800px;
+    border-bottom: 3px solid #ebebeb;
+}
+
+.currentSection {
+    border: none;
+}
+
+.btn-centered {
+    margin: 0 auto;
+    display:table;
 }
 
 /*  For mobile / tablets / small resolutions */
