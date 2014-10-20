@@ -24,14 +24,14 @@ angular.module('solidusApp')
         return {
             restrict: 'A',
             priority: 100,
-            link: function(scope, element, attrs) {
+            link: function(scope, element) {
                 element.click(function() {
                     scope.$apply(function() {
                         var element = $('#' + scope.currentSection.id);
                         if (element.length) {
                             $('html, body').animate({
                                 scrollTop: element.offset().top - 140
-                            }, 1000);
+                            }, 1500, 'easeInExpo');
                         }
                     });
                 });
