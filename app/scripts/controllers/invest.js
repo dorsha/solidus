@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('solidusApp')
-    .controller('InvestCtrl', function ($scope) {
+    .controller('InvestCtrl', function ($rootScope, $scope) {
         $scope.sections = [
-            { id: 'amount', position: 0, passed: false },
-            { id: 'fundCoin', position: 1, passed: false },
-            { id: 'fundGold', position: 2, passed: false },
-            { id: 'fundStock', position: 3, passed: false },
-            { id: 'fundDebenture', position: 4, passed: false },
-            { id: 'summary', position: 5, passed: false }
+            { id: 'amount', position: 0, passed: false, notificationTitle: $rootScope.appmessages.amountNotification },
+            { id: 'fundCoin', position: 1, passed: false, notificationTitle: $rootScope.appmessages.fundCoinNotification },
+            { id: 'fundGold', position: 2, passed: false, notificationTitle: $rootScope.appmessages.fundGoldNotification },
+            { id: 'fundStock', position: 3, passed: false, notificationTitle: $rootScope.appmessages.fundStockNotification },
+            { id: 'fundDebenture', position: 4, passed: false, notificationTitle: $rootScope.appmessages.fundDebentureNotification },
+            { id: 'summary', position: 5, passed: false, notificationTitle: $rootScope.appmessages.summaryNotification }
         ];
         $scope.currentSection = $scope.sections[0];
         $scope.moveToNextSection = function(section) {
@@ -20,21 +20,58 @@ angular.module('solidusApp')
                 }
             }
         };
-    }).directive('scrollToSection', function() {
+    }).directive('scrollToSection', ['$timeout', function($timeout) {
         return {
             restrict: 'A',
             priority: 100,
             link: function(scope, element) {
                 element.click(function() {
-                    scope.$apply(function() {
+                    function animateToNextSection() {
                         var element = $('#' + scope.currentSection.id);
                         if (element.length) {
                             $('html, body').animate({
                                 scrollTop: element.offset().top - 140
-                            }, 1500, 'easeInExpo');
+                            }, 750, 'easeOutExpo');
                         }
+                    }
+
+                    scope.$emit('showNotificationBar', {
+                        title: scope.currentSection.notificationTitle,
+                        duration: 2500
                     });
+
+                    $timeout(function () {
+                        scope.$apply(animateToNextSection);
+                    }, 1500);
                 });
             }
         };
-    });
+    }]).directive('notificationBar', ['$timeout', function ($timeout) {
+        return {
+            restrict: 'E',
+            replace: true,
+            template: '<div class="notificationBar">{{notificationBarTitle}}</div>',
+            link: function (scope, el) {
+                function showNotificationBar(event, params) {
+                    scope.notificationBarTitle = params.title || '';
+                    scope.$digest();
+
+                    el.width($('body').width());
+                    el.animate({
+                        top: 0
+                    }, 400, 'easeOutExpo', function () {
+                        $timeout(function () {
+                            el.animate({
+                                top: -100
+                            },
+                            300,
+                            'easeInExpo',
+                            params.onCollapsed || function(){});
+                        }, params.duration || 300)
+                    });
+                }
+
+                scope.$on('showNotificationBar', showNotificationBar);
+            }
+        };
+    }]);

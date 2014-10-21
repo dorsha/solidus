@@ -19,7 +19,15 @@ angular.module('solidusApp')
             fundGoldSectionHeader: 'קרן סחורות',
             fundStockSectionHeader: 'קרן מניות',
             fundDebentureSectionHeader: 'קרן אגרות חוב',
-            summarySectionHeader: 'וואו! איזה תיק השקעות!'
+            summarySectionHeader: 'וואו! איזה תיק השקעות!',
+
+            // Notification strings
+            amountNotification: 'לא מעט כסף. בוא נשקיע אותו בתבונה',
+            fundCoinNotification: 'אני התראה נעלמת מטבע',
+            fundGoldNotification: 'אני התראה נעלמת זהב',
+            fundStockNotification: 'אני התראה נעלמת מניות',
+            fundDebentureNotification: 'אני התראה נעלמת אג״ח',
+            summaryNotification: 'אני התראה נעלמת סיכום'
         };
 
         $scope.amount = 0;
