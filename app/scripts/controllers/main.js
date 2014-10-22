@@ -9,6 +9,11 @@ angular.module('solidusApp')
             trackHeader: 'מעקב',
             balance: 'איזון',
             welcome: 'משה, בחר סכום להשקעה:',
+            welcomeMorning: 'בוקר טוב',
+            welcomeNoon: 'צהריים טובים',
+            welcomeAfternoon: 'אחר הצהריים טובים',
+            welcomeEvening: 'ערב טוב',
+            welcomeNight: 'לילה טוב',
             submitAmountSection: 'בוא נשקיע',
             submitFundCoinSection: 'בוא נמשיך',
             submitFundGoldSection: 'בוא נמשיך',
@@ -32,17 +37,17 @@ angular.module('solidusApp')
 
         function calculateWelcomeLabel() {
             var hour = new Date().getHours();
-            var prefix = 'שלום';
+            var prefix;
             if (hour >= 6 && hour < 12) {
-                prefix = 'בוקר טוב';
+                prefix = $rootScope.appmessages.welcomeMorning;
             } else if (hour >= 12 && hour < 16) {
-                prefix = 'צהריים טובים';
+                prefix = $rootScope.appmessages.welcomeNoon;
             } else if (hour >= 16 && hour < 17) {
-                prefix = 'אחרי צהריים טובים';
+                prefix = $rootScope.appmessages.welcomeAfternoon;
             } else if (hour >= 17 && hour < 21) {
-                prefix = 'ערב טוב';
-            } else if (hour >= 21) {
-                prefix = 'לילה טוב';
+                prefix = $rootScope.appmessages.welcomeEvening;
+            } else {
+                prefix = $rootScope.appmessages.welcomeNight;
             }
             $rootScope.appmessages.welcome = prefix + ' ' + $rootScope.appmessages.welcome;
         }

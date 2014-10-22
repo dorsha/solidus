@@ -67,7 +67,7 @@ angular.module('solidusApp')
                             300,
                             'easeInExpo',
                             params.onCollapsed || function(){});
-                        }, params.duration || 300)
+                        }, params.duration || 300);
                     });
                 }
 
