@@ -74,7 +74,7 @@ angular.module('solidusApp')
                                 params.onCollapsed && params.onCollapsed();
                                 scope.showNotificationTimeout = null;
                             });
-                        }, params.duration || 300)
+                        }, params.duration || 300);
                     });
                 }
 

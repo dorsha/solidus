@@ -8,7 +8,12 @@ angular.module('solidusApp')
             investHeader: 'השקעה',
             trackHeader: 'מעקב',
             balance: 'איזון',
-            welcome: 'שלום משה, בחר סכום להשקעה:',
+            welcome: 'משה, בחר סכום להשקעה:',
+            welcomeMorning: 'בוקר טוב',
+            welcomeNoon: 'צהריים טובים',
+            welcomeAfternoon: 'אחר הצהריים טובים',
+            welcomeEvening: 'ערב טוב',
+            welcomeNight: 'לילה טוב',
             submitAmountSection: 'בוא נשקיע',
             submitFundCoinSection: 'בוא נמשיך',
             submitFundGoldSection: 'בוא נמשיך',
@@ -30,6 +35,23 @@ angular.module('solidusApp')
             summaryNotification: 'אני התראה נעלמת סיכום'
         };
 
+        function calculateWelcomeLabel() {
+            var hour = new Date().getHours();
+            var prefix;
+            if (hour >= 6 && hour < 12) {
+                prefix = $rootScope.appmessages.welcomeMorning;
+            } else if (hour >= 12 && hour < 16) {
+                prefix = $rootScope.appmessages.welcomeNoon;
+            } else if (hour >= 16 && hour < 17) {
+                prefix = $rootScope.appmessages.welcomeAfternoon;
+            } else if (hour >= 17 && hour < 21) {
+                prefix = $rootScope.appmessages.welcomeEvening;
+            } else {
+                prefix = $rootScope.appmessages.welcomeNight;
+            }
+            $rootScope.appmessages.welcome = prefix + ' ' + $rootScope.appmessages.welcome;
+        }
+
         $scope.amount = 0;
         $scope.totalCash = 123456;
         
@@ -42,4 +64,6 @@ angular.module('solidusApp')
         $scope.itemSelected = function(item) {
             $scope.selected = item;
         };
+
+        calculateWelcomeLabel();
     });
