@@ -53,6 +53,10 @@ angular.module('solidusApp')
             template: '<div class="notificationBar">{{notificationBarTitle}}</div>',
             link: function (scope, el) {
                 function showNotificationBar(event, params) {
+                    if (scope.showNotificationTimeout) {
+                        $timeout.cancel(scope.showNotificationTimeout);
+                    }
+
                     scope.notificationBarTitle = params.title || '';
                     scope.$digest();
 
@@ -60,13 +64,16 @@ angular.module('solidusApp')
                     el.animate({
                         top: 0
                     }, 400, 'easeOutExpo', function () {
-                        $timeout(function () {
+                        scope.showNotificationTimeout = $timeout(function () {
                             el.animate({
                                 top: -100
                             },
                             300,
                             'easeInExpo',
-                            params.onCollapsed || function(){});
+                            function (){
+                                params.onCollapsed && params.onCollapsed();
+                                scope.showNotificationTimeout = null;
+                            });
                         }, params.duration || 300)
                     });
                 }
