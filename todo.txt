@@ -3,11 +3,11 @@
 
 Investment
 Infa - sync - Tomer & Doron
-- Wizard skeleton
-- Menu (header)
-- Next button
-- Scrolling animation
-- Notification bar
+- Wizard skeleton - DONE
+- Menu (header) - DONE
+- Next button - DONE
+- Scrolling animation - DONE
+- Notification bar - DONE
 
 Components - async
 - Sum to invest slider - Meir
