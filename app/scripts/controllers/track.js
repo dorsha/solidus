@@ -90,7 +90,8 @@ angular.module('solidusApp')
         $scope.selectedFundName = $rootScope.appmessages.fundCoinSectionHeader;
         $scope.selectedFundY = 26.2;
         $scope.pie = getPieChart();
-        $scope.currentDate = new Date().toLocaleDateString('he')
+        var d = new Date();
+        $scope.currentDate = d.getDate() + "." + d.getMonth() + "." + d.getFullYear();
     }).directive('highchart', [function () {
         return {
             restrict: 'E',
