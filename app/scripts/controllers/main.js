@@ -32,7 +32,14 @@ angular.module('solidusApp')
             fundGoldNotification: 'אני התראה נעלמת זהב',
             fundStockNotification: 'אני התראה נעלמת מניות',
             fundDebentureNotification: 'אני התראה נעלמת אג״ח',
-            summaryNotification: 'אני התראה נעלמת סיכום'
+            summaryNotification: 'אני התראה נעלמת סיכום',
+
+            // Tracking
+            pieChartTitle: 'התפלגות תיק ההשקעות שלך נכון לתאריך: ',
+            piePlotName: 'value',
+            foundDetailsHeader: 'נתוני הקרן',
+            foundDetailsTypeTitle: 'סוג הקרן: ',
+            foundDetailsPercentageTitle: 'נתח מהתיק: '
         };
 
         function calculateWelcomeLabel() {
@@ -60,7 +67,10 @@ angular.module('solidusApp')
             { id: 'track', title: $rootScope.appmessages.trackHeader },
             { id: 'balance', title: $rootScope.appmessages.balance }
         ];
-        $scope.selected = $scope.toolbarItems[0];
+        var elementPos = $scope.toolbarItems.map(function(x) {
+            return x.id;
+        }).indexOf(window.location.hash.substring(2));
+        $scope.selected = $scope.toolbarItems[elementPos];
         $scope.itemSelected = function(item) {
             $scope.selected = item;
         };

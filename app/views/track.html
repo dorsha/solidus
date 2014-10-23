@@ -1,3 +1,10 @@
 <div ng-controller="TrackCtrl">
-    <p>Track...</p>
+    <highchart chart='pie'></highchart>
+    <div class="fundDetailsContainer">
+        <p class="h2" dir="rtl">{{$root.appmessages.foundDetailsHeader}}</p>
+        <div class="fundDetails">
+            <p class="h3" dir="rtl">{{$root.appmessages.foundDetailsTypeTitle}} {{selectedFundName}}</p>
+            <p class="h3" dir="rtl">{{$root.appmessages.foundDetailsPercentageTitle}} {{selectedFundY}}%</p>
+        </div>
+    </div>
 </div>
