@@ -20,7 +20,7 @@ angular.module('solidusApp')
                 credits: false,
                 exporting: { enabled: false },
                 title: {
-                    text: $rootScope.appmessages.pieChartTitle + new Date().toLocaleDateString('he')
+                    text: ''
                 },
                 tooltip: {
                     pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -30,13 +30,10 @@ angular.module('solidusApp')
                         allowPointSelect: true,
                         cursor: 'pointer',
                         dataLabels: {
-                            enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f}%',
-                            style: {
-                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                            },
-                            connectorColor: 'silver'
-                        }
+                            enabled: false
+                        },
+                        showInLegend: true
+
                     }
                 },
                 series: [{
@@ -93,6 +90,7 @@ angular.module('solidusApp')
         $scope.selectedFundName = $rootScope.appmessages.fundCoinSectionHeader;
         $scope.selectedFundY = 26.2;
         $scope.pie = getPieChart();
+        $scope.currentDate = new Date().toLocaleDateString('he')
     }).directive('highchart', [function () {
         return {
             restrict: 'E',
