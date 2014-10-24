@@ -9,10 +9,10 @@ angular.module('solidusApp')
                 $scope.selectedFundName = plot.name;
                 $scope.selectedFundType = plot.type;
                 $scope.selectedFundY = plot.y;
-                $scope.moneyValue = plot.moneyValue;
-                $scope.costValue = plot.costValue;
-                $scope.changedValuePercentage = plot.changedValuePercentage;
-                $scope.changedValueCash = plot.changedValueCash;
+                $scope.moneyValue = plot.moneyValue.toLocaleString();
+                $scope.costValue = plot.costValue.toLocaleString();
+                $scope.changedValuePercentage = plot.changedValuePercentage.toLocaleString();
+                $scope.changedValueCash = plot.changedValueCash.toLocaleString();
                 $scope.direction = plot.direction;
                 $scope.$apply();
             }
@@ -56,15 +56,15 @@ angular.module('solidusApp')
                         name: $rootScope.appmessages.piePlotName,
                     data: [
                         {
-                            name: $rootScope.appmessages.fundCoinName,
+                            name: $rootScope.consts.fundsCoin.fundCoinSelected.name,
                             type: $rootScope.appmessages.fundCoinSectionHeader,
                             id: 'fundCoin',
-                            y: 24.85,
-                            moneyValue: 25900,
-                            costValue: 136.23,
-                            changedValuePercentage: 3.6,
-                            changedValueCash: 900,
-                            direction: '+',
+                            y: $rootScope.consts.fundsCoin.fundCoinSelected.y,
+                            moneyValue: $rootScope.consts.fundsCoin.fundCoinSelected.moneyValue,
+                            costValue: $rootScope.consts.fundsCoin.fundCoinSelected.costValue,
+                            changedValuePercentage: $rootScope.consts.fundsCoin.fundCoinSelected.changedValuePercentage,
+                            changedValueCash: $rootScope.consts.fundsCoin.fundCoinSelected.changedValueCash,
+                            direction: $rootScope.consts.fundsCoin.fundCoinSelected.direction,
                             sliced: true,
                             selected: true,
                             events: {
@@ -74,15 +74,15 @@ angular.module('solidusApp')
                             }
                         },
                         {
-                            name: $rootScope.appmessages.fundGoldName,
+                            name: $rootScope.consts.fundsGold.fundGoldSelected.name,
                             type: $rootScope.appmessages.fundGoldSectionHeader,
                             id: 'fundGold',
-                            y: 23.03,
-                            moneyValue: 24000,
-                            costValue: 157.61,
-                            changedValuePercentage: 4,
-                            changedValueCash: 1000,
-                            direction: '-',
+                            y: $rootScope.consts.fundsGold.fundGoldSelected.y,
+                            moneyValue: $rootScope.consts.fundsGold.fundGoldSelected.moneyValue,
+                            costValue: $rootScope.consts.fundsGold.fundGoldSelected.costValue,
+                            changedValuePercentage: $rootScope.consts.fundsGold.fundGoldSelected.changedValuePercentage,
+                            changedValueCash: $rootScope.consts.fundsGold.fundGoldSelected.changedValueCash,
+                            direction: $rootScope.consts.fundsGold.fundGoldSelected.direction,
                             events: {
                                 click: function() {
                                     onPlotClick(this);
@@ -90,15 +90,15 @@ angular.module('solidusApp')
                             }
                         },
                         {
-                            name: $rootScope.appmessages.fundStockName,
+                            name: $rootScope.consts.fundsStock.fundStockSelected.name,
                             type: $rootScope.appmessages.fundStockSectionHeader,
                             id: 'fundStock',
-                            y: 26.77,
-                            moneyValue: 27900,
-                            costValue: 115.91,
-                            changedValuePercentage: 11.6,
-                            changedValueCash: 2900,
-                            direction: '+',
+                            y: $rootScope.consts.fundsStock.fundStockSelected.y,
+                            moneyValue: $rootScope.consts.fundsStock.fundStockSelected.moneyValue,
+                            costValue: $rootScope.consts.fundsStock.fundStockSelected.costValue,
+                            changedValuePercentage: $rootScope.consts.fundsStock.fundStockSelected.changedValuePercentage,
+                            changedValueCash: $rootScope.consts.fundsStock.fundStockSelected.changedValueCash,
+                            direction: $rootScope.consts.fundsStock.fundStockSelected.direction,
                             events: {
                                 click: function() {
                                     onPlotClick(this);
@@ -106,15 +106,15 @@ angular.module('solidusApp')
                             }
                         },
                         {
-                            name: $rootScope.appmessages.fundDebentureName,
+                            name: $rootScope.consts.fundsDebenture.fundDebentureSelected.name,
                             type: $rootScope.appmessages.fundDebentureSectionHeader,
                             id: 'fundDebenture',
-                            y: 25.33,
-                            moneyValue: 26400,
-                            costValue: 185.56,
-                            changedValuePercentage: 5.6,
-                            changedValueCash: 1400,
-                            direction: '+',
+                            y: $rootScope.consts.fundsDebenture.fundDebentureSelected.y,
+                            moneyValue: $rootScope.consts.fundsDebenture.fundDebentureSelected.moneyValue,
+                            costValue: $rootScope.consts.fundsDebenture.fundDebentureSelected.costValue,
+                            changedValuePercentage: $rootScope.consts.fundsDebenture.fundDebentureSelected.changedValuePercentage,
+                            changedValueCash: $rootScope.consts.fundsDebenture.fundDebentureSelected.changedValueCash,
+                            direction: $rootScope.consts.fundsDebenture.fundDebentureSelected.direction,
                             events: {
                                 click: function() {
                                     onPlotClick(this);
@@ -126,22 +126,22 @@ angular.module('solidusApp')
             };
         }
 
-        $scope.selectedFundName = $rootScope.appmessages.fundCoinName;
+        $scope.selectedFundName = $rootScope.consts.fundsCoin.fundCoinSelected.name;
         $scope.selectedFundType = $rootScope.appmessages.fundCoinSectionHeader;
-        $scope.selectedFundY = 24.8;
-        $scope.moneyValue = 25900;
-        $scope.costValue = 136.23;
-        $scope.changedValuePercentage = 3.6;
-        $scope.changedValueCash = 900;
-        $scope.direction = '+';
+        $scope.selectedFundY = $rootScope.consts.fundsCoin.fundCoinSelected.y;
+        $scope.moneyValue = $rootScope.consts.fundsCoin.fundCoinSelected.moneyValue;
+        $scope.costValue = $rootScope.consts.fundsCoin.fundCoinSelected.costValue;
+        $scope.changedValuePercentage = $rootScope.consts.fundsCoin.fundCoinSelected.changedValuePercentage;
+        $scope.changedValueCash = $rootScope.consts.fundsCoin.fundCoinSelected.changedValueCash;
+        $scope.direction = $rootScope.consts.fundsCoin.fundCoinSelected.direction;
 
-        $scope.totalProfitPercentage = 4.2;
-        $scope.totalProfitCash = 4200;
-        $scope.totalPortfolioCash = 104200;
+        $scope.totalProfitPercentage = $rootScope.consts.totalProfitPercentage;
+        $scope.totalProfitCash = $rootScope.consts.totalProfitCash.toLocaleString();
+        $scope.totalPortfolioCash = $rootScope.consts.totalPortfolioCash.toLocaleString();
 
         $scope.pie = getPieChart();
         var d = new Date();
-        $scope.currentDate = d.getDate() + "." + d.getMonth() + "." + d.getFullYear();
+        $scope.currentDate = d.getDate() + '.' + d.getMonth() + '.' + d.getFullYear();
     }).directive('highchart', [function () {
         return {
             restrict: 'E',

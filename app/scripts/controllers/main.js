@@ -3,6 +3,67 @@
 angular.module('solidusApp')
     .controller('MainCtrl', function ($scope, $rootScope) {
 
+        $rootScope.consts = {
+            // total portfolio values
+            totalProfitPercentage: 4.2,
+            totalProfitCash: 4200,
+            totalPortfolioCash: 104200,
+            totalPortfolioDirection: '+',
+
+            // all available funds
+
+            // funds coin
+            fundsCoin: {
+                fundCoinSelected : {
+                    name : 'מגדל כספית פרימיום',
+                    y : 24.85,
+                    moneyValue : 25900,
+                    costValue : 136.23,
+                    changedValuePercentage : 3.6,
+                    changedValueCash : 900,
+                    direction : '+'
+                }
+            },
+
+            // funds gold
+            fundsGold: {
+                fundGoldSelected : {
+                    name : 'הראל סל זהב',
+                    y : 23.03,
+                    moneyValue : 24000,
+                    costValue : 157.61,
+                    changedValuePercentage : 4,
+                    changedValueCash : 1000
+                }
+            },
+
+            // funds stock
+            fundsStock: {
+                fundStockSelected : {
+                    name : 'אנליסט מניות ממוקדת',
+                    y : 26.77,
+                    moneyValue : 27900,
+                    costValue : 115.91,
+                    changedValuePercentage : 11.6,
+                    changedValueCash : 2900,
+                    direction : '+'
+                }
+            },
+
+            // funds debenture
+            fundsDebenture: {
+                fundDebentureSelected : {
+                    name : 'אילים תיק אג"ח',
+                    y : 25.33,
+                    moneyValue : 26400,
+                    costValue : 185.56,
+                    changedValuePercentage : 5.6,
+                    changedValueCash : 1400,
+                    direction : '+'
+                }
+            }
+        };
+
         // App labels
         $rootScope.appmessages = {
             nis: 'ש"ח',
@@ -26,10 +87,6 @@ angular.module('solidusApp')
             fundStockSectionHeader: 'קרן מניות',
             fundDebentureSectionHeader: 'קרן אגרות חוב',
             summarySectionHeader: 'וואו! איזה תיק השקעות!',
-            fundCoinName: 'מגדל כספית פרימיום',
-            fundGoldName: 'הראל סל זהב',
-            fundStockName: 'אנליסט מניות ממוקדת',
-            fundDebentureName: 'אילים תיק אג"ח',
 
             // Notification strings
             amountNotification: 'לא מעט כסף. בוא נשקיע אותו בתבונה',
