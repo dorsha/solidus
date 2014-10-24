@@ -39,8 +39,10 @@ angular.module('solidusApp')
                             enabled: false
                         },
                         showInLegend: true
-
                     }
+                },
+                legend: {
+                    rtl: true
                 },
                 series: [{
                     type: 'pie',
