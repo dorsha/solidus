@@ -27,7 +27,7 @@
                     <div class="row">
                         <div ng-click="itemSelected(item)" ng-repeat="item in toolbarItems.slice().reverse()"
                              ng-class="{active: selected.id == item.id }" class="col-xs-6 col-sm-4 menuitem">
-                            <a ng-href="/#/{{item.id}}">{{item.title}}</a>
+                            <a ng-cloak ng-href="/#/{{item.id}}">{{item.title}}</a>
                         </div>
                     </div>
                 </div>

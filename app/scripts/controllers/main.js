@@ -5,6 +5,7 @@ angular.module('solidusApp')
 
         // App labels
         $rootScope.appmessages = {
+            nis: 'ש"ח',
             investHeader: 'השקעה',
             trackHeader: 'מעקב',
             balance: 'איזון',
@@ -25,6 +26,10 @@ angular.module('solidusApp')
             fundStockSectionHeader: 'קרן מניות',
             fundDebentureSectionHeader: 'קרן אגרות חוב',
             summarySectionHeader: 'וואו! איזה תיק השקעות!',
+            fundCoinName: 'מגדל כספית פרימיום',
+            fundGoldName: 'הראל סל זהב',
+            fundStockName: 'אנליסט מניות ממוקדת',
+            fundDebentureName: 'אילים תיק אג"ח',
 
             // Notification strings
             amountNotification: 'לא מעט כסף. בוא נשקיע אותו בתבונה',
@@ -38,8 +43,16 @@ angular.module('solidusApp')
             pieChartTitle: 'התפלגות תיק ההשקעות שלך נכון לתאריך: ',
             piePlotName: 'value',
             foundDetailsHeader: 'נתוני הקרן',
+            foundDetailsFundNameTitle: 'שם הקרן: ',
             foundDetailsTypeTitle: 'סוג הקרן: ',
-            foundDetailsPercentageTitle: 'נתח מהתיק: '
+            foundDetailsPercentageTitle: 'נתח מהתיק: ',
+            foundDetailsValueTitle: 'שווי אחזקה בש"ח: ',
+            foundDetailsCostValueTitle: 'שער עלות: ',
+            foundDetailsChangedValuePercentageTitle: 'שינוי מעלות באחוזים: ',
+            foundDetailsChangedValueCashTitle: 'שינוי כספי: ',
+            foundDetailsTotalProfitPercentageTitle: 'סה"כ שינוי מעלות באחוזים: ',
+            foundDetailsTotalProfitCashTitle: ' סה"כ שינוי כספי מעלות : ',
+            foundDetailsTotalPortfolioCashTitle: 'סה"כ שווי תיק: '
         };
 
         function calculateWelcomeLabel() {

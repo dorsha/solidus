@@ -4,8 +4,26 @@
     <div class="fundDetailsContainer">
         <p class="h2" dir="rtl">{{$root.appmessages.foundDetailsHeader}}</p>
         <div class="fundDetails">
-            <p class="h3" dir="rtl">{{$root.appmessages.foundDetailsTypeTitle}} {{selectedFundName}}</p>
-            <p class="h3" dir="rtl">{{$root.appmessages.foundDetailsPercentageTitle}} {{selectedFundY}}%</p>
+            <div class="row">
+                <p class="h3 col-xs-12 col-sm-8" dir="rtl">{{$root.appmessages.foundDetailsTypeTitle}} {{selectedFundType}}</p>
+                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsFundNameTitle}} {{selectedFundName}}</p>
+            </div>
+            <div class="row">
+                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsPercentageTitle}} {{selectedFundY}}%</p>
+                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsValueTitle}} {{moneyValue}} {{$root.appmessages.nis}}</p>
+                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsCostValueTitle}} {{costValue}} {{$root.appmessages.nis}}</p>
+            </div>
+            <div class="row">
+                <p class="h3 col-xs-12 col-sm-8" dir="rtl">{{$root.appmessages.foundDetailsChangedValuePercentageTitle}} {{changedValuePercentage}}%{{direction}}</p>
+                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsChangedValueCashTitle}} {{changedValueCash}}{{direction}} {{$root.appmessages.nis}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="fundsSummary">
+        <div class="row">
+            <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsTotalProfitPercentageTitle}} {{totalProfitPercentage}}%{{direction}}</p>
+            <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsTotalProfitCashTitle}} {{totalProfitCash}}{{direction}} {{$root.appmessages.nis}}</p>
+            <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsTotalPortfolioCashTitle}} {{totalPortfolioCash}} {{$root.appmessages.nis}}</p>
         </div>
     </div>
 </div>

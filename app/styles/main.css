@@ -182,9 +182,9 @@ input[type="range"]::-ms-thumb {
 
 .fundDetailsContainer {
     width: 100%;
-    height: 300px;
     background-color: #e1e1e1;
     border: 1px solid #707070;
+    padding-bottom: 15px;
 }
 
 .fundDetailsContainer .h2 {
@@ -192,5 +192,18 @@ input[type="range"]::-ms-thumb {
 }
 
 .fundDetails {
-    margin-right: 50px;
+    margin-right: 20px;
+}
+
+.fundsSummary {
+    margin-top: 20px;
+}
+
+.fundsSummary p {
+    font-weight: bold;
+}
+
+/* to avoid angular flickering */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
 }
