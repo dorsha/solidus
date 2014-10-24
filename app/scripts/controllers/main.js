@@ -137,7 +137,7 @@ angular.module('solidusApp')
 
         $scope.username = 'משה';
         $scope.amount = 0;
-        $scope.totalCash = 123456;
+        $scope.totalCash = 123400;
         
         $scope.toolbarItems = [
             { id: 'invest', title: $rootScope.appmessages.investHeader },
