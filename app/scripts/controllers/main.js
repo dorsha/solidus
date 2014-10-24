@@ -71,7 +71,7 @@ angular.module('solidusApp')
             investHeader: 'השקעה',
             trackHeader: 'מעקב',
             balance: 'איזון',
-            welcome: 'משה, ברשותך %s ש"ח. לא מעט כסף, בוא נשקיע אותו בחוכמה.',
+            welcomeInvest: '%s, ברשותך %s ש"ח. לא מעט כסף, בוא נשקיע אותו בחוכמה.',
             welcomeMorning: 'בוקר טוב',
             welcomeNoon: 'צהריים טובים',
             welcomeAfternoon: 'אחר הצהריים טובים',
@@ -99,7 +99,7 @@ angular.module('solidusApp')
             summaryNotification: 'אני התראה נעלמת סיכום',
 
             // Tracking
-            pieChartTitle: 'התפלגות תיק ההשקעות שלך נכון לתאריך: ',
+            welcomeTrack: '%s, להלן התפלגות תיק ההשקעות שלך נכון לתאריך: ',
             piePlotName: 'value',
             foundDetailsHeader: 'נתוני הקרן',
             foundDetailsFundNameTitle: 'שם הקרן: ',
@@ -114,7 +114,7 @@ angular.module('solidusApp')
             foundDetailsTotalPortfolioCashTitle: 'סה"כ שווי תיק: '
         };
 
-        function calculateWelcomeLabel() {
+        function calculateWelcomeLabels() {
             var hour = new Date().getHours();
             var prefix;
             if (hour >= 6 && hour < 12) {
@@ -128,10 +128,14 @@ angular.module('solidusApp')
             } else {
                 prefix = $rootScope.appmessages.welcomeNight;
             }
-            $rootScope.appmessages.welcome = prefix + ' ' + $rootScope.appmessages.welcome;
-            $rootScope.appmessages.welcome = $rootScope.appmessages.welcome.format($scope.totalCash.toLocaleString());
+            $rootScope.appmessages.welcomeInvest = prefix + ' ' + $rootScope.appmessages.welcomeInvest;
+            $rootScope.appmessages.welcomeInvest = $rootScope.appmessages.welcomeInvest.format($scope.username, $scope.totalCash.toLocaleString());
+
+            $rootScope.appmessages.welcomeTrack = prefix + ' ' + $rootScope.appmessages.welcomeTrack;
+            $rootScope.appmessages.welcomeTrack = $rootScope.appmessages.welcomeTrack.format($scope.username);
         }
 
+        $scope.username = 'משה';
         $scope.amount = 0;
         $scope.totalCash = 123456;
         
@@ -148,5 +152,5 @@ angular.module('solidusApp')
             $scope.selected = item;
         };
 
-        calculateWelcomeLabel();
+        calculateWelcomeLabels();
     });
