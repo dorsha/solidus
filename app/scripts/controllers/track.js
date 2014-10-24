@@ -38,7 +38,14 @@ angular.module('solidusApp')
                         dataLabels: {
                             enabled: false
                         },
-                        showInLegend: true
+                        showInLegend: true,
+                        point: {
+                            events: {
+                                legendItemClick: function () {
+                                    return false; // disable legend click
+                                }
+                            }
+                        }
                     }
                 },
                 legend: {
