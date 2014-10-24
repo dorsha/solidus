@@ -141,7 +141,8 @@ angular.module('solidusApp')
 
         $scope.pie = getPieChart();
         var d = new Date();
-        $scope.currentDate = d.getDate() + '.' + d.getMonth() + '.' + d.getFullYear();
+        var month = d.getMonth() + 1;
+        $scope.currentDate = d.getDate() + '.' + month + '.' + d.getFullYear();
     }).directive('highchart', [function () {
         return {
             restrict: 'E',
