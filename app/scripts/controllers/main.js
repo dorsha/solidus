@@ -33,7 +33,8 @@ angular.module('solidusApp')
                     moneyValue : 24000,
                     costValue : 157.61,
                     changedValuePercentage : 4,
-                    changedValueCash : 1000
+                    changedValueCash : 1000,
+                    direction : '+'
                 }
             },
 
