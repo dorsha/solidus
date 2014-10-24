@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 angular.module('solidusApp')
     .controller('MainCtrl', function ($scope, $rootScope) {
@@ -71,12 +71,13 @@ angular.module('solidusApp')
             investHeader: 'השקעה',
             trackHeader: 'מעקב',
             balance: 'איזון',
-            welcome: 'משה, בחר סכום להשקעה:',
+            welcome: 'משה, ברשותך %s ש"ח. לא מעט כסף, בוא נשקיע אותו בחוכמה.',
             welcomeMorning: 'בוקר טוב',
             welcomeNoon: 'צהריים טובים',
             welcomeAfternoon: 'אחר הצהריים טובים',
             welcomeEvening: 'ערב טוב',
             welcomeNight: 'לילה טוב',
+            chooseAmount: 'בחר סכום להשקעה:',
             submitAmountSection: 'בוא נשקיע',
             submitFundCoinSection: 'בוא נמשיך',
             submitFundGoldSection: 'בוא נמשיך',
@@ -128,6 +129,7 @@ angular.module('solidusApp')
                 prefix = $rootScope.appmessages.welcomeNight;
             }
             $rootScope.appmessages.welcome = prefix + ' ' + $rootScope.appmessages.welcome;
+            $rootScope.appmessages.welcome = $rootScope.appmessages.welcome.format($scope.totalCash.toLocaleString());
         }
 
         $scope.amount = 0;
