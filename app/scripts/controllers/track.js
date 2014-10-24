@@ -11,7 +11,7 @@ angular.module('solidusApp')
                 $scope.selectedFundY = plot.y;
                 $scope.moneyValue = plot.moneyValue.toLocaleString();
                 $scope.costValue = plot.costValue.toLocaleString();
-                $scope.changedValuePercentage = plot.changedValuePercentage.toLocaleString();
+                $scope.changedValuePercentage = plot.changedValuePercentage;
                 $scope.changedValueCash = plot.changedValueCash.toLocaleString();
                 $scope.direction = plot.direction;
                 $scope.$apply();
@@ -129,10 +129,10 @@ angular.module('solidusApp')
         $scope.selectedFundName = $rootScope.consts.fundsCoin.fundCoinSelected.name;
         $scope.selectedFundType = $rootScope.appmessages.fundCoinSectionHeader;
         $scope.selectedFundY = $rootScope.consts.fundsCoin.fundCoinSelected.y;
-        $scope.moneyValue = $rootScope.consts.fundsCoin.fundCoinSelected.moneyValue;
-        $scope.costValue = $rootScope.consts.fundsCoin.fundCoinSelected.costValue;
+        $scope.moneyValue = $rootScope.consts.fundsCoin.fundCoinSelected.moneyValue.toLocaleString();
+        $scope.costValue = $rootScope.consts.fundsCoin.fundCoinSelected.costValue.toLocaleString();
         $scope.changedValuePercentage = $rootScope.consts.fundsCoin.fundCoinSelected.changedValuePercentage;
-        $scope.changedValueCash = $rootScope.consts.fundsCoin.fundCoinSelected.changedValueCash;
+        $scope.changedValueCash = $rootScope.consts.fundsCoin.fundCoinSelected.changedValueCash.toLocaleString();
         $scope.direction = $rootScope.consts.fundsCoin.fundCoinSelected.direction;
 
         $scope.totalProfitPercentage = $rootScope.consts.totalProfitPercentage;
