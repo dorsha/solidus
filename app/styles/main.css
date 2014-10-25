@@ -163,28 +163,14 @@ input[type="range"]::-ms-thumb {
     display: table;
     background-color: #7b4397;
     border-radius: 4px;
-    box-shadow: 1px 0 #49285A, 0 1px #623578,
-                  2px 1px #49285A, 1px 2px #623578,
-                  3px 2px #49285A, 2px 3px #623578,
-                  4px 3px #49285A, 3px 4px #623578,
-                  5px 4px #49285A, 4px 5px #623578,
-                  6px 5px #49285A, 5px 6px #623578;
 }
 
 .btn-centered:hover {
     background-color: #a321d3;
-    transform: translate(2px, 2px);
-    box-shadow: 1px 0 #49285A, 0 1px #623578,
-                2px 1px #49285A, 1px 2px #623578,
-                3px 2px #49285A, 2px 3px #623578,
-                4px 3px #49285A, 3px 4px #623578;
 }
 
 .btn-centered:active {
     background-color: #a321d3;
-    transform: translate(4px, 4px);
-    box-shadow: 1px 0 #49285A, 0 1px #623578,
-                2px 1px #49285A, 1px 2px #623578;
 }
 
 /*  For mobile / tablets / small resolutions */
