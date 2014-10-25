@@ -20,6 +20,15 @@ angular.module('solidusApp')
                 }
             }
         };
+
+        $scope.getTotalFees = function () {
+            $scope.totalMgmtFee = 0;
+            $scope.totalCommission = 0;
+            $scope.selectedFunds.forEach(function (fund) {
+                $scope.totalMgmtFee += fund.mgmtFee / 1000 * $scope.amount;
+                $scope.totalCommission += fund.commission / 1000 * $scope.amount;
+            });
+        }
     }).directive('scrollToSection', ['$timeout', function($timeout) {
         return {
             restrict: 'A',

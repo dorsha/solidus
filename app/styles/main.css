@@ -173,11 +173,6 @@ input[type="range"]::-ms-thumb {
     background-color: #a321d3;
 }
 
-/*  For mobile / tablets / small resolutions */
-@media (max-width: 767px) {
-
-}
-
 .notificationBar {
     display: block;
     position: fixed;
@@ -218,4 +213,83 @@ input[type="range"]::-ms-thumb {
 /* to avoid angular flickering */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
+}
+
+.selectedFundsContainer {
+    padding: 0;
+    margin-right: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.selectedFundBox {
+    position: relative;
+    box-shadow: #f0f0f0 0 0 0 3px inset,#edddf5 2px 3px 0;
+    -webkit-box-shadow: #f0f0f0 0 0 0 3px inset,#edddf5 2px 3px 0;
+    -moz-box-shadow: #f0f0f0 0 0 0 3px inset,#edddf5 2px 3px 0;
+    border: 1px solid #999;
+    height: 250px;
+    max-width: 22%;
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+    float: right;
+    margin-left: 3%;
+}
+
+@media (max-width: 1690px) {
+    .selectedFundBox .h2 {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .selectedFundBox .h3 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 1517px) {
+    .selectedFundBox {
+        margin-left: 8px;
+        max-width: 24%;
+    }
+}
+
+@media (max-width: 1396px) {
+    .selectedFundBox .h2 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .selectedFundBox .h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .selectedFundBox {
+        margin-left: 25px;
+        margin-bottom: 25px;
+        max-width: 45%;
+    }
+    .h2 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 630px) {
+    .selectedFundBox {
+        margin-left: 25px;
+        margin-bottom: 25px;
+        max-width: 92%;
+    }
+}
+
+.totalFees {
+    margin-bottom: 30px;
 }

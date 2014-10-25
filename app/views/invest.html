@@ -1,12 +1,12 @@
 <div ng-controller="InvestCtrl">
     <notification-bar></notification-bar>
 
-    <p class="h3" dir="rtl">{{$root.appmessages.welcomeInvest}}</p>
-    <br>
-    <p class="h3" dir="rtl">{{$root.appmessages.chooseAmount}}</p>
-    <br>
 
     <section id="amount" class="investSection first" ng-class="{'current': currentSection.id === 'amount'}">
+        <p class="h3" dir="rtl">{{$root.appmessages.welcomeInvest}}</p>
+        <br>
+        <p class="h3" dir="rtl">{{$root.appmessages.chooseAmount}}</p>
+        <br>
         <div class="amountPicker">
             <input type="range" ng-model="amount" min="0" max="{{totalCash}}" step="100" class="amountSlider">
             <br>
@@ -48,8 +48,27 @@
            ng-click="moveToNextSection(sections[4])">{{$root.appmessages.submitFundDebentureSection}}</a>
     </section>
 
-    <section ng-if="currentSection.id === 'summary' || currentSection.position > 5" class="investSection current" id="summary">
+    <section ng-if="currentSection.id === 'summary' || currentSection.position > 5 class="investSection current" id="summary">
         <p class="h3" dir="rtl">{{$root.appmessages.summarySectionHeader}}</p>
+        <p class="h3" dir="rtl">{{$root.appmessages.summarySectionHeader2}}</p>
+
+        <ul class="row selectedFundsContainer">
+            <li ng-repeat="fund in selectedFunds" class="selectedFundBox col-xs-12 col-sm-12" ng-cloak>
+                <div>
+                    <p class="h2" dir="rtl">{{amount / 4}} {{$root.appmessages.nis}}</p>
+                    <p class="h2" dir="rtl">{{fund.name}}</p>
+                    <p class="h3" dir="rtl">{{$root.appmessages.summarySectionMgmtFeeTitle}} {{'%.2f'.format(fund.mgmtFee / 1000 * amount)}} {{$root.appmessages.nis}}</p>
+                    <p class="h3" dir="rtl">{{$root.appmessages.summarySectionCommissionTitle}} {{'%.2f'.format(fund.commission / 1000 * amount)}} {{$root.appmessages.nis}}</p>
+                </div>
+            </li>
+        </ul>
+
+        <div class="totalFees">
+            <p class="h3" dir="rtl">{{$root.appmessages.summarySectionTotalMgmtFee}} {{getTotalFees(); '%.2f'.format(totalMgmtFee)}} {{$root.appmessages.nis}}</p>
+            <p class="h3" dir="rtl">{{$root.appmessages.summarySectionTotalCommission}} {{'%.2f'.format(totalCommission)}} {{$root.appmessages.nis}}</p>
+            <p class="h3" dir="rtl">{{$root.appmessages.summarySectionPastYieldTitle}} 4.2%</p>
+        </div>
+
         <a class="btn btn-primary btn-centered btn-lg" data-vx-common-prevent-default=""
            ng-click="moveToNextSection(sections[5])">{{$root.appmessages.submitSummary}}</a>
     </section>

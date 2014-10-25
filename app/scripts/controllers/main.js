@@ -22,7 +22,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 3.6,
                     changedValueCash : 900,
                     direction : '+',
-                    mgmtFee: 0.100
+                    mgmtFee: 0.100,
+                    commission: 0.01
                 },
                 fundCoin2 : {
                     name : 'מיטב פק"מ נזיל',
@@ -32,7 +33,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 3.2,
                     changedValueCash : 800,
                     direction : '+',
-                    mgmtFee: 0.100
+                    mgmtFee: 0.100,
+                    commission: 0.01
                 },
                 fundCoin3 : {
                     name : 'אנליסט כספית',
@@ -42,7 +44,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 2.8,
                     changedValueCash : 700,
                     direction : '+',
-                    mgmtFee: 0.100
+                    mgmtFee: 0.100,
+                    commission: 0.01
                 },
                 fundCoin4 : {
                     name : 'פסגות כספית ממוקדת',
@@ -52,7 +55,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 3.1,
                     changedValueCash : 775,
                     direction : '+',
-                    mgmtFee: 0.100
+                    mgmtFee: 0.100,
+                    commission: 0.01
                 }
             },
 
@@ -66,7 +70,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 4,
                     changedValueCash : 1000,
                     direction : '-',
-                    mgmtFee: 1.00
+                    mgmtFee: 1.00,
+                    commission: 0.1
                 },
                 fundGold2 : {
                     name : 'תכלית זהב',
@@ -76,7 +81,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 3.7,
                     changedValueCash : 925,
                     direction : '-',
-                    mgmtFee: 1.00
+                    mgmtFee: 1.00,
+                    commission: 0.1
                 },
                 fundGold3 : {
                     name : 'קסם זהב',
@@ -86,7 +92,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 2.2,
                     changedValueCash : 550,
                     direction : '-',
-                    mgmtFee: 1.00
+                    mgmtFee: 1.00,
+                    commission: 0.1
                 },
                 fundGold4 : {
                     name : 'תכלית סילבר',
@@ -96,7 +103,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 4.5,
                     changedValueCash : 1125,
                     direction : '-',
-                    mgmtFee: 0.90
+                    mgmtFee: 0.90,
+                    commission: 0.1
                 }
             },
 
@@ -110,7 +118,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 11.6,
                     changedValueCash : 2900,
                     direction : '+',
-                    mgmtFee: 2.610
+                    mgmtFee: 2.610,
+                    commission: 0.1
                 },
                 fundStock2 : {
                     name : 'מגדל ת"א 25',
@@ -120,7 +129,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 8.6,
                     changedValueCash : 2150,
                     direction : '+',
-                    mgmtFee: 1.670
+                    mgmtFee: 1.670,
+                    commission: 0.1
                 },
                 fundStock3 : {
                     name : 'אנליסט ת"א 100',
@@ -130,7 +140,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 3.41,
                     changedValueCash : 852.5,
                     direction : '+',
-                    mgmtFee: 1.900
+                    mgmtFee: 1.900,
+                    commission: 0.1
                 },
                 fundStock4 : {
                     name : 'מור מנייתית',
@@ -140,7 +151,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 6.2,
                     changedValueCash : 1550,
                     direction : '+',
-                    mgmtFee: 1.950
+                    mgmtFee: 1.950,
+                    commission: 0.1
                 }
             },
 
@@ -154,7 +166,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 5.6,
                     changedValueCash : 1400,
                     direction : '+',
-                    mgmtFee: 0.500
+                    mgmtFee: 0.500,
+                    commission: 0.1
                 },
                 fundDebenture2 : {
                     name : 'הראל מחקה מדדי מדינה',
@@ -164,7 +177,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 7.21,
                     changedValueCash : 1802.5,
                     direction : '+',
-                    mgmtFee: 0.300
+                    mgmtFee: 0.300,
+                    commission: 0.1
                 },
                 fundDebenture3 : {
                     name : 'סיגמא ממשלתי ללא מניות',
@@ -174,7 +188,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 5.68,
                     changedValueCash : 1420,
                     direction : '+',
-                    mgmtFee: 0.900
+                    mgmtFee: 0.900,
+                    commission: 0.1
                 },
                 fundDebenture4 : {
                     name : 'אקסלנס ממשלתי טהור',
@@ -184,7 +199,8 @@ angular.module('solidusApp')
                     changedValuePercentage : 4.99,
                     changedValueCash : 1247.5,
                     direction : '+',
-                    mgmtFee: 0.470
+                    mgmtFee: 0.470,
+                    commission: 0.1
                 }
             }
         };
@@ -212,7 +228,13 @@ angular.module('solidusApp')
             fundGoldSectionHeader: 'קרן סחורות',
             fundStockSectionHeader: 'קרן מניות',
             fundDebentureSectionHeader: 'קרן אגרות חוב',
-            summarySectionHeader: 'וואו! איזה תיק השקעות!',
+            summarySectionHeader: 'הגענו לשלב הסופי.',
+            summarySectionHeader2: 'הקרנות שבחרת הן:',
+            summarySectionMgmtFeeTitle: 'דמי ניהול רבעוניים: ',
+            summarySectionCommissionTitle: 'עמלת קניה: ',
+            summarySectionTotalMgmtFee: 'סה"כ דמי ניהול רבעוניים: ',
+            summarySectionTotalCommission: 'סה"כ עמלות קניה: ',
+            summarySectionPastYieldTitle: 'בשנה האחרונה התיק שבחרת הניב תשואה של: ',
 
             // Notification strings
             amountNotification: 'לא מעט כסף. בוא נשקיע אותו בתבונה',
@@ -262,7 +284,13 @@ angular.module('solidusApp')
         $scope.username = 'משה';
         $scope.amount = 0;
         $scope.totalCash = 123400;
-        
+
+        $scope.selectedFunds = [];
+        $scope.selectedFunds.push($rootScope.consts.fundsCoin.fundCoinSelected);
+        $scope.selectedFunds.push($rootScope.consts.fundsGold.fundGoldSelected);
+        $scope.selectedFunds.push($rootScope.consts.fundsStock.fundStockSelected);
+        $scope.selectedFunds.push($rootScope.consts.fundsDebenture.fundDebentureSelected);
+
         $scope.toolbarItems = [
             { id: 'invest', title: $rootScope.appmessages.investHeader },
             { id: 'track', title: $rootScope.appmessages.trackHeader },
