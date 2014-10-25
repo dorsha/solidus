@@ -28,10 +28,10 @@ angular.module('solidusApp')
                 $scope.totalMgmtFee += fund.mgmtFee / 1000 * $scope.amount;
                 $scope.totalCommission += fund.commission / 1000 * $scope.amount;
             });
-        }
+        };
 
         BankService.getTotalCash(function (data) {
-            debugger;
+//            debugger;
         });
     }).directive('scrollToSection', ['$timeout', function($timeout) {
         return {
