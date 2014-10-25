@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('solidusApp')
-    .controller('InvestCtrl', function ($rootScope, $scope) {
+    .controller('InvestCtrl', function ($rootScope, $scope, BankService) {
         $scope.sections = [
             { id: 'amount', position: 0, passed: false, notificationTitle: $rootScope.appmessages.amountNotification },
             { id: 'fundCoin', position: 1, passed: false, notificationTitle: $rootScope.appmessages.fundCoinNotification },
@@ -29,6 +29,10 @@ angular.module('solidusApp')
                 $scope.totalCommission += fund.commission / 1000 * $scope.amount;
             });
         }
+
+        BankService.getTotalCash(function (data) {
+            debugger;
+        });
     }).directive('scrollToSection', ['$timeout', function($timeout) {
         return {
             restrict: 'A',
