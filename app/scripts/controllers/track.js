@@ -15,6 +15,14 @@ angular.module('solidusApp')
                 $scope.changedValueCash = plot.changedValueCash.toLocaleString();
                 $scope.direction = plot.direction;
                 $scope.$apply();
+
+                // scroll to fund's details on plot click - much better user experience
+                var element = $('#fundDetailsContainer');
+                if (element.length) {
+                    $('html, body').animate({
+                        scrollTop : element.offset().top - 140
+                    }, 750, 'easeOutExpo');
+                }
             }
 
             return {

@@ -7,7 +7,7 @@
     <div ng-if="$root.invested">
         <p class="h2" dir="rtl">{{$root.appmessages.welcomeTrack}} {{currentDate}}</p>
         <highchart chart='pie'></highchart>
-        <div class="fundDetailsContainer">
+        <div id="fundDetailsContainer" class="fundDetailsContainer">
             <p class="h2" dir="rtl">{{$root.appmessages.foundDetailsHeader}}</p>
             <div class="fundDetails">
                 <div class="row">
