@@ -202,6 +202,7 @@ angular.module('solidusApp')
         // App labels
         $rootScope.appmessages = {
             nis: 'ש"ח',
+            agorot: 'אגורות',
             investHeader: 'השקעה',
             trackHeader: 'מעקב',
             balance: 'איזון',
@@ -218,7 +219,7 @@ angular.module('solidusApp')
             submitFundStockSection: 'בוא נמשיך',
             submitFundDebentureSection: 'בוא נראה מה יש לנו',
             submitSummary: 'מאשר רכישה',
-            fundCoinSectionHeader: 'קרן שיקלית',
+            fundCoinSectionHeader: 'קרן כספית',
             fundGoldSectionHeader: 'קרן סחורות',
             fundStockSectionHeader: 'קרן מניות',
             fundDebentureSectionHeader: 'קרן אגרות חוב',
