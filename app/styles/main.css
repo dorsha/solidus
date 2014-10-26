@@ -12,7 +12,7 @@ body {
     width: 100%;
     z-index: 90;
     min-height: 100px;
-    background-color: #AB2688;
+    background-color: #55266c;
     color: #FFFFFF;
 }
 
@@ -32,12 +32,12 @@ body {
 }
 
 .main-nav .active {
-    background-color: #6A104D;
+    background-color: #8a20b7;
     color: #FFFFFF;
 }
 
 .main-nav .menuitem:hover {
-    background-color: #812262;
+    background-color: #8a20b7;
     color: #FFFFFF;
 }
 
@@ -166,11 +166,11 @@ input[type="range"]::-ms-thumb {
 }
 
 .btn-centered:hover {
-    background-color: #a321d3;
+    background-color: #8a20b7;
 }
 
 .btn-centered:active {
-    background-color: #a321d3;
+    background-color: #8a20b7;
 }
 
 .notificationBar {
@@ -182,7 +182,7 @@ input[type="range"]::-ms-thumb {
     text-align: center;
     line-height: 100px;
     font-size: 30px;
-    background-color: #d847a7;
+    background-color: #55266c;
     color: #FFF;
     z-index: 100;
     width: 100% !important;
