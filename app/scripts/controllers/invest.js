@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('solidusApp')
-    .controller('InvestCtrl', function ($rootScope, $scope, BankService) {
+    .controller('InvestCtrl', function ($rootScope, $scope) {
         $scope.sections = [
             { id: 'amount', position: 0, passed: false, notificationTitle: $rootScope.appmessages.amountNotification },
             { id: 'fundCoin', position: 1, passed: false, notificationTitle: $rootScope.appmessages.fundCoinNotification },
@@ -86,8 +86,10 @@ angular.module('solidusApp')
                             },
                             300,
                             'easeInExpo',
-                            function (){
-                                params.onCollapsed && params.onCollapsed();
+                            function () {
+                                if (params.onCollapsed) {
+                                    params.onCollapsed();
+                                }
                                 scope.showNotificationTimeout = null;
                             });
                         }, params.duration || 300);
