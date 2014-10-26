@@ -32,17 +32,6 @@ angular.module('solidusApp')
             });
         };
 
-        BankService.getTotalCash(function (data) {
-            if (!$rootScope.receivedBankData) {
-                $rootScope.totalCash = parseInt(data.nisBalance.substring(2, data.nisBalance.length -3).replace(',', ''));
-                BankService.getUsername(function (data) {
-                    $rootScope.username = data.customerName;
-                    $scope.calculateWelcomeLabels();
-                    $rootScope.receivedBankData = true;
-                });
-            }
-        });
-
         $scope.submit = function() {
             $rootScope.invested = true;
             $rootScope.selectedAmount = parseInt($scope.amount);

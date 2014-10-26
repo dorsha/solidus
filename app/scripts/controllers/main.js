@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('solidusApp')
-    .controller('MainCtrl', function ($scope, $rootScope) {
+    .controller('MainCtrl', function ($scope, $rootScope, BankService) {
 
         // App labels
         $rootScope.appmessages = {
@@ -240,8 +240,8 @@ angular.module('solidusApp')
                 }
             }
         };
-        
-        $scope.calculateWelcomeLabels = function() {
+
+        function calculateWelcomeLabels() {
             var hour = new Date().getHours();
             var prefix;
             if (hour >= 6 && hour < 12) {
@@ -263,7 +263,18 @@ angular.module('solidusApp')
 
             $rootScope.welcomeTrackNotInvested = prefix + ' ' + $rootScope.appmessages.welcomeTrackNotInvested;
             $rootScope.welcomeTrackNotInvested = $rootScope.welcomeTrackNotInvested.format($rootScope.username);
-        };
+        }
+
+        BankService.getTotalCash(function (data) {
+            if (!$rootScope.receivedBankData) {
+                $rootScope.totalCash = parseInt(data.nisBalance.substring(2, data.nisBalance.length -3).replace(',', ''));
+                BankService.getUsername(function (data) {
+                    $rootScope.username = data.customerName;
+                    calculateWelcomeLabels();
+                    $rootScope.receivedBankData = true;
+                });
+            }
+        });
 
         $rootScope.invested = false;
         $rootScope.amount = 100;
