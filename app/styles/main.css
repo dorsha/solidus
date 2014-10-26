@@ -238,6 +238,18 @@ input[type="range"]::-ms-thumb {
     margin-left: 3%;
 }
 
+.totalFees {
+    margin-bottom: 30px;
+}
+
+@media (max-width: 630px) {
+    .main-nav .menuitem,
+    .notificationBar {
+        font-size: 24px;
+    }
+}
+
+
 @media (max-width: 1690px) {
     .selectedFundBox .h2 {
         font-size: 22px;
@@ -289,8 +301,4 @@ input[type="range"]::-ms-thumb {
         margin-bottom: 25px;
         max-width: 92%;
     }
-}
-
-.totalFees {
-    margin-bottom: 30px;
 }
