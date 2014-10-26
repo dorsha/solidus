@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('solidusApp')
-    .controller('MainCtrl', function ($scope, $rootScope) {
+    .controller('MainCtrl', function ($scope, $rootScope, BankService) {
 
         // all available funds
         $rootScope.funds = {
@@ -281,9 +281,14 @@ angular.module('solidusApp')
         }
 
         $rootScope.invested = false;
-        $scope.username = 'משה';
         $rootScope.amount = 100;
-        $scope.totalCash = 123400;
+        BankService.getTotalCash(function (data) {
+            $scope.totalCash = parseInt(data.nisBalance.substring(2, data.nisBalance.length -3).replace(',', ''));
+            BankService.getUsername(function (data) {
+                $scope.username = data.customerName;
+                calculateWelcomeLabels();
+            });
+        });
 
         // selected funds
         $scope.selectedFunds = [];
@@ -314,6 +319,4 @@ angular.module('solidusApp')
                 }, 750, 'easeOutExpo');
             }
         };
-
-        calculateWelcomeLabels();
     });
