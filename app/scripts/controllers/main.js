@@ -271,13 +271,13 @@ angular.module('solidusApp')
                 prefix = $rootScope.appmessages.welcomeNight;
             }
             $rootScope.welcomeInvest = prefix + ' ' + $rootScope.appmessages.welcomeInvest;
-            $rootScope.welcomeInvest = $rootScope.appmessages.welcomeInvest.format($rootScope.username, $rootScope.totalCash.toLocaleString());
+            $rootScope.welcomeInvest = $rootScope.welcomeInvest.format($rootScope.username, $rootScope.totalCash.toLocaleString());
 
             $rootScope.welcomeTrack = prefix + ' ' + $rootScope.appmessages.welcomeTrack;
-            $rootScope.welcomeTrack = $rootScope.appmessages.welcomeTrack.format($rootScope.username);
+            $rootScope.welcomeTrack = $rootScope.welcomeTrack.format($rootScope.username);
 
             $rootScope.welcomeTrackNotInvested = prefix + ' ' + $rootScope.appmessages.welcomeTrackNotInvested;
-            $rootScope.welcomeTrackNotInvested = $rootScope.appmessages.welcomeTrackNotInvested.format($rootScope.username);
+            $rootScope.welcomeTrackNotInvested = $rootScope.welcomeTrackNotInvested.format($rootScope.username);
         };
 
         $rootScope.invested = false;
