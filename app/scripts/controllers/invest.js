@@ -45,6 +45,7 @@ angular.module('solidusApp')
 
         $scope.submit = function() {
             $rootScope.invested = true;
+            $rootScope.selectedAmount = parseInt($scope.amount);
         };
     }).directive('scrollToSection', ['$timeout', function($timeout) {
         return {
