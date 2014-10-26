@@ -10,10 +10,12 @@ angular.module('solidusApp')
             { id: 'fundDebenture', position: 4, passed: false, notificationTitle: $rootScope.appmessages.fundDebentureNotification },
             { id: 'summary', position: 5, passed: false, notificationTitle: $rootScope.appmessages.summaryNotification }
         ];
+        $scope.previousSection = $scope.sections[0];
         $scope.currentSection = $scope.sections[0];
         $scope.moveToNextSection = function(section) {
             if (!section.passed) {
                 section.passed = true;
+                $scope.previousSection = $scope.currentSection;
                 var nextPosition = section.position + 1;
                 if (nextPosition < $scope.sections.length) {
                     $scope.currentSection = $scope.sections[nextPosition];
@@ -33,6 +35,10 @@ angular.module('solidusApp')
         BankService.getTotalCash(function (data) {
 //            debugger;
         });
+
+        $scope.submit = function() {
+            $rootScope.invested = true;
+        };
     }).directive('scrollToSection', ['$timeout', function($timeout) {
         return {
             restrict: 'A',
@@ -49,7 +55,7 @@ angular.module('solidusApp')
                     }
 
                     scope.$emit('showNotificationBar', {
-                        title: scope.currentSection.notificationTitle,
+                        title: scope.previousSection.notificationTitle,
                         duration: 2500
                     });
 

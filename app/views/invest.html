@@ -1,14 +1,11 @@
 <div ng-controller="InvestCtrl">
-    <notification-bar></notification-bar>
-
-
     <section id="amount" class="investSection first" ng-class="{'current': currentSection.id === 'amount'}">
         <p class="h3" dir="rtl">{{$root.appmessages.welcomeInvest}}</p>
         <br>
         <p class="h3" dir="rtl">{{$root.appmessages.chooseAmount}}</p>
         <br>
         <div class="amountPicker">
-            <input type="range" ng-model="amount" min="0" max="{{totalCash}}" step="100" class="amountSlider">
+            <input type="range" ng-model="amount" min="100" max="{{totalCash}}" step="100" class="amountSlider">
             <br>
             <div class="input-group amountDisplay">
                 <span class="input-group-addon">₪</span>
@@ -69,7 +66,7 @@
             <p class="h3" dir="rtl">{{$root.appmessages.summarySectionPastYieldTitle}} 4.2%</p>
         </div>
 
-        <a class="btn btn-primary btn-centered btn-lg" data-vx-common-prevent-default=""
-           ng-click="moveToNextSection(sections[5])">{{$root.appmessages.submitSummary}}</a>
+        <a class="btn btn-primary btn-centered btn-lg" scroll-to-section data-vx-common-prevent-default=""
+           ng-click="moveToNextSection(sections[5]); submit(); itemSelected(toolbarItems[1])" ng-href="/#/{{toolbarItems[1].id}}">{{$root.appmessages.submitSummary}}</a>
     </section>
 </div>

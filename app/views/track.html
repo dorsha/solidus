@@ -1,29 +1,36 @@
 <div ng-controller="TrackCtrl">
-    <p class="h2" dir="rtl">{{$root.appmessages.welcomeTrack}} {{currentDate}}</p>
-    <highchart chart='pie'></highchart>
-    <div class="fundDetailsContainer">
-        <p class="h2" dir="rtl">{{$root.appmessages.foundDetailsHeader}}</p>
-        <div class="fundDetails">
-            <div class="row">
-                <p class="h3 col-xs-12 col-sm-8" dir="rtl">{{$root.appmessages.foundDetailsTypeTitle}} {{selectedFundType}}</p>
-                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsFundNameTitle}} {{selectedFundName}}</p>
-            </div>
-            <div class="row">
-                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsPercentageTitle}} {{selectedFundY}}%</p>
-                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsValueTitle}} {{moneyValue}} {{$root.appmessages.nis}}</p>
-                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsCostValueTitle}} {{costValue}} {{$root.appmessages.nis}}</p>
-            </div>
-            <div class="row">
-                <p class="h3 col-xs-12 col-sm-8" dir="rtl">{{$root.appmessages.foundDetailsChangedValuePercentageTitle}} {{changedValuePercentage}}%{{direction}}</p>
-                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsChangedValueCashTitle}} {{changedValueCash}}{{direction}} {{$root.appmessages.nis}}</p>
+    <div ng-if="!$root.invested">
+        <p class="h2" dir="rtl">{{$root.appmessages.welcomeTrackNotInvested}}</p>
+        <a class="btn btn-primary btn-centered btn-lg" data-vx-common-prevent-default=""
+           ng-click="itemSelected(toolbarItems[0])" ng-href="/#/{{toolbarItems[0].id}}">{{$root.appmessages.buttonMoveToInvest}}</a>
+    </div>
+    <div ng-if="$root.invested">
+        <p class="h2" dir="rtl">{{$root.appmessages.welcomeTrack}} {{currentDate}}</p>
+        <highchart chart='pie'></highchart>
+        <div class="fundDetailsContainer">
+            <p class="h2" dir="rtl">{{$root.appmessages.foundDetailsHeader}}</p>
+            <div class="fundDetails">
+                <div class="row">
+                    <p class="h3 col-xs-12 col-sm-8" dir="rtl">{{$root.appmessages.foundDetailsTypeTitle}} {{selectedFundType}}</p>
+                    <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsFundNameTitle}} {{selectedFundName}}</p>
+                </div>
+                <div class="row">
+                    <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsPercentageTitle}} {{selectedFundY}}%</p>
+                    <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsValueTitle}} {{moneyValue}} {{$root.appmessages.nis}}</p>
+                    <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsCostValueTitle}} {{costValue}} {{$root.appmessages.nis}}</p>
+                </div>
+                <div class="row">
+                    <p class="h3 col-xs-12 col-sm-8" dir="rtl">{{$root.appmessages.foundDetailsChangedValuePercentageTitle}} {{changedValuePercentage}}%{{direction}}</p>
+                    <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsChangedValueCashTitle}} {{changedValueCash}}{{direction}} {{$root.appmessages.nis}}</p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="fundsSummary">
-        <div class="row">
-            <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsTotalProfitPercentageTitle}} {{totalProfitPercentage}}%</p>
-            <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsTotalProfitCashTitle}} {{totalProfitCash}} {{$root.appmessages.nis}}</p>
-            <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsTotalPortfolioCashTitle}} {{totalPortfolioCash}} {{$root.appmessages.nis}}</p>
+        <div class="fundsSummary">
+            <div class="row">
+                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsTotalProfitPercentageTitle}} {{totalProfitPercentage}}%</p>
+                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsTotalProfitCashTitle}} {{totalProfitCash}} {{$root.appmessages.nis}}</p>
+                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsTotalPortfolioCashTitle}} {{totalPortfolioCash}} {{$root.appmessages.nis}}</p>
+            </div>
         </div>
     </div>
 </div>

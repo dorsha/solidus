@@ -26,13 +26,13 @@
                 <div class="main-nav">
                     <div class="row">
                         <div ng-click="itemSelected(item)" ng-repeat="item in toolbarItems.slice().reverse()"
-                             ng-class="{active: selected.id == item.id }" class="col-xs-6 col-sm-4 menuitem">
+                             ng-class="{ active: selected.id === item.id }" class="col-xs-6 col-sm-4 menuitem">
                             <a ng-cloak ng-href="/#/{{item.id}}">{{item.title}}</a>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <notification-bar></notification-bar>
             <div class="content" ng-view data-autoscroll="true"></div>
         </div>
 

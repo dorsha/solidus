@@ -3,10 +3,8 @@
 angular.module('solidusApp')
     .controller('MainCtrl', function ($scope, $rootScope) {
 
+        // all available funds
         $rootScope.funds = {
-            selectedAmount: 100000, // todo get the value from the real selected amount!
-
-            // all available funds
 
             // funds coin
             fundsCoin: {
@@ -238,10 +236,12 @@ angular.module('solidusApp')
             fundGoldNotification: 'אני התראה נעלמת זהב',
             fundStockNotification: 'אני התראה נעלמת מניות',
             fundDebentureNotification: 'אני התראה נעלמת אג״ח',
-            summaryNotification: 'אני התראה נעלמת סיכום',
+            summaryNotification: '!הרכישה בוצעה בהצלחה, כל הכבוד',
 
             // Tracking
             welcomeTrack: '%s, להלן התפלגות תיק ההשקעות שלך נכון לתאריך: ',
+            welcomeTrackNotInvested: '%s, לא נמצאו השקעות בחשבונך.',
+            buttonMoveToInvest: 'לחץ על מנת להשקיע',
             piePlotName: 'value',
             foundDetailsHeader: 'נתוני הקרן',
             foundDetailsFundNameTitle: 'שם הקרן: ',
@@ -275,10 +275,14 @@ angular.module('solidusApp')
 
             $rootScope.appmessages.welcomeTrack = prefix + ' ' + $rootScope.appmessages.welcomeTrack;
             $rootScope.appmessages.welcomeTrack = $rootScope.appmessages.welcomeTrack.format($scope.username);
+
+            $rootScope.appmessages.welcomeTrackNotInvested = prefix + ' ' + $rootScope.appmessages.welcomeTrackNotInvested;
+            $rootScope.appmessages.welcomeTrackNotInvested = $rootScope.appmessages.welcomeTrackNotInvested.format($scope.username);
         }
 
+        $rootScope.invested = false;
         $scope.username = 'משה';
-        $scope.amount = 0;
+        $rootScope.amount = 100;
         $scope.totalCash = 123400;
 
         // selected funds
@@ -298,7 +302,7 @@ angular.module('solidusApp')
             return x.id;
         }).indexOf(window.location.hash.substring(2));
         $scope.selected = $scope.toolbarItems[elementPos];
-        $scope.itemSelected = function(item) {
+        $rootScope.itemSelected = function(item) {
             $scope.selected = item;
         };
 

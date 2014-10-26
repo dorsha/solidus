@@ -185,6 +185,7 @@ input[type="range"]::-ms-thumb {
     background-color: #d847a7;
     color: #FFF;
     z-index: 100;
+    width: 100% !important;
 }
 
 .fundDetailsContainer {
