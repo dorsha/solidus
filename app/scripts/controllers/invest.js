@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('solidusApp')
-    .controller('InvestCtrl', function ($rootScope, $scope, BankService) {
+    .controller('InvestCtrl', function ($rootScope, $scope) {
         $scope.sections = [
             { id: 'amount', position: 0, passed: false, notificationTitle: $rootScope.appmessages.amountNotification },
             { id: 'fundCoin', position: 1, passed: false, notificationTitle: $rootScope.appmessages.fundCoinNotification },
@@ -32,19 +32,9 @@ angular.module('solidusApp')
             });
         };
 
-        BankService.getTotalCash(function (data) {
-            if (!$rootScope.receivedBankData) {
-                $rootScope.totalCash = parseInt(data.nisBalance.substring(2, data.nisBalance.length -3).replace(',', ''));
-                BankService.getUsername(function (data) {
-                    $rootScope.username = data.customerName;
-                    $scope.calculateWelcomeLabels();
-                    $rootScope.receivedBankData = true;
-                });
-            }
-        });
-
         $scope.submit = function() {
             $rootScope.invested = true;
+            $rootScope.selectedAmount = parseInt($scope.amount);
         };
     }).directive('scrollToSection', ['$timeout', function($timeout) {
         return {
@@ -96,8 +86,10 @@ angular.module('solidusApp')
                             },
                             300,
                             'easeInExpo',
-                            function (){
-                                params.onCollapsed && params.onCollapsed();
+                            function () {
+                                if (params.onCollapsed) {
+                                    params.onCollapsed();
+                                }
                                 scope.showNotificationTimeout = null;
                             });
                         }, params.duration || 300);

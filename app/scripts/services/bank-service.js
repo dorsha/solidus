@@ -15,15 +15,19 @@ angular.module('solidusApp')
                 },
                 withCredentials: true
             }).then(function(response, status) {
-                // this callback will be called asynchronously
-                // when the response is available
-                onSuccess && onSuccess(response.data, status);
-            },
-            function(response, status) {
-                // called asynchronously if an error occurs
-                // or server returns response with an error status.
-                onError && onError(response.data, status);
-            });
+                    // this callback will be called asynchronously
+                    // when the response is available
+                    if (onSuccess) {
+                        onSuccess(response.data, status);
+                    }
+                },
+                function(response, status) {
+                    // called asynchronously if an error occurs
+                    // or server returns response with an error status.
+                    if (onError) {
+                        onError(response.data, status);
+                    }
+                });
         };
 
         self.getUsername = function (onSuccess, onError) {
@@ -36,12 +40,16 @@ angular.module('solidusApp')
             }).then(function(response, status) {
                     // this callback will be called asynchronously
                     // when the response is available
-                    onSuccess && onSuccess(response.data, status);
+                    if (onSuccess) {
+                        onSuccess(response.data, status);
+                    }
                 },
                 function(response, status) {
                     // called asynchronously if an error occurs
                     // or server returns response with an error status.
-                    onError && onError(response.data, status);
+                    if (onError) {
+                        onError(response.data, status);
+                    }
                 });
         };
 
