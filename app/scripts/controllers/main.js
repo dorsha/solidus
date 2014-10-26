@@ -9,14 +9,14 @@ angular.module('solidusApp')
             // funds coin
             fundsCoin: {
                 fundCoin1: {
-                    name: 'מגדל כספית פרימיום',
+                    name: 'פסגות מחקה מק"מ',
                     y: 24.85,
                     moneyValue: 25900,
-                    costValue: 116.18,
-                    changedValuePercentage: 3.6,
-                    changedValueCash: 900,
+                    costValue: 112.75,
+                    changedValuePercentage: 3.1,
+                    changedValueCash: 775,
                     direction: '+',
-                    mgmtFee: 0.100,
+                    mgmtFee: 0.000,
                     commission: 0.01
                 },
                 fundCoin2: {
@@ -42,12 +42,12 @@ angular.module('solidusApp')
                     commission: 0.01
                 },
                 fundCoin4: {
-                    name: 'פסגות כספית ממוקדת',
+                    name: 'מגדל כספית פרימיום',
                     y: 24.85,
                     moneyValue: 25900,
-                    costValue: 100.61,
-                    changedValuePercentage: 3.1,
-                    changedValueCash: 775,
+                    costValue: 116.18,
+                    changedValuePercentage: 3.6,
+                    changedValueCash: 900,
                     direction: '+',
                     mgmtFee: 0.100,
                     commission: 0.01
@@ -57,12 +57,12 @@ angular.module('solidusApp')
             // funds gold
             fundsGold: {
                 fundGold1: {
-                    name: 'הראל סל זהב',
+                    name: 'קסם זהב לונדון שקלי',
                     y: 23.03,
-                    moneyValue: 24000,
-                    costValue: 3548,
-                    changedValuePercentage: 4,
-                    changedValueCash: 1000,
+                    moneyValue: 24450,
+                    costValue: 1216.96,
+                    changedValuePercentage: 2.2,
+                    changedValueCash: 550,
                     direction: '-',
                     mgmtFee: 1.00,
                     commission: 0.1
@@ -79,12 +79,12 @@ angular.module('solidusApp')
                     commission: 0.1
                 },
                 fundGold3: {
-                    name: 'קסם זהב',
+                    name: 'הראל סל זהב',
                     y: 23.03,
-                    moneyValue: 24450,
-                    costValue: 3975,
-                    changedValuePercentage: 2.2,
-                    changedValueCash: 550,
+                    moneyValue: 24000,
+                    costValue: 3548,
+                    changedValuePercentage: 4,
+                    changedValueCash: 1000,
                     direction: '-',
                     mgmtFee: 1.00,
                     commission: 0.1
@@ -105,6 +105,17 @@ angular.module('solidusApp')
             // funds stock
             fundsStock: {
                 fundStock1: {
+                    name: 'מגדל MTF תל אביב 100',
+                    y: 26.77,
+                    moneyValue: 26150,
+                    costValue: 143.12,
+                    changedValuePercentage: 8.6,
+                    changedValueCash: 2150,
+                    direction: '+',
+                    mgmtFee: 1.670,
+                    commission: 0.000
+                },
+                fundStock2: {
                     name: 'אנליסט מניות ממוקדת',
                     y: 26.77,
                     moneyValue: 27900,
@@ -113,17 +124,6 @@ angular.module('solidusApp')
                     changedValueCash: 2900,
                     direction: '+',
                     mgmtFee: 2.610,
-                    commission: 0.1
-                },
-                fundStock2: {
-                    name: 'מגדל ת"א 25',
-                    y: 26.77,
-                    moneyValue: 26150,
-                    costValue: 768.75,
-                    changedValuePercentage: 8.6,
-                    changedValueCash: 2150,
-                    direction: '+',
-                    mgmtFee: 1.670,
                     commission: 0.1
                 },
                 fundStock3: {
