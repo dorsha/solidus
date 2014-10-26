@@ -225,10 +225,7 @@ input[type="range"]::-ms-thumb {
 
 .selectedFundBox {
     position: relative;
-    box-shadow: #f0f0f0 0 0 0 3px inset,#edddf5 2px 3px 0;
-    -webkit-box-shadow: #f0f0f0 0 0 0 3px inset,#edddf5 2px 3px 0;
-    -moz-box-shadow: #f0f0f0 0 0 0 3px inset,#edddf5 2px 3px 0;
-    border: 1px solid #999;
+    border: 3px solid #702b61;
     height: 250px;
     max-width: 22%;
     padding: 20px;
@@ -236,6 +233,8 @@ input[type="range"]::-ms-thumb {
     display: inline-block;
     float: right;
     margin-left: 3%;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
 .totalFees {
@@ -319,4 +318,27 @@ input[type="range"]::-ms-thumb {
         margin-bottom: 25px;
         max-width: 92%;
     }
+}
+
+.fundViewSub {
+    color: #696969;
+}
+
+.fundViewTitle {
+    min-height: 104px;
+}
+
+.selectedFundBox.selected {
+    border: 12px solid #971e75;
+}
+
+.selectedFundBox.recommended:before {
+    background-color: yellow;
+    content: 'המומלצת שלנו';
+    position: absolute;
+    top: 0px;
+    left: -29px;
+    -webkit-transform: rotate(-30deg);
+    border: 1px solid;
+    padding: 5px;
 }
