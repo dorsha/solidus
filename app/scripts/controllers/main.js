@@ -69,7 +69,6 @@ angular.module('solidusApp')
                 fundCoin1: {
                     name: 'פסגות מחקה מק"מ',
                     type: $rootScope.appmessages.fundCoinSectionHeader,
-                    y: 24.85,
                     costValue: 112.75,
                     changedValuePercentage: 3.1,
                     direction: '+',
@@ -79,7 +78,6 @@ angular.module('solidusApp')
                 fundCoin2: {
                     name: 'מיטב פק"מ נזיל',
                     type: $rootScope.appmessages.fundCoinSectionHeader,
-                    y: 24.85,
                     costValue: 111.86,
                     changedValuePercentage: 3.2,
                     direction: '+',
@@ -89,7 +87,6 @@ angular.module('solidusApp')
                 fundCoin3: {
                     name: 'אנליסט כספית',
                     type: $rootScope.appmessages.fundCoinSectionHeader,
-                    y: 24.85,
                     costValue: 336.09,
                     changedValuePercentage: 2.8,
                     direction: '+',
@@ -99,7 +96,6 @@ angular.module('solidusApp')
                 fundCoin4: {
                     name: 'מגדל כספית פרימיום',
                     type: $rootScope.appmessages.fundCoinSectionHeader,
-                    y: 24.85,
                     costValue: 116.18,
                     changedValuePercentage: 3.6,
                     direction: '+',
@@ -113,7 +109,6 @@ angular.module('solidusApp')
                 fundGold1: {
                     name: 'קסם זהב לונדון שקלי',
                     type: $rootScope.appmessages.fundGoldSectionHeader,
-                    y: 23.03,
                     costValue: 1216.96,
                     changedValuePercentage: 2.2,
                     direction: '-',
@@ -123,7 +118,6 @@ angular.module('solidusApp')
                 fundGold2: {
                     name: 'תכלית זהב',
                     type: $rootScope.appmessages.fundGoldSectionHeader,
-                    y: 23.03,
                     costValue: 4141,
                     changedValuePercentage: 3.7,
                     direction: '-',
@@ -133,7 +127,6 @@ angular.module('solidusApp')
                 fundGold3: {
                     name: 'הראל סל זהב',
                     type: $rootScope.appmessages.fundGoldSectionHeader,
-                    y: 23.03,
                     costValue: 3548,
                     changedValuePercentage: 4,
                     direction: '-',
@@ -143,7 +136,6 @@ angular.module('solidusApp')
                 fundGold4: {
                     name: 'תכלית סילבר',
                     type: $rootScope.appmessages.fundGoldSectionHeader,
-                    y: 23.03,
                     costValue: 4975,
                     changedValuePercentage: 4.5,
                     direction: '-',
@@ -157,7 +149,6 @@ angular.module('solidusApp')
                 fundStock1: {
                     name: 'מגדל MTF תל אביב 100',
                     type: $rootScope.appmessages.fundStockSectionHeader,
-                    y: 26.77,
                     costValue: 143.12,
                     changedValuePercentage: 8.6,
                     direction: '+',
@@ -167,7 +158,6 @@ angular.module('solidusApp')
                 fundStock2: {
                     name: 'אנליסט מניות ממוקדת',
                     type: $rootScope.appmessages.fundStockSectionHeader,
-                    y: 26.77,
                     costValue: 111.06,
                     changedValuePercentage: 11.6,
                     direction: '+',
@@ -177,7 +167,6 @@ angular.module('solidusApp')
                 fundStock3: {
                     name: 'אנליסט ת"א 100',
                     type: $rootScope.appmessages.fundStockSectionHeader,
-                    y: 26.77,
                     costValue: 229.70,
                     changedValuePercentage: 3.41,
                     direction: '+',
@@ -187,7 +176,6 @@ angular.module('solidusApp')
                 fundStock4: {
                     name: 'מור מנייתית',
                     type: $rootScope.appmessages.fundStockSectionHeader,
-                    y: 26.77,
                     costValue: 173.02,
                     changedValuePercentage: 6.2,
                     direction: '+',
@@ -201,7 +189,6 @@ angular.module('solidusApp')
                 fundDebenture1: {
                     name: 'אילים תיק אג"ח + 10%',
                     type: $rootScope.appmessages.fundDebentureSectionHeader,
-                    y: 25.33,
                     costValue: 167.09,
                     changedValuePercentage: 5.6,
                     direction: '+',
@@ -211,7 +198,6 @@ angular.module('solidusApp')
                 fundDebenture2: {
                     name: 'הראל מחקה מדדי מדינה',
                     type: $rootScope.appmessages.fundDebentureSectionHeader,
-                    y: 25.33,
                     costValue: 134.92,
                     changedValuePercentage: 7.21,
                     direction: '+',
@@ -221,7 +207,6 @@ angular.module('solidusApp')
                 fundDebenture3: {
                     name: 'סיגמא ממשלתי ללא מניות',
                     type: $rootScope.appmessages.fundDebentureSectionHeader,
-                    y: 25.33,
                     costValue: 89.85,
                     changedValuePercentage: 5.68,
                     direction: '+',
@@ -231,7 +216,6 @@ angular.module('solidusApp')
                 fundDebenture4: {
                     name: 'אקסלנס ממשלתי טהור',
                     type: $rootScope.appmessages.fundDebentureSectionHeader,
-                    y: 25.33,
                     costValue: 108.67,
                     changedValuePercentage: 4.99,
                     direction: '+',

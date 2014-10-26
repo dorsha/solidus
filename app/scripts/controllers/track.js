@@ -7,7 +7,7 @@ angular.module('solidusApp')
             var quarterAmount = $rootScope.selectedAmount / 4;
             $scope.selectedFundName = fund.name;
             $scope.selectedFundType = fund.type;
-            $scope.selectedFundY = fund.y;
+            $scope.selectedFundY = '%.2f'.format(getPlotY(fund.changedValuePercentage));
             $scope.changedValuePercentage = fund.changedValuePercentage;
             $scope.changedValueCash = ($scope.changedValuePercentage / 100) * quarterAmount;
             $scope.direction = fund.direction;
@@ -20,6 +20,13 @@ angular.module('solidusApp')
 
             $scope.changedValueCash = $scope.changedValueCash.toLocaleString();
             $scope.costValue = fund.costValue.toLocaleString();
+        }
+
+        function getPlotY(changedValuePercentage) {
+            var totalProfit = calculateTotalProfit();
+            var totalMoneyValue = totalProfit + $rootScope.selectedAmount;
+            var fundMoneyValue = ((changedValuePercentage / 100) + 1) * $rootScope.selectedAmount / 4;
+            return (fundMoneyValue / totalMoneyValue) * 100;
         }
 
         function getPieChart() {
@@ -74,7 +81,7 @@ angular.module('solidusApp')
                             name: $scope.selectedFunds[0].name,
                             type: $scope.selectedFunds[0].type,
                             id: 'fundCoin',
-                            y: $scope.selectedFunds[0].y,
+                            y: getPlotY($scope.selectedFunds[0].changedValuePercentage),
                             costValue: $scope.selectedFunds[0].costValue,
                             changedValuePercentage: $scope.selectedFunds[0].changedValuePercentage,
                             direction: $scope.selectedFunds[0].direction,
@@ -90,7 +97,7 @@ angular.module('solidusApp')
                             name: $scope.selectedFunds[1].name,
                             type: $scope.selectedFunds[1].type,
                             id: 'fundGold',
-                            y: $scope.selectedFunds[1].y,
+                            y: getPlotY(1),
                             costValue: $scope.selectedFunds[1].costValue,
                             changedValuePercentage: $scope.selectedFunds[1].changedValuePercentage,
                             direction: $scope.selectedFunds[1].direction,
@@ -104,7 +111,7 @@ angular.module('solidusApp')
                             name: $scope.selectedFunds[2].name,
                             type: $scope.selectedFunds[2].type,
                             id: 'fundStock',
-                            y: $scope.selectedFunds[2].y,
+                            y: getPlotY(2),
                             costValue: $scope.selectedFunds[2].costValue,
                             changedValuePercentage: $scope.selectedFunds[2].changedValuePercentage,
                             direction: $scope.selectedFunds[2].direction,
@@ -118,7 +125,7 @@ angular.module('solidusApp')
                             name: $scope.selectedFunds[3].name,
                             type: $scope.selectedFunds[3].type,
                             id: 'fundDebenture',
-                            y: $scope.selectedFunds[3].y,
+                            y: getPlotY(3),
                             costValue: $scope.selectedFunds[3].costValue,
                             changedValuePercentage: $scope.selectedFunds[3].changedValuePercentage,
                             direction: $scope.selectedFunds[3].direction,
@@ -133,19 +140,23 @@ angular.module('solidusApp')
             };
         }
 
+        function calculateTotalProfit() {
+            var totalProfit = 0;
+            $scope.selectedFunds.forEach(function (fund) {
+                if (fund.direction === '+') {
+                    totalProfit += ((fund.changedValuePercentage / 100) * $rootScope.selectedAmount / 4);
+                } else {
+                    totalProfit -= ((fund.changedValuePercentage / 100) * $rootScope.selectedAmount / 4);
+                }
+            });
+
+            return totalProfit;
+        }
+
         function init() {
             // initial fund details (always the coin fund)
             fundToPlotDetails($scope.selectedFunds[0]);
-
-            // calculate total values
-            $scope.totalProfitCash = 0;
-            $scope.selectedFunds.forEach(function (fund) {
-                if (fund.direction === '+') {
-                    $scope.totalProfitCash += ((fund.changedValuePercentage / 100) * $rootScope.selectedAmount / 4);
-                } else {
-                    $scope.totalProfitCash -= ((fund.changedValuePercentage / 100) * $rootScope.selectedAmount / 4);
-                }
-            });
+            $scope.totalProfitCash = calculateTotalProfit();
 
             // format total values
             $scope.totalProfitPercentage = '%.2f'.format(($scope.totalProfitCash / $rootScope.selectedAmount) * 100);
@@ -155,7 +166,7 @@ angular.module('solidusApp')
             $scope.pie = getPieChart();
         }
 
-        if ($rootScope.selectedAmount) {
+        if ($rootScope.invested) {
             init();
         }
 
