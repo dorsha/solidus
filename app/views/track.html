@@ -6,8 +6,9 @@
     </div>
     <div ng-if="$root.invested">
         <p class="h2" dir="rtl">{{$root.appmessages.welcomeTrack}} {{currentDate}}</p>
-        <highchart chart='pie'></highchart>
+        <highchart chart='pie' id="highchart"></highchart>
         <div id="fundDetailsContainer" class="fundDetailsContainer">
+            <a class="graphButton" data-vx-common-prevent-default="highchart" ng-click="scrollTo('highchart')"></a>
             <p class="h2" dir="rtl">{{$root.appmessages.foundDetailsHeader}}</p>
             <div class="fundDetails">
                 <div class="row">

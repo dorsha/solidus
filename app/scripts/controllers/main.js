@@ -306,5 +306,14 @@ angular.module('solidusApp')
             $scope.selected = item;
         };
 
+        $scope.scrollTo = function(id) {
+            var element = $('#' + id);
+            if (element.length) {
+                $('html, body').animate({
+                    scrollTop : element.offset().top - 140
+                }, 750, 'easeOutExpo');
+            }
+        };
+
         calculateWelcomeLabels();
     });

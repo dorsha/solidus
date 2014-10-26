@@ -242,6 +242,24 @@ input[type="range"]::-ms-thumb {
     margin-bottom: 30px;
 }
 
+@media (max-width: 767px), (max-height: 805px) {
+    .graphButton {
+        width: 60px;
+        height: 60px;
+        background: url('../images/graphButton.png') #cccccc;
+        background-size: 60px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        position: absolute;
+        margin: 10px;
+    }
+
+    .graphButton:active {
+        background-color: #a6a6a6;
+    }
+}
+
 @media (max-width: 630px) {
     .main-nav .menuitem,
     .notificationBar {
