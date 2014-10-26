@@ -155,7 +155,7 @@ angular.module('solidusApp')
         });
 
         // format total values
-        $scope.totalProfitPercentage = '%.2f'.format($scope.totalProfitCash / $rootScope.amount * 100);
+        $scope.totalProfitPercentage = '%.2f'.format($scope.totalProfitCash / $rootScope.amount * 100) / 1000;
         $scope.totalProfitCash = $scope.totalProfitCash.toLocaleString();
         $scope.totalPortfolioCash = $scope.totalPortfolioCash.toLocaleString();
 
