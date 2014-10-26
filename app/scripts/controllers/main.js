@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('solidusApp')
-    .controller('MainCtrl', function ($scope, $rootScope, BankService) {
+    .controller('MainCtrl', function ($scope, $rootScope) {
 
         // all available funds
         $rootScope.funds = {
@@ -256,7 +256,7 @@ angular.module('solidusApp')
             foundDetailsTotalPortfolioCashTitle: 'סה"כ שווי תיק: '
         };
 
-        function calculateWelcomeLabels() {
+        $scope.calculateWelcomeLabels = function() {
             var hour = new Date().getHours();
             var prefix;
             if (hour >= 6 && hour < 12) {
@@ -270,25 +270,18 @@ angular.module('solidusApp')
             } else {
                 prefix = $rootScope.appmessages.welcomeNight;
             }
-            $rootScope.appmessages.welcomeInvest = prefix + ' ' + $rootScope.appmessages.welcomeInvest;
-            $rootScope.appmessages.welcomeInvest = $rootScope.appmessages.welcomeInvest.format($scope.username, $scope.totalCash.toLocaleString());
+            $rootScope.welcomeInvest = prefix + ' ' + $rootScope.appmessages.welcomeInvest;
+            $rootScope.welcomeInvest = $rootScope.appmessages.welcomeInvest.format($rootScope.username, $rootScope.totalCash.toLocaleString());
 
-            $rootScope.appmessages.welcomeTrack = prefix + ' ' + $rootScope.appmessages.welcomeTrack;
-            $rootScope.appmessages.welcomeTrack = $rootScope.appmessages.welcomeTrack.format($scope.username);
+            $rootScope.welcomeTrack = prefix + ' ' + $rootScope.appmessages.welcomeTrack;
+            $rootScope.welcomeTrack = $rootScope.appmessages.welcomeTrack.format($rootScope.username);
 
-            $rootScope.appmessages.welcomeTrackNotInvested = prefix + ' ' + $rootScope.appmessages.welcomeTrackNotInvested;
-            $rootScope.appmessages.welcomeTrackNotInvested = $rootScope.appmessages.welcomeTrackNotInvested.format($scope.username);
-        }
+            $rootScope.welcomeTrackNotInvested = prefix + ' ' + $rootScope.appmessages.welcomeTrackNotInvested;
+            $rootScope.welcomeTrackNotInvested = $rootScope.appmessages.welcomeTrackNotInvested.format($rootScope.username);
+        };
 
         $rootScope.invested = false;
         $rootScope.amount = 100;
-        BankService.getTotalCash(function (data) {
-            $scope.totalCash = parseInt(data.nisBalance.substring(2, data.nisBalance.length -3).replace(',', ''));
-            BankService.getUsername(function (data) {
-                $scope.username = data.customerName;
-                calculateWelcomeLabels();
-            });
-        });
 
         // selected funds
         $scope.selectedFunds = [];

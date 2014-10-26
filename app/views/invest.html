@@ -1,11 +1,11 @@
 <div ng-controller="InvestCtrl">
     <section id="amount" class="investSection first" ng-class="{'current': currentSection.id === 'amount'}">
-        <p ng-cloak class="h3" dir="rtl">{{$root.appmessages.welcomeInvest}}</p>
+        <p ng-cloak class="h3" dir="rtl">{{$root.welcomeInvest}}</p>
         <br>
         <p class="h3" dir="rtl">{{$root.appmessages.chooseAmount}}</p>
         <br>
         <div class="amountPicker">
-            <input type="range" ng-model="amount" min="100" max="{{totalCash}}" step="100" class="amountSlider">
+            <input type="range" ng-model="amount" min="100" max="{{$root.totalCash}}" step="100" class="amountSlider">
             <br>
             <div class="input-group amountDisplay">
                 <span class="input-group-addon">₪</span>
