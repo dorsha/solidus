@@ -264,13 +264,26 @@ input[type="range"]::-ms-thumb {
     }
 }
 
-@media (max-width: 630px) {
+@media (max-width: 720px) {
     .main-nav .menuitem,
     .notificationBar {
         font-size: 24px;
     }
 }
 
+@media (max-width: 630px) {
+    .main-nav .menuitem,
+    .notificationBar {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 450px) {
+    .main-nav .menuitem,
+    .notificationBar {
+        font-size: 20px;
+    }
+}
 
 @media (max-width: 1690px) {
     .selectedFundBox .h2 {
