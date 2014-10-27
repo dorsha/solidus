@@ -160,8 +160,8 @@ angular.module('solidusApp')
 
             // format total values
             $scope.totalProfitPercentage = '%.2f'.format(($scope.totalProfitCash / $rootScope.selectedAmount) * 100);
-            $scope.totalPortfolioCash = ($scope.totalProfitCash + $rootScope.selectedAmount).toLocaleString();
-            $scope.totalProfitCash = $scope.totalProfitCash.toLocaleString();
+            $scope.totalPortfolioCash = '%.2f'.format(($scope.totalProfitCash + $rootScope.selectedAmount)).toLocaleString();
+            $scope.totalProfitCash = '%.2f'.format($scope.totalProfitCash).toLocaleString();
 
             $scope.pie = getPieChart();
         }
