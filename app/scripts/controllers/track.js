@@ -13,12 +13,12 @@ angular.module('solidusApp')
             $scope.direction = fund.direction;
 
             if ($scope.direction === '+') {
-                $scope.moneyValue = (quarterAmount + $scope.changedValueCash).toLocaleString();
+                $scope.moneyValue = '%.2f'.format((quarterAmount + $scope.changedValueCash)).toLocaleString();
             } else {
-                $scope.moneyValue = (quarterAmount - $scope.changedValueCash).toLocaleString();
+                $scope.moneyValue = '%.2f'.format((quarterAmount - $scope.changedValueCash)).toLocaleString();
             }
 
-            $scope.changedValueCash = $scope.changedValueCash.toLocaleString();
+            $scope.changedValueCash = '%.2f'.format($scope.changedValueCash).toLocaleString();
             $scope.costValue = fund.costValue.toLocaleString();
         }
 
