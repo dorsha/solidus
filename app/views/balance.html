@@ -11,27 +11,21 @@
         <div class="balanceOptions">
             <p class="h2" dir="rtl">{{$root.appmessages.balanceOptions}}</p>
             <p class="h3" dir="rtl">{{$root.appmessages.balanceDate}}</p>
-            <div class="balancePercentageSlider">
-                <div ui-slider="{range: true}" min="-30.00" max="30.00" step="1.00" use-decimals ng-model="values"></div>
-                <div class="balancePercentageDisplay">
-                    <p class="h2 left">{{values[0]}}%</p>
-                    <p class="h2 right">{{values[1]}}%</p>
+            <div class="balancePeriodPicker">
+                <div ng-repeat="period in periodOptions" class="balancePeriodButton"
+                     ng-class="{ 'selected': $root.selectedPeriodId === period.id }" ng-click="periodSelected(period)" ng-cloak>
+                    <p dir="rtl">{{period.title}}</p>
                 </div>
             </div>
 
             <p class="h3" dir="rtl">{{$root.appmessages.balancePercentage}}</p>
             <div class="balancePercentageSlider">
-                <div ui-slider="{range: true}" min="-30.00" max="30.00" step="1.00" use-decimals ng-model="values"></div>
+                <div ui-slider="{range: true}" min="-40.00" max="40.00" step="1.00" use-decimals ng-model="$root.periodSliderValues"></div>
                 <div class="balancePercentageDisplay">
-                    <p class="h2 left">{{values[0]}}%</p>
-                    <p class="h2 right">{{values[1]}}%</p>
+                    <p class="h2 left">{{periodSliderValues[0]}}%</p>
+                    <p class="h2 right">{{periodSliderValues[1]}}%</p>
                 </div>
             </div>
-        </div>
-
-        <div class="balanceNow">
-            <a class="btn btn-primary btn-centered btn-lg" scroll-to-section data-vx-common-prevent-default=""
-                ng-href="/#/{{toolbarItems[1].id}}">{{$root.appmessages.balanceNow}}</a>
         </div>
     </div>
 </div>

@@ -340,6 +340,56 @@ input[type="range"]::-ms-thumb {
 
 .balanceOptions {
     margin-top: 85px;
+    width: 100%;
+    text-align: center;
+}
+
+.balancePeriodPicker {
+    padding-top: 35px;
+    padding-bottom: 50px;
+    display: inline-block;
+}
+
+.balancePeriodButton {
+    height: 95px;
+    width: 165px;
+    font-size: 26px;
+    line-height: 50px;
+    font-weight: bold;
+    color: #7b4397;
+    position: relative;
+    box-shadow: #f0f0f0 0 0 0 3px inset,#edddf5 2px 3px 0;
+    -webkit-box-shadow: #f0f0f0 0 0 0 3px inset,#edddf5 2px 3px 0;
+    -moz-box-shadow: #f0f0f0 0 0 0 3px inset,#edddf5 2px 3px 0;
+    border: 1px solid #999;
+    max-width: 22%;
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+    float: right;
+    margin-left: 3%;
+    cursor: pointer;
+}
+
+.balancePeriodPicker .selected {
+    border: 3px solid #7b4397;
+}
+
+@media (max-width: 565px) {
+    .balancePeriodButton {
+        width: 165px;
+        margin-left: -50px;
+        margin-bottom: 20px;
+        margin-right: 70px;
+        max-width: 39%;
+    }
+}
+
+@media (max-width: 480px) {
+    .balancePeriodButton {
+        margin-left: -15px;
+        margin-right: 35px;
+    }
 }
 
 .balancePercentageSlider {
