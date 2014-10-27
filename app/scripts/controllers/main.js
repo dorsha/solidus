@@ -58,7 +58,15 @@ angular.module('solidusApp')
             foundDetailsChangedValueCashTitle: 'שינוי כספי: ',
             foundDetailsTotalProfitPercentageTitle: 'סה"כ שינוי מעלות באחוזים: ',
             foundDetailsTotalProfitCashTitle: ' סה"כ שינוי כספי מעלות: ',
-            foundDetailsTotalPortfolioCashTitle: 'סה"כ שווי תיק: '
+            foundDetailsTotalPortfolioCashTitle: 'סה"כ שווי תיק: ',
+
+            // Balance page
+            welcomeBalance: 'איש אינו יכול לתזמן את השוק, לכן מומלץ לאזן את הקצאת הנכסים בתיק אחת לתקופה.',
+            balanceExplanation: 'איזון מחדש של תיק ההשקעות הוא מנגנון ההתערבות המאפשר למשקיע הפסיבי להשיב את הנכסים השונים בתיק למשקלם המקורי, ובכך להבטיח שלא יסטה מפרופיל הסיכון המקורי שהוגדר מראש, לא יהיה מסוכן מדי או מתון מדי ולא יהיה מוטה לנכסים שעלו בערכם.',
+            balanceOptions: 'קיימות שתי שיטות של איזון, איזון קלנדרי ואיזון מבוסס אחוזים.',
+            balanceDate: 'בחר תקופת זמן בה תרצה שיתבצע האיזון באופן אוטומטי:',
+            balancePercentage: 'בחר טווח אחוזים בו תרצה שיתבצע איזון באופן אוטומטי כאשר אחת מהקרנות תחרוג מטווח זה:',
+            balanceNow: 'אזן עכשיו'
         };
 
         // all available funds
