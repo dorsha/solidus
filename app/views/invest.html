@@ -28,6 +28,7 @@
     <section ng-if="currentSection.id === 'fundGold' || currentSection.position > 2" class="investSection" id="fundGold"
              ng-class="{'current': currentSection.id === 'fundGold'}">
         <p class="h3" dir="rtl">{{$root.appmessages.fundGoldSectionHeader}}</p>
+        <fund-view ng-repeat="fund in $root.funds.fundsGold" fund-type="fundsGold"></fund-view>
         <a class="btn btn-primary btn-centered btn-lg" scroll-to-section data-vx-common-prevent-default=""
            ng-click="moveToNextSection(sections[2])">{{$root.appmessages.submitFundGoldSection}}</a>
     </section>
@@ -35,6 +36,7 @@
     <section ng-if="currentSection.id === 'fundStock' || currentSection.position > 3" class="investSection" id="fundStock"
              ng-class="{'current': currentSection.id === 'fundStock'}">
         <p class="h3" dir="rtl">{{$root.appmessages.fundStockSectionHeader}}</p>
+        <fund-view ng-repeat="fund in $root.funds.fundsStock" fund-type="fundsStock"></fund-view>
         <a class="btn btn-primary btn-centered btn-lg" scroll-to-section data-vx-common-prevent-default=""
            ng-click="moveToNextSection(sections[3])">{{$root.appmessages.submitFundStockSection}}</a>
     </section>
@@ -42,6 +44,7 @@
     <section ng-if="currentSection.id === 'fundDebenture' || currentSection.position > 4" class="investSection" id="fundDebenture"
              ng-class="{'current': currentSection.id === 'fundDebenture'}">
         <p class="h3" dir="rtl">{{$root.appmessages.fundDebentureSectionHeader}}</p>
+        <fund-view ng-repeat="fund in $root.funds.fundsDebenture" fund-type="fundsDebenture"></fund-view>
         <a class="btn btn-primary btn-centered btn-lg" scroll-to-section data-vx-common-prevent-default=""
            ng-click="moveToNextSection(sections[4])">{{$root.appmessages.submitFundDebentureSection}}</a>
     </section>

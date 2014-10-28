@@ -505,3 +505,7 @@ input[type="range"]::-ms-thumb {
     background-image: linear-gradient(to bottom, #999 0, #484848 100%);
     outline: none;
 }
+
+.clickable {
+    cursor: pointer;
+}
