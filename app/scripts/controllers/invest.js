@@ -99,4 +99,35 @@ angular.module('solidusApp')
                 scope.$on('showNotificationBar', showNotificationBar);
             }
         };
+    }]).directive('fundView', [function () {
+        return {
+            restrict: 'EA',
+            replace: true,
+            templateUrl: 'views/fund-view.html',
+            link: function (scope, el, attrs) {
+                var fundType = attrs.fundType;
+
+                scope.fund.selected = !!scope.fund.recommended;
+
+                scope.toggleSelected = function () {
+                    _.forEach(scope.funds[fundType], function (fund, key) {
+                        if (fund.selected) {
+                            _.remove(scope.selectedFunds, fund);
+                            fund.selected = false;
+                        }
+                    });
+
+                    scope.fund.selected = !scope.fund.selected;
+
+                    if (scope.fund.selected) {
+                        scope.selectedFunds.push(scope.fund);
+                    }
+                };
+
+                scope.flipCard = function (event) {
+                    el.toggleClass('flipped');
+                    event.stopPropagation();
+                };
+            }
+        }
     }]);

@@ -5,7 +5,7 @@ angular.module('solidusApp')
 
         // App labels
         $rootScope.appmessages = {
-            nis: 'ש"ח',
+            nis: '₪',
             agorot: 'אגורות',
             investHeader: 'השקעה',
             trackHeader: 'מעקב',
@@ -84,7 +84,8 @@ angular.module('solidusApp')
                     changedValuePercentage: 3.1,
                     direction: '+',
                     mgmtFee: 0.000,
-                    commission: 0.01
+                    commission: 0.01,
+                    recommended: true
                 },
                 fundCoin2: {
                     name: 'מיטב פק"מ נזיל',
@@ -124,7 +125,8 @@ angular.module('solidusApp')
                     changedValuePercentage: 2.2,
                     direction: '-',
                     mgmtFee: 1.00,
-                    commission: 0.1
+                    commission: 0.1,
+                    recommended: true
                 },
                 fundGold2: {
                     name: 'תכלית זהב',
@@ -164,7 +166,8 @@ angular.module('solidusApp')
                     changedValuePercentage: 8.6,
                     direction: '+',
                     mgmtFee: 1.670,
-                    commission: 0.000
+                    commission: 0.000,
+                    recommended: true
                 },
                 fundStock2: {
                     name: 'אנליסט מניות ממוקדת',
@@ -204,7 +207,8 @@ angular.module('solidusApp')
                     changedValuePercentage: 5.6,
                     direction: '+',
                     mgmtFee: 0.500,
-                    commission: 0.1
+                    commission: 0.1,
+                    recommended: true
                 },
                 fundDebenture2: {
                     name: 'הראל מחקה מדדי מדינה',

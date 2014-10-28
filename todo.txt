@@ -11,10 +11,25 @@ Infa - sync - Tomer & Doron
 
 Components - async
 - Sum to invest slider - Meir
-- Selected ETF view
-- Summary ETF view
-- Icons - Meir
+- Selected ETF view - Tomer
+- Summary ETF view (leftovers) - Tomer
+- Icons, choose and push - Meir
 
 Tracking
-- Pie chart
+- Pie chart - DONE
 - ETF details view
+-- Add tracking graph (HighChart) - Doron
+- Update selected ETFs
+
+Balancing - Doron
+- Time balancing
+- Difference balancing
+- Immediate balancing
+
+General
+- Choose fonts - Tomer
+- Strings - Tomer
+- Bank Hapoalim Slides
+- Our slides - Meir
+- Designers feedback
+- Polish design
