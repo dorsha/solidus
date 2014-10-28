@@ -20,7 +20,7 @@
     <section ng-if="currentSection.id === 'fundCoin' || currentSection.position > 1" class="investSection" id="fundCoin"
              ng-class="{'current': currentSection.id === 'fundCoin'}">
         <div dir="rtl" class="sectionTitle container">
-            <img src="../images/icons/cash-48.png" class="sectionIcon" />
+            <img src="../images/icons/cash-48-img.png" class="sectionIcon" />
             <p class="h1 text-center" dir="rtl">{{$root.appmessages.fundCoinSectionHeader}}</p>
         </div>
         <fund-view ng-repeat="fund in $root.funds.fundsCoin" fund-type="fundsCoin"></fund-view>
@@ -31,7 +31,7 @@
     <section ng-if="currentSection.id === 'fundGold' || currentSection.position > 2" class="investSection" id="fundGold"
              ng-class="{'current': currentSection.id === 'fundGold'}">
         <div dir="rtl" class="sectionTitle container">
-            <img src="../images/icons/gold-48.png" class="sectionIcon" />
+            <img src="../images/icons/gold-48-img.png" class="sectionIcon" />
             <p class="h1 text-center" dir="rtl">{{$root.appmessages.fundGoldSectionHeader}}</p>
         </div>
         <fund-view ng-repeat="fund in $root.funds.fundsGold" fund-type="fundsGold"></fund-view>
@@ -42,7 +42,7 @@
     <section ng-if="currentSection.id === 'fundStock' || currentSection.position > 3" class="investSection" id="fundStock"
              ng-class="{'current': currentSection.id === 'fundStock'}">
         <div dir="rtl" class="sectionTitle container">
-            <img src="../images/icons/stock-48.png" class="sectionIcon" />
+            <img src="../images/icons/stock-48-img.png" class="sectionIcon" />
             <p class="h1 text-center" dir="rtl">{{$root.appmessages.fundStockSectionHeader}}</p>
         </div>
         <fund-view ng-repeat="fund in $root.funds.fundsStock" fund-type="fundsStock"></fund-view>
@@ -53,7 +53,7 @@
     <section ng-if="currentSection.id === 'fundDebenture' || currentSection.position > 4" class="investSection" id="fundDebenture"
              ng-class="{'current': currentSection.id === 'fundDebenture'}">
         <div dir="rtl" class="sectionTitle container">
-            <img src="../images/icons/bonds-48.png" class="sectionIcon" />
+            <img src="../images/icons/bonds-48-img.png" class="sectionIcon" />
             <p class="h1 text-center" dir="rtl">{{$root.appmessages.fundDebentureSectionHeader}}</p>
         </div>
         <fund-view ng-repeat="fund in $root.funds.fundsDebenture" fund-type="fundsDebenture"></fund-view>
