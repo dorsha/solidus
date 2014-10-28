@@ -224,8 +224,8 @@ input[type="range"]::-ms-thumb {
 }
 
 .selectedFundBox {
+    background-color: #fbe2ba;
     position: relative;
-    border: 3px solid #702b61;
     height: 250px;
     max-width: 22%;
     padding: 20px;
@@ -235,6 +235,66 @@ input[type="range"]::-ms-thumb {
     margin-left: 3%;
     box-sizing: border-box;
     cursor: pointer;
+
+    /* 3D animation */
+    -webkit-transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    -webkit-perspective: 700px; /* container for 3D animation */
+    perspective: 700px; /* container for 3D animation */
+}
+
+.selectedFundBox .front, .selectedFundBox .back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotateY(0deg);
+    -moz-transition: 0.6s;
+    -moz-transform-style: preserve-3d;
+    -moz-transform: rotateY(0deg);
+    -o-transition: 0.6s;
+    -o-transform-style: preserve-3d;
+    -o-transform: rotateY(0deg);
+    -ms-transition: 0.6s;
+    -ms-transform-style: preserve-3d;
+    -ms-transform: rotateY(0deg);
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.selectedFundBox .front {
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    z-index: 20;
+}
+
+.selectedFundBox .back {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    z-index: 10;
+}
+
+.selectedFundBox.flipped {
+    transform: rotateY( 180deg );
 }
 
 .totalFees {
@@ -325,11 +385,12 @@ input[type="range"]::-ms-thumb {
 }
 
 .fundViewTitle {
-    min-height: 104px;
+    margin-top: 60px;
+    min-height: 75px;
 }
 
 .selectedFundBox.selected {
-    border: 12px solid #971e75;
+    background-color: #89d86b;
 }
 
 .selectedFundBox.recommended:before {
@@ -341,4 +402,41 @@ input[type="range"]::-ms-thumb {
     -webkit-transform: rotate(-30deg);
     border: 1px solid;
     padding: 5px;
+}
+
+.selectedFundBox.recommended.flipped:before {
+    visibility: hidden;
+}
+
+.infoBtn {
+    background-image: url('../images/info.png');
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.selectedFundBox.flipped .infoBtn {
+    display: none;
+}
+
+.flipInfoBtn {
+    background-image: url('../images/info.png');
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.fundImg {
+    background-image: url('../images/fund-graph.png');
+    width: 120px;
+    height: 100px;
+    margin: auto;
 }

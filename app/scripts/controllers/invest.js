@@ -122,7 +122,12 @@ angular.module('solidusApp')
                     if (scope.fund.selected) {
                         scope.selectedFunds.push(scope.fund);
                     }
-                }
+                };
+
+                scope.flipCard = function (event) {
+                    el.toggleClass('flipped');
+                    event.stopPropagation();
+                };
             }
         }
     }]);
