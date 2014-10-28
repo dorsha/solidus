@@ -66,7 +66,7 @@ angular.module('solidusApp')
         return {
             restrict: 'E',
             replace: true,
-            template: '<div class="notificationBar">{{notificationBarTitle}}</div>',
+            template: '<div dir="rtl" class="notificationBar">{{notificationBarTitle}}</div>',
             link: function (scope, el) {
                 function showNotificationBar(event, params) {
                     if (scope.showNotificationTimeout) {

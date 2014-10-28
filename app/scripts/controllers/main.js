@@ -36,12 +36,12 @@ angular.module('solidusApp')
             summarySectionPastYieldTitle: 'בשנה האחרונה התיק שבחרת הניב תשואה של: ',
 
             // Notification strings
-            amountNotification: 'לא מעט כסף. בוא נשקיע אותו בתבונה',
-            fundCoinNotification: 'אני התראה נעלמת מטבע',
-            fundGoldNotification: 'אני התראה נעלמת זהב',
-            fundStockNotification: 'אני התראה נעלמת מניות',
-            fundDebentureNotification: 'אני התראה נעלמת אג״ח',
-            summaryNotification: '!הרכישה בוצעה בהצלחה, כל הכבוד',
+            amountNotification: 'מעולה, בוא נדאג לעתיד שלך.',
+            fundCoinNotification: 'האפיק הכספי יגן עלינו בזמן מיתון.',
+            fundGoldNotification: 'זהב, במצב של אינפלציה ערכו יעלה.',
+            fundStockNotification: 'מניות, נקצור את הפירות כשהשוק יעלה.',
+            fundDebentureNotification: 'אגרות החוב יזנקו כשהמחירים ירדו.',
+            summaryNotification: 'הרכישה בוצעה, התיק כבר מתחיל לעבוד.',
 
             // Tracking
             welcomeTrack: '%s, להלן התפלגות תיק ההשקעות שלך נכון לתאריך: ',
