@@ -357,6 +357,7 @@ input[type="range"]::-ms-thumb {
     -webkit-transform: rotate(-30deg);
     border: 1px solid;
     padding: 5px;
+    z-index: 10;
 }
 
 .balanceOptions {
@@ -514,6 +515,7 @@ input[type="range"]::-ms-thumb {
 .sectionTitle {
     margin: auto;
     padding-bottom: 35px;
+    padding-right: 12px;
 }
 
 .sectionTitle p {
@@ -532,5 +534,9 @@ input[type="range"]::-ms-thumb {
 
 .nextBtn {
     margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.cardsContainer {
     margin-bottom: 20px;
 }
