@@ -313,7 +313,8 @@ input[type="range"]::-ms-thumb {
 
 @media (max-width: 1000px) {
     .selectedFundBox {
-        margin-left: 25px;
+        margin-left: 12px;
+        margin-right: 12px;
         margin-bottom: 25px;
         max-width: 45%;
     }

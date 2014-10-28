@@ -46,7 +46,7 @@ angular.module('solidusApp')
                         var element = $('#' + scope.currentSection.id);
                         if (element.length) {
                             $('html, body').animate({
-                                scrollTop: element.offset().top - 120
+                                scrollTop: element.offset().top - 115
                             }, 750, 'easeOutExpo');
                         }
                     }
