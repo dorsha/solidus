@@ -33,3 +33,4 @@ General
 - Our slides - Meir
 - Designers feedback
 - Polish design
+- Favicon
