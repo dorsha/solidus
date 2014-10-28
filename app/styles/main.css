@@ -145,7 +145,6 @@ input[type="range"]::-ms-thumb {
 
 .investSection {
     height: 800px;
-    border-bottom: 3px solid #ebebeb;
 }
 
 .investSection.first {
@@ -352,7 +351,7 @@ input[type="range"]::-ms-thumb {
     content: 'המומלצת שלנו';
     position: absolute;
     top: 0px;
-    left: -29px;
+    left: -20px;
     -webkit-transform: rotate(-30deg);
     border: 1px solid;
     padding: 5px;
@@ -508,4 +507,23 @@ input[type="range"]::-ms-thumb {
 
 .clickable {
     cursor: pointer;
+}
+
+.sectionTitle {
+    margin: auto;
+    padding-bottom: 35px;
+}
+
+.sectionTitle p {
+    display: inline;
+    margin: auto;
+    text-align: center;
+    float: right;
+}
+
+.sectionTitle .sectionIcon {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin-right: 15px;
 }

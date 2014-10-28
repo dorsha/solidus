@@ -34,3 +34,4 @@ General
 - Designers feedback
 - Polish design
 - Favicon
+- App logo
