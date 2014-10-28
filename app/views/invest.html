@@ -24,7 +24,7 @@
             <p class="h1 text-center" dir="rtl">{{$root.appmessages.fundCoinSectionHeader}}</p>
         </div>
         <fund-view ng-repeat="fund in $root.funds.fundsCoin" fund-type="fundsCoin"></fund-view>
-        <a class="btn btn-primary btn-centered btn-lg" scroll-to-section data-vx-common-prevent-default=""
+        <a class="nextBtn btn btn-primary btn-centered btn-lg" scroll-to-section data-vx-common-prevent-default=""
            ng-click="moveToNextSection(sections[1])">{{$root.appmessages.submitFundCoinSection}}</a>
     </section>
 
@@ -35,7 +35,7 @@
             <p class="h1 text-center" dir="rtl">{{$root.appmessages.fundGoldSectionHeader}}</p>
         </div>
         <fund-view ng-repeat="fund in $root.funds.fundsGold" fund-type="fundsGold"></fund-view>
-        <a class="btn btn-primary btn-centered btn-lg" scroll-to-section data-vx-common-prevent-default=""
+        <a class="nextBtn btn btn-primary btn-centered btn-lg" scroll-to-section data-vx-common-prevent-default=""
            ng-click="moveToNextSection(sections[2])">{{$root.appmessages.submitFundGoldSection}}</a>
     </section>
 
@@ -46,7 +46,7 @@
             <p class="h1 text-center" dir="rtl">{{$root.appmessages.fundStockSectionHeader}}</p>
         </div>
         <fund-view ng-repeat="fund in $root.funds.fundsStock" fund-type="fundsStock"></fund-view>
-        <a class="btn btn-primary btn-centered btn-lg" scroll-to-section data-vx-common-prevent-default=""
+        <a class="nextBtn btn btn-primary btn-centered btn-lg" scroll-to-section data-vx-common-prevent-default=""
            ng-click="moveToNextSection(sections[3])">{{$root.appmessages.submitFundStockSection}}</a>
     </section>
 
@@ -57,7 +57,7 @@
             <p class="h1 text-center" dir="rtl">{{$root.appmessages.fundDebentureSectionHeader}}</p>
         </div>
         <fund-view ng-repeat="fund in $root.funds.fundsDebenture" fund-type="fundsDebenture"></fund-view>
-        <a class="btn btn-primary btn-centered btn-lg" scroll-to-section data-vx-common-prevent-default=""
+        <a class="nextBtn btn btn-primary btn-centered btn-lg" scroll-to-section data-vx-common-prevent-default=""
            ng-click="moveToNextSection(sections[4])">{{$root.appmessages.submitFundDebentureSection}}</a>
     </section>
 

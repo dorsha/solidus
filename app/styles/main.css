@@ -144,7 +144,8 @@ input[type="range"]::-ms-thumb {
 }
 
 .investSection {
-    height: 800px;
+    padding-top: 20px;
+    min-height: 600px;
 }
 
 .investSection.first {
@@ -526,4 +527,9 @@ input[type="range"]::-ms-thumb {
     height: 40px;
     display: inline-block;
     margin-right: 15px;
+}
+
+.nextBtn {
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
