@@ -334,10 +334,9 @@ angular.module('solidusApp')
                 title: 'Solid and Easy investing for everyone'
             });
         }
-
-        document.ontouchstart = function(e){
+        document.body.addEventListener('touchmove', function(e) {
             if ($rootScope.splashed) {
                 e.preventDefault();
             }
-        }
+        });
     });
