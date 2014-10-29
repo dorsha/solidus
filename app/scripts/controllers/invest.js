@@ -110,6 +110,8 @@ angular.module('solidusApp')
                 scope.fund.selected = !!scope.fund.recommended;
 
                 scope.toggleSelected = function () {
+                    _.remove(scope.selectedFunds, scope.fund);
+
                     _.forEach(scope.funds[fundType], function (fund, key) {
                         if (fund.selected) {
                             _.remove(scope.selectedFunds, fund);
@@ -122,6 +124,11 @@ angular.module('solidusApp')
                     if (scope.fund.selected) {
                         scope.selectedFunds.push(scope.fund);
                     }
+                };
+
+                scope.flipCard = function (event) {
+                    event.stopPropagation();
+                    el.find('.flipper').toggleClass('flipped');
                 };
             }
         }

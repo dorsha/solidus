@@ -228,7 +228,7 @@ input[type="range"]::-ms-thumb {
     position: relative;
     height: 250px;
     max-width: 22%;
-    padding: 20px;
+    padding: 0;
     text-align: center;
     display: inline-block;
     float: right;
@@ -342,22 +342,6 @@ input[type="range"]::-ms-thumb {
 .fundViewTitle {
     margin-top: 35px;
     min-height: 75px;
-}
-
-.selectedFundBox.selected {
-    background-color: #89d86b;
-}
-
-.selectedFundBox.recommended:before {
-    background-color: yellow;
-    content: 'המומלצת שלנו';
-    position: absolute;
-    top: 0px;
-    left: -20px;
-    -webkit-transform: rotate(-30deg);
-    border: 1px solid;
-    padding: 5px;
-    z-index: 10;
 }
 
 .balanceOptions {
@@ -539,4 +523,105 @@ input[type="range"]::-ms-thumb {
 
 .cardsContainer {
     margin-bottom: 20px;
+}
+
+.fundIcon {
+    width: 40px;
+    height: 40px;
+    background-size: 40px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.fundInfoIcon {
+    background-image: url('../images/icons/fund-info-icon.png');
+}
+
+.flipBackInfo {
+    background-image: url('../images/icons/fund-back-icon.png');
+}
+
+.backImage {
+    background-image: url('../images/fundGraph.png');
+    background-size: 160px;
+    background-repeat: no-repeat;
+    width: 160px;
+    height: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.fundStatus {
+    color: green;
+    font-size: 22px;
+}
+
+/*** FUND CARD ANIMATION ***/
+
+.flip-container {
+    perspective: 1000;
+}
+
+.flip-container, .front, .back {
+    /*width: 250px;*/
+    height: 250px;
+}
+
+/* flip speed goes here */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.front.selected {
+    background-color: #89d86b;
+}
+
+.front.recommended:before {
+    background-color: yellow;
+    content: 'המומלצת שלנו';
+    position: absolute;
+    top: 0px;
+    left: -20px;
+    -webkit-transform: rotate(-30deg);
+    border: 1px solid;
+    padding: 5px;
+    z-index: 10;
+}
+
+/* front pane, placed above back */
+.front {
+    background-color: #fbe2ba;
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+    width: 100%;
+}
+
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(180deg);
+    background: #f8f8f8;
+    width: 100%;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-container.selectedFundBox {
+    background-color: transparent;
 }

@@ -1,5 +1,15 @@
-<div class="selectedFundBox clickable col-xs-12 col-sm-12" ng-class="{'selected': fund.selected, 'recommended': fund.recommended}" ng-click="toggleSelected()">
-    <h2 class="fundViewTitle">{{fund.name}}</h2>
-    <div class="fundViewSub">%{{$root.appmessages.summarySectionMgmtFeeTitle}} {{'%.2f'.format(fund.mgmtFee / 1000 * amount)}}</div>
-    <div class="fundViewSub">{{$root.appmessages.nis}}{{$root.appmessages.summarySectionCommissionTitle}} {{'%.2f'.format(fund.commission / 1000 * amount)}}</div>
+<div class="flip-container selectedFundBox clickable col-xs-12 col-sm-12">
+    <div class="flipper">
+        <div class="front" ng-class="{'selected': fund.selected, 'recommended': fund.recommended}" ng-click="toggleSelected()">
+            <h2 class="fundViewTitle">{{fund.name}}</h2>
+            <div class="fundViewSub">%{{$root.appmessages.summarySectionMgmtFeeTitle}} {{'%.2f'.format(fund.mgmtFee / 1000 * amount)}}</div>
+            <div class="fundViewSub">{{$root.appmessages.nis}}{{$root.appmessages.summarySectionCommissionTitle}} {{'%.2f'.format(fund.commission / 1000 * amount)}}</div>
+            <div class="fundInfoIcon fundIcon" ng-click="flipCard($event)"></div>
+        </div>
+        <div class="back">
+            <div class="backImage"></div>
+            <div class="fundStatus">+1.14%</div>
+            <div class="flipBackInfo fundIcon" ng-click="flipCard($event)"></div>
+        </div>
+    </div>
 </div>
