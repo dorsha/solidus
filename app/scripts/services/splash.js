@@ -32,7 +32,7 @@ angular.module('solidusApp').service('$splash', [
             );
             $templateCache.put('splash/content.html',
                     '<div class="splash-content text-center">' +
-                    '  <img src="images/solidus-logo.png"/>' +
+                    '  <img src="../images/solidus-logo.png"/>' +
                     '  <p class="lead" ng-bind="title"></p>' +
                     '  <button class="btn btn-primary btn-centered btn-lg" ng-bind="btnText || \'המשך לאתר\'" ng-click="$close()"></button>' +
                     '</div>'
