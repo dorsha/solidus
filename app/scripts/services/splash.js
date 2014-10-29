@@ -15,9 +15,6 @@ angular.module('solidusApp').service('$splash', [
                     windowTemplateUrl: 'splash/index.html'
                 });
                 return $modal.open(opts);
-            },
-            close: function() {
-                close();
             }
         };
     }
