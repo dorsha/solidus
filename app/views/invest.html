@@ -15,6 +15,20 @@
         </div>
         <a class="btn btn-primary btn-centered btn-lg" scroll-to-section data-vx-common-prevent-default=""
            ng-click="moveToNextSection(sections[0])">{{$root.appmessages.submitAmountSection}}</a>
+        <div class="bullets">
+            <div class="bullet">
+                <img src="images/icons/Discount-128.png">
+                <p dir="rtl">{{$root.appmessages.bulletDiscount}}</p>
+            </div>
+            <div class="bullet">
+                <img src="images/icons/Scale-128.png">
+                <p dir="rtl">{{$root.appmessages.bulletAutoBalance}}</p>
+            </div>
+            <div class="bullet">
+                <img src="images/icons/Equalizer-128.png">
+                <p dir="rtl">{{$root.appmessages.bulletSpread}}</p>
+            </div>
+        </div>
     </section>
 
     <section ng-if="currentSection.id === 'fundCoin' || currentSection.position > 1" class="investSection" id="fundCoin"

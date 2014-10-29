@@ -357,6 +357,8 @@ input[type="range"]::-ms-thumb {
     top: 0px;
     left: -20px;
     -webkit-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    transform: rotate(-30deg);
     border: 1px solid;
     padding: 5px;
     z-index: 10;
@@ -554,4 +556,35 @@ input[type="range"]::-ms-thumb {
 
 .down {
     color: #cc171b;
+}
+
+.bullets {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 70px;
+    padding-right: 80px;
+}
+
+.bullet {
+    font-weight: bold;
+    color: #643077;
+    box-shadow: #f0f0f0 0 0 0 3px inset,#edddf5 2px 3px 0;
+    -webkit-box-shadow: #f0f0f0 0 0 0 3px inset,#edddf5 2px 3px 0;
+    -moz-box-shadow: #f0f0f0 0 0 0 3px inset,#edddf5 2px 3px 0;
+    border: 1px solid #999;
+    border-radius: 25px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 80px;
+}
+
+@media (max-width: 775px) {
+    .bullets {
+        padding-right: 0;
+        margin-top: 35px;
+    }
+    .bullet {
+        margin: 15px;
+    }
 }
