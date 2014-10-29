@@ -256,7 +256,7 @@ angular.module('solidusApp')
                 prefix = $rootScope.appmessages.welcomeNight;
             }
             $rootScope.welcomeInvest = prefix + ' ' + $rootScope.appmessages.welcomeInvest;
-            $rootScope.welcomeInvest = $rootScope.welcomeInvest.format($rootScope.username, $rootScope.totalCash.toLocaleString());
+            $rootScope.welcomeInvest = $rootScope.formatNumberRgx($rootScope.welcomeInvest.format($rootScope.username, $rootScope.totalCash));
 
             $rootScope.welcomeTrack = prefix + ' ' + $rootScope.appmessages.welcomeTrack;
             $rootScope.welcomeTrack = $rootScope.welcomeTrack.format($rootScope.username);
@@ -307,5 +307,11 @@ angular.module('solidusApp')
                     scrollTop : element.offset().top - 140
                 }, 750, 'easeOutExpo');
             }
+        };
+
+        $rootScope.formatNumberRgx = function(num) {
+            var parts = num.toString().split(".");
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return parts.join(".");
         };
     });
