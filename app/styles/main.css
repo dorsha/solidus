@@ -646,4 +646,12 @@ input[type="range"]::-ms-thumb {
 .splash button:hover {
     border: 1px solid #ffffff;
     outline: none;
+    margin-top: 70px;
+}
+
+.splashLogo {
+    background: url('../images/solidus-logo.png');
+    width: 400px;
+    height: 400px;
+    margin: auto;
 }
