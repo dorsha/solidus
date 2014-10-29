@@ -1,5 +1,5 @@
-- Investment screen
-- Tracking screen
+- Investment screen - DONE
+- Tracking screen - DONE
 
 Investment
 Infa - sync - Tomer & Doron
@@ -10,28 +10,35 @@ Infa - sync - Tomer & Doron
 - Notification bar - DONE
 
 Components - async
-- Sum to invest slider - Meir
-- Selected ETF view - Tomer
-- Summary ETF view (leftovers) - Tomer
-- Icons, choose and push - Meir
+- Sum to invest slider - DONE
+- Selected ETF view - DONE
+- Icons, choose and push - DONE
 
 Tracking
 - Pie chart - DONE
-- ETF details view
--- Add tracking graph (HighChart) - Doron
-- Update selected ETFs
+- ETF details view DONE
+- Update selected ETFs - DONE
 
 Balancing - Doron
-- Time balancing
-- Difference balancing
-- Immediate balancing
+- Time balancing - DONE
+- Difference balancing - DONE
+- Immediate balancing - N/A
 
 General
+- Favicon DONE
+- App logo DONE
+- Bank Hapoalim Slides DONE
+
+Leftovers:
+- Improve Summary ETF view - Tomer
 - Choose fonts - Tomer
-- Strings - Tomer
-- Bank Hapoalim Slides
-- Our slides - Meir
+- Flipping card (invest screen) - Tomer
+- Improve tacking view - Doron & Tomer
+- Tracking slider should work in touch - Doron
+- Add tracking graph (HighChart) - Doron
+- Our slides with pictures - Meir
+- Strings - Meir
 - Designers feedback
 - Polish design
-- Favicon
-- App logo
+- Splash screen with logo and slogan - DONE
+- Bullets for the first section - DONE

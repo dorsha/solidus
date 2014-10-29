@@ -13,13 +13,13 @@ angular.module('solidusApp')
             $scope.direction = fund.direction;
 
             if ($scope.direction === '+') {
-                $scope.moneyValue = parseFloat('%.2f'.format((quarterAmount + $scope.changedValueCash))).toLocaleString();
+                $scope.moneyValue = $rootScope.formatNumberRgx(parseFloat('%.2f'.format((quarterAmount + $scope.changedValueCash))));
             } else {
-                $scope.moneyValue = parseFloat('%.2f'.format((quarterAmount - $scope.changedValueCash))).toLocaleString();
+                $scope.moneyValue = $rootScope.formatNumberRgx(parseFloat('%.2f'.format((quarterAmount - $scope.changedValueCash))));
             }
 
-            $scope.changedValueCash = parseFloat('%.2f'.format($scope.changedValueCash)).toLocaleString();
-            $scope.costValue = fund.costValue.toLocaleString();
+            $scope.changedValueCash = $rootScope.formatNumberRgx(parseFloat('%.2f'.format($scope.changedValueCash)));
+            $scope.costValue = $rootScope.formatNumberRgx(fund.costValue);
         }
 
         function getPlotY(changedValuePercentage) {
@@ -160,8 +160,9 @@ angular.module('solidusApp')
 
             // format total values
             $scope.totalProfitPercentage = '%.2f'.format(($scope.totalProfitCash / $rootScope.selectedAmount) * 100);
-            $scope.totalPortfolioCash = parseFloat('%.2f'.format(($scope.totalProfitCash + $rootScope.selectedAmount))).toLocaleString();
-            $scope.totalProfitCash = parseFloat('%.2f'.format($scope.totalProfitCash)).toLocaleString();
+            $scope.totalPortfolioCash = $rootScope.formatNumberRgx(parseFloat('%.2f'.format(($scope.totalProfitCash + $rootScope.selectedAmount))));
+            $scope.totalProfitUp = $scope.totalProfitCash >= 0;
+            $scope.totalProfitCash = $rootScope.formatNumberRgx(parseFloat('%.2f'.format($scope.totalProfitCash)));
 
             $scope.pie = getPieChart();
         }

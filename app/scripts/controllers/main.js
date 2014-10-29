@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('solidusApp')
-    .controller('MainCtrl', function ($scope, $rootScope, BankService) {
+    .controller('MainCtrl', function ($scope, $rootScope, BankService, $splash, $timeout) {
 
         // App labels
         $rootScope.appmessages = {
@@ -16,7 +16,11 @@ angular.module('solidusApp')
             welcomeAfternoon: 'אחר הצהריים טובים',
             welcomeEvening: 'ערב טוב',
             welcomeNight: 'לילה טוב',
+            bulletDiscount: 'דמי ניהול נמוכים',
+            bulletAutoBalance: 'איזון אוטומטי',
+            bulletSpread: 'פיזור השקעות',
             chooseAmount: 'בחר סכום להשקעה:',
+            chooseFund: 'בחר קרן נאמנות:',
             submitAmountSection: 'בוא נשקיע',
             submitFundCoinSection: 'בוא נמשיך',
             submitFundGoldSection: 'בוא נמשיך',
@@ -27,6 +31,10 @@ angular.module('solidusApp')
             fundGoldSectionHeader: 'קרן סחורות',
             fundStockSectionHeader: 'קרן מניות',
             fundDebentureSectionHeader: 'קרן אגרות חוב',
+            fundCoinSectionDesc: 'נשקיע 25% באפיק הכספי.',
+            fundGoldSectionDesc: 'נשקיע 25% בנכסים פיזיים (זהב).',
+            fundStockSectionDesc: 'נשקיע 25% באפיק המנייתי.',
+            fundDebentureSectionDesc: 'נשקיע 25% באגרות חוב ממשלתיות ארוכות טווח.',
             summarySectionHeader: 'הגענו לשלב הסופי.',
             summarySectionHeader2: 'הקרנות שבחרת הן:',
             summarySectionMgmtFeeTitle: 'דמי ניהול רבעוניים: ',
@@ -201,22 +209,22 @@ angular.module('solidusApp')
             // funds debenture
             fundsDebenture: {
                 fundDebenture1: {
-                    name: 'אילים תיק אג"ח + 10%',
-                    type: $rootScope.appmessages.fundDebentureSectionHeader,
-                    costValue: 167.09,
-                    changedValuePercentage: 5.6,
-                    direction: '+',
-                    mgmtFee: 0.500,
-                    commission: 0.1,
-                    recommended: true
-                },
-                fundDebenture2: {
                     name: 'הראל מחקה מדדי מדינה',
                     type: $rootScope.appmessages.fundDebentureSectionHeader,
                     costValue: 134.92,
                     changedValuePercentage: 7.21,
                     direction: '+',
                     mgmtFee: 0.300,
+                    commission: 0.1,
+                    recommended: true
+                },
+                fundDebenture2: {
+                    name: 'אילים תיק אג"ח + 10%',
+                    type: $rootScope.appmessages.fundDebentureSectionHeader,
+                    costValue: 167.09,
+                    changedValuePercentage: 5.6,
+                    direction: '+',
+                    mgmtFee: 0.500,
                     commission: 0.1
                 },
                 fundDebenture3: {
@@ -255,7 +263,7 @@ angular.module('solidusApp')
                 prefix = $rootScope.appmessages.welcomeNight;
             }
             $rootScope.welcomeInvest = prefix + ' ' + $rootScope.appmessages.welcomeInvest;
-            $rootScope.welcomeInvest = $rootScope.welcomeInvest.format($rootScope.username, $rootScope.totalCash.toLocaleString());
+            $rootScope.welcomeInvest = $rootScope.formatNumberRgx($rootScope.welcomeInvest.format($rootScope.username, $rootScope.totalCash));
 
             $rootScope.welcomeTrack = prefix + ' ' + $rootScope.appmessages.welcomeTrack;
             $rootScope.welcomeTrack = $rootScope.welcomeTrack.format($rootScope.username);
@@ -294,9 +302,14 @@ angular.module('solidusApp')
         var elementPos = $scope.toolbarItems.map(function(x) {
             return x.id;
         }).indexOf(window.location.hash.substring(2));
-        $scope.selected = $scope.toolbarItems[elementPos];
+
+        $rootScope.selected = $scope.toolbarItems[elementPos];
+        if (elementPos === -1) {
+            $rootScope.selected = $scope.toolbarItems[0];
+        }
+
         $rootScope.itemSelected = function(item) {
-            $scope.selected = item;
+            $rootScope.selected = item;
         };
 
         $scope.scrollTo = function(id) {
@@ -307,4 +320,27 @@ angular.module('solidusApp')
                 }, 750, 'easeOutExpo');
             }
         };
+
+        $rootScope.formatNumberRgx = function(num) {
+            var parts = num.toString().split('.');
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            return parts.join('.');
+        };
+
+        // open splash screen
+        if (!$rootScope.splashed) {
+            $rootScope.splashed = true;
+            var close = $splash.open({
+                title: 'Solid and Easy investing for everyone'
+            });
+            $timeout(function () {
+                close.close();
+                $rootScope.splashed = false;
+            }, 2500);
+        }
+        document.body.addEventListener('touchmove', function(e) {
+            if ($rootScope.splashed) {
+                e.preventDefault();
+            }
+        });
     });

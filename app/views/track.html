@@ -21,15 +21,15 @@
                     <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsCostValueTitle}} {{costValue}} {{$root.appmessages.agorot}}</p>
                 </div>
                 <div class="row">
-                    <p class="h3 col-xs-12 col-sm-8" dir="rtl">{{$root.appmessages.foundDetailsChangedValuePercentageTitle}} {{changedValuePercentage}}%{{direction}}</p>
-                    <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsChangedValueCashTitle}} {{changedValueCash}}{{direction}} {{$root.appmessages.nis}}</p>
+                    <p class="h3 col-xs-12 col-sm-8" ng-class="{ up: direction === '+', down: direction === '-' }" dir="rtl">{{$root.appmessages.foundDetailsChangedValuePercentageTitle}} {{changedValuePercentage}}%{{direction}}</p>
+                    <p class="h3 col-xs-12 col-sm-4" ng-class="{ up: direction === '+', down: direction === '-' }" dir="rtl">{{$root.appmessages.foundDetailsChangedValueCashTitle}} {{changedValueCash}}{{direction}} {{$root.appmessages.nis}}</p>
                 </div>
             </div>
         </div>
         <div class="fundsSummary">
             <div class="row">
-                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsTotalProfitPercentageTitle}} {{totalProfitPercentage}}%</p>
-                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsTotalProfitCashTitle}} {{totalProfitCash}} {{$root.appmessages.nis}}</p>
+                <p class="h3 col-xs-12 col-sm-4" ng-class="{ up: totalProfitUp, down: !totalProfitUp }" dir="rtl">{{$root.appmessages.foundDetailsTotalProfitPercentageTitle}} {{totalProfitPercentage}}%</p>
+                <p class="h3 col-xs-12 col-sm-4" ng-class="{ up: totalProfitUp, down: !totalProfitUp }" dir="rtl">{{$root.appmessages.foundDetailsTotalProfitCashTitle}} {{totalProfitCash}} {{$root.appmessages.nis}}</p>
                 <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsTotalPortfolioCashTitle}} {{totalPortfolioCash}} {{$root.appmessages.nis}}</p>
             </div>
         </div>
