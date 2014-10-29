@@ -146,6 +146,7 @@ input[type="range"]::-ms-thumb {
 .investSection {
     padding-top: 20px;
     min-height: 800px;
+    border-bottom: 3px solid #ebebeb;
 }
 
 .investSection.first {
@@ -538,5 +539,5 @@ input[type="range"]::-ms-thumb {
 }
 
 .cardsContainer {
-    margin-bottom: 20px;
+    margin-bottom: 70px;
 }
