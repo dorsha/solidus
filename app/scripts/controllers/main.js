@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('solidusApp')
-    .controller('MainCtrl', function ($scope, $rootScope, BankService) {
+    .controller('MainCtrl', function ($scope, $rootScope, BankService, $splash) {
 
         // App labels
         $rootScope.appmessages = {
@@ -304,7 +304,7 @@ angular.module('solidusApp')
         }).indexOf(window.location.hash.substring(2));
 
         $rootScope.selected = $scope.toolbarItems[elementPos];
-        if (elementPos == -1) {
+        if (elementPos === -1) {
             $rootScope.selected = $scope.toolbarItems[0];
         }
 
@@ -326,4 +326,10 @@ angular.module('solidusApp')
             parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
             return parts.join('.');
         };
+
+        // open splash screen
+        $splash.open({
+            title: 'Solid and Easy investing for everyone'
+        });
+        $splash.close();
     });
