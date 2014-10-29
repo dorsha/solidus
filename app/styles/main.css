@@ -589,6 +589,27 @@ input[type="range"]::-ms-thumb {
     }
 }
 
+@media (max-width: 382px) {
+    .bullets {
+        margin-top: 0;
+    }
+    .bullet {
+        width: 115px;
+    }
+    .bullet img {
+        margin-left: -8px;
+    }
+}
+
+@media (max-width: 349px) {
+    .bullet {
+        width: 103px;
+    }
+    .bullet img {
+        margin-left: -13px;
+    }
+}
+
 .splash {
     position: fixed;
     background: rgba(100, 48, 119, 0.80);
