@@ -110,7 +110,7 @@ angular.module('solidusApp')
                 scope.fund.selected = !!scope.fund.recommended;
 
                 scope.toggleSelected = function () {
-                    _.forEach(scope.funds[fundType], function (fund, key) {
+                    _.forEach(scope.funds[fundType], function (fund) {
                         if (fund.selected) {
                             _.remove(scope.selectedFunds, fund);
                             fund.selected = false;
@@ -124,5 +124,5 @@ angular.module('solidusApp')
                     }
                 };
             }
-        }
+        };
     }]);

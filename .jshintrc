@@ -21,6 +21,7 @@
     "globals": {
         "angular": false,
         "$": false,
-        "Highcharts": false
+        "Highcharts": false,
+        "_": false
     }
 }
