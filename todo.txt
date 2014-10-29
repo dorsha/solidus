@@ -40,5 +40,5 @@ Leftovers:
 - Strings - Meir
 - Designers feedback
 - Polish design
-- Splash screen with logo and slogan - Doron
+- Splash screen with logo and slogan - DONE
 - Bullets for the first section - DONE

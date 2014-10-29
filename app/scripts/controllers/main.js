@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('solidusApp')
-    .controller('MainCtrl', function ($scope, $rootScope, BankService, $splash) {
+    .controller('MainCtrl', function ($scope, $rootScope, BankService, $splash, $timeout) {
 
         // App labels
         $rootScope.appmessages = {
@@ -330,9 +330,13 @@ angular.module('solidusApp')
         // open splash screen
         if (!$rootScope.splashed) {
             $rootScope.splashed = true;
-            $splash.open({
+            var close = $splash.open({
                 title: 'Solid and Easy investing for everyone'
             });
+            $timeout(function () {
+                close.close();
+                $rootScope.splashed = false;
+            }, 2500);
         }
         document.body.addEventListener('touchmove', function(e) {
             if ($rootScope.splashed) {
