@@ -11,28 +11,11 @@ angular.module('solidusApp').service('$splash', [
                 opts = angular.extend(opts || {}, {
                     backdrop: false,
                     scope: scope,
-                    templateUrl: 'splash/content.html',
-                    windowTemplateUrl: 'splash/index.html'
+                    templateUrl: 'views/splash-view-content.html',
+                    windowTemplateUrl: 'views/splash-view.html'
                 });
                 return $modal.open(opts);
             }
         };
     }
-])
-    .run([
-        '$templateCache',
-        function ($templateCache) {
-            $templateCache.put('splash/index.html',
-                    '<section class="splash" ng-class="{\'splash-open\': animate}" ng-style="{\'z-index\': 1000, display: \'block\'}" ng-click="close($event)">' +
-                    '  <div class="splash-inner" ng-transclude></div>' +
-                    '</section>'
-            );
-            $templateCache.put('splash/content.html',
-                    '<div class="splash-content text-center">' +
-                    '  <div class="splashLogo"/>' +
-                    '  <p class="lead" ng-bind="title"></p>' +
-                    '  <button class="btn btn-primary btn-centered btn-lg" ng-bind="btnText || \'המשך לאתר\'" ng-click="$close()"></button>' +
-                    '</div>'
-            );
-        }
-    ]);
+]);

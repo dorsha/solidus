@@ -328,8 +328,8 @@ angular.module('solidusApp')
         };
 
         // open splash screen
-        if (!$scope.splashed) {
-            $scope.splashed = true;
+        if (!$rootScope.splashed) {
+            $rootScope.splashed = true;
             $splash.open({
                 title: 'Solid and Easy investing for everyone'
             });
