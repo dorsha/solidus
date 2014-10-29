@@ -1,5 +1,5 @@
 <div class="selectedFundBox clickable col-xs-12 col-sm-12" ng-class="{'selected': fund.selected, 'recommended': fund.recommended}" ng-click="toggleSelected()">
-    <h2 class="fundViewTitle">{{fund.name}}</h2>
-    <div class="fundViewSub">%{{$root.appmessages.summarySectionMgmtFeeTitle}} {{'%.2f'.format(fund.mgmtFee / 1000 * amount)}}</div>
-    <div class="fundViewSub">{{$root.appmessages.nis}}{{$root.appmessages.summarySectionCommissionTitle}} {{'%.2f'.format(fund.commission / 1000 * amount)}}</div>
+    <h2 class="fundViewTitle" dir="rtl">{{fund.name}}</h2>
+    <div class="fundViewSub">{{$root.appmessages.summarySectionMgmtFeeTitle}} {{'%.2f'.format(fund.mgmtFee / 1000 * amount)}}%</div>
+    <div class="fundViewSub" dir="rtl">{{$root.appmessages.summarySectionCommissionTitle}} {{'%.2f'.format(fund.commission / 1000 * amount)}} {{$root.appmessages.nis}}</div>
 </div>

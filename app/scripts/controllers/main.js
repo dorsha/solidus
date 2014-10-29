@@ -17,6 +17,7 @@ angular.module('solidusApp')
             welcomeEvening: 'ערב טוב',
             welcomeNight: 'לילה טוב',
             chooseAmount: 'בחר סכום להשקעה:',
+            chooseFund: 'בחר קרן נאמנות:',
             submitAmountSection: 'בוא נשקיע',
             submitFundCoinSection: 'בוא נמשיך',
             submitFundGoldSection: 'בוא נמשיך',
@@ -201,22 +202,22 @@ angular.module('solidusApp')
             // funds debenture
             fundsDebenture: {
                 fundDebenture1: {
-                    name: 'אילים תיק אג"ח + 10%',
-                    type: $rootScope.appmessages.fundDebentureSectionHeader,
-                    costValue: 167.09,
-                    changedValuePercentage: 5.6,
-                    direction: '+',
-                    mgmtFee: 0.500,
-                    commission: 0.1,
-                    recommended: true
-                },
-                fundDebenture2: {
                     name: 'הראל מחקה מדדי מדינה',
                     type: $rootScope.appmessages.fundDebentureSectionHeader,
                     costValue: 134.92,
                     changedValuePercentage: 7.21,
                     direction: '+',
                     mgmtFee: 0.300,
+                    commission: 0.1,
+                    recommended: true
+                },
+                fundDebenture2: {
+                    name: 'אילים תיק אג"ח + 10%',
+                    type: $rootScope.appmessages.fundDebentureSectionHeader,
+                    costValue: 167.09,
+                    changedValuePercentage: 5.6,
+                    direction: '+',
+                    mgmtFee: 0.500,
                     commission: 0.1
                 },
                 fundDebenture3: {

@@ -23,6 +23,7 @@
             <img src="../images/icons/cash-48-img.png" class="sectionIcon" />
             <p class="h1 text-center" dir="rtl">{{$root.appmessages.fundCoinSectionHeader}}</p>
         </div>
+        <p class="h3 chooseCard" dir="rtl">{{$root.appmessages.chooseFund}}</p>
         <div class="row cardsContainer center-block">
             <fund-view ng-repeat="fund in $root.funds.fundsCoin" fund-type="fundsCoin"></fund-view>
         </div>
@@ -36,6 +37,7 @@
             <img src="../images/icons/gold-48-img.png" class="sectionIcon" />
             <p class="h1 text-center" dir="rtl">{{$root.appmessages.fundGoldSectionHeader}}</p>
         </div>
+        <p class="h3 chooseCard" dir="rtl">{{$root.appmessages.chooseFund}}</p>
         <div class="row cardsContainer center-block">
             <fund-view ng-repeat="fund in $root.funds.fundsGold" fund-type="fundsGold"></fund-view>
         </div>
@@ -49,6 +51,7 @@
             <img src="../images/icons/stock-48-img.png" class="sectionIcon" />
             <p class="h1 text-center" dir="rtl">{{$root.appmessages.fundStockSectionHeader}}</p>
         </div>
+        <p class="h3 chooseCard" dir="rtl">{{$root.appmessages.chooseFund}}</p>
         <div class="row cardsContainer center-block">
             <fund-view ng-repeat="fund in $root.funds.fundsStock" fund-type="fundsStock"></fund-view>
         </div>
@@ -62,6 +65,7 @@
             <img src="../images/icons/bonds-48-img.png" class="sectionIcon" />
             <p class="h1 text-center" dir="rtl">{{$root.appmessages.fundDebentureSectionHeader}}</p>
         </div>
+        <p class="h3 chooseCard" dir="rtl">{{$root.appmessages.chooseFund}}</p>
         <div class="row cardsContainer center-block">
             <fund-view ng-repeat="fund in $root.funds.fundsDebenture" fund-type="fundsDebenture"></fund-view>
         </div>
@@ -73,16 +77,16 @@
         <p class="h3" dir="rtl">{{$root.appmessages.summarySectionHeader}}</p>
         <p class="h3" dir="rtl">{{$root.appmessages.summarySectionHeader2}}</p>
 
-        <ul class="row selectedFundsContainer">
-            <li ng-repeat="fund in selectedFunds" class="selectedFundBox col-xs-12 col-sm-12" ng-cloak>
+        <div class="row selectedFundsContainer center-block">
+            <div ng-repeat="fund in selectedFunds" class="selectedFundBox col-xs-12 col-sm-12" ng-cloak>
                 <div>
                     <p class="h2" dir="rtl">{{amount / 4}} {{$root.appmessages.nis}}</p>
                     <p class="h2" dir="rtl">{{fund.name}}</p>
                     <p class="h3" dir="rtl">{{$root.appmessages.summarySectionMgmtFeeTitle}} {{'%.2f'.format(fund.mgmtFee / 1000 * amount)}} {{$root.appmessages.nis}}</p>
                     <p class="h3" dir="rtl">{{$root.appmessages.summarySectionCommissionTitle}} {{'%.2f'.format(fund.commission / 1000 * amount)}} {{$root.appmessages.nis}}</p>
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
 
         <div class="totalFees">
             <p class="h3" dir="rtl">{{$root.appmessages.summarySectionTotalMgmtFee}} {{getTotalFees(); '%.2f'.format(totalMgmtFee)}} {{$root.appmessages.nis}}</p>
