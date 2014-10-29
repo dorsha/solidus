@@ -299,9 +299,14 @@ angular.module('solidusApp')
         var elementPos = $scope.toolbarItems.map(function(x) {
             return x.id;
         }).indexOf(window.location.hash.substring(2));
-        $scope.selected = $scope.toolbarItems[elementPos];
+
+        $rootScope.selected = $scope.toolbarItems[elementPos];
+        if (elementPos == -1) {
+            $rootScope.selected = $scope.toolbarItems[0];
+        }
+
         $rootScope.itemSelected = function(item) {
-            $scope.selected = item;
+            $rootScope.selected = item;
         };
 
         $scope.scrollTo = function(id) {
