@@ -694,6 +694,9 @@ input[type="range"]::-ms-thumb {
     }
 }
 
+.splashLogo,
+.splash-open,
+.splash-content,
 .splash {
     display: none;
 }
@@ -756,6 +759,10 @@ input[type="range"]::-ms-thumb {
         border: 1px solid #ffffff;
         outline: none;
         margin-top: 70px;
+    }
+
+    .splash-content {
+        display: inherit;
     }
 
     .splashLogo {
