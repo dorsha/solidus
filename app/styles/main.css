@@ -646,7 +646,6 @@ input[type="range"]::-ms-thumb {
     display: inline-block;
     width: 100%;
     text-align: center;
-    margin-top: 70px;
     padding-right: 80px;
 }
 
@@ -673,6 +672,12 @@ input[type="range"]::-ms-thumb {
     }
 }
 
+@media (min-width: 775px) {
+    .bullets .h2 {
+        margin-left: 65px;
+        margin-top: 20px;
+    }
+}
 @media (max-width: 382px) {
     .bullets {
         margin-top: 0;
