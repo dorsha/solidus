@@ -69,9 +69,8 @@ angular.module('solidusApp')
             foundDetailsCostValueTitle: 'שער עלות: ',
             foundDetailsChangedValuePercentageTitle: 'שינוי מעלות באחוזים: ',
             foundDetailsChangedValueCashTitle: 'שינוי כספי: ',
-            foundDetailsTotalProfitPercentageTitle: 'סה"כ שינוי מעלות באחוזים: ',
-            foundDetailsTotalProfitCashTitle: ' סה"כ שינוי כספי מעלות: ',
-            foundDetailsTotalPortfolioCashTitle: 'סה"כ שווי תיק: ',
+            foundDetailsTotalProfitTitle: 'תשואת התיק: ',
+            foundDetailsTotalPortfolioCashTitle: 'שווי תיק: ',
 
             // Balance page
             welcomeBalance: 'איש אינו יכול לתזמן את השוק, לכן מומלץ לאזן את הקצאת הנכסים בתיק אחת לתקופה.',

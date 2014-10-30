@@ -222,11 +222,33 @@ input[type="range"]::-ms-thumb {
 }
 
 .fundsSummary {
-    margin-top: 20px;
+    margin-top: 10px;
+    display: table-cell;
+    float: right;
+}
+
+.fundsSummary .profit p {
+    float: right;
+}
+
+.fundsSummary .profit p:nth-child(2) {
+    margin-right: 7px;
 }
 
 .fundsSummary p {
     font-weight: bold;
+}
+
+@media (max-width: 400px) {
+    .fundsSummary p {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 380px) {
+    .fundsSummary p {
+        font-size: 16px;
+    }
 }
 
 /* to avoid angular flickering */
@@ -343,6 +365,12 @@ input[type="range"]::-ms-thumb {
 @media (max-width: 350px) {
     .main-nav .invest {
         font-size: 12px !important;
+    }
+}
+
+@media (max-width: 334px) {
+    .notificationBar {
+        font-size: 18px;
     }
 }
 
