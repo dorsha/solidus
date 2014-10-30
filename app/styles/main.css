@@ -221,10 +221,13 @@ input[type="range"]::-ms-thumb {
     margin-right: 20px;
 }
 
+.trackingTopPane {
+    text-align: right;
+}
+
 .fundsSummary {
     margin-top: 10px;
-    display: table-cell;
-    float: right;
+    display: inline-table;
 }
 
 .fundsSummary .profit p {
