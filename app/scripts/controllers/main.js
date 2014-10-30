@@ -336,7 +336,7 @@ angular.module('solidusApp')
             $timeout(function () {
                 close.close();
                 $rootScope.splashed = false;
-            }, 2500);
+            }, 3500);
         }
         document.body.addEventListener('touchmove', function(e) {
             if ($rootScope.splashed) {

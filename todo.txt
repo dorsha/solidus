@@ -32,7 +32,7 @@ General
 Leftovers:
 - Improve Summary ETF view - Tomer
 - Choose fonts - Tomer
-- Flipping card (invest screen) - Tomer
+- Flipping card (invest screen) - DONE
 - Improve tacking view - Doron & Tomer
 - Tracking slider should work in touch - Doron
 - Add tracking graph (HighChart) - Doron
