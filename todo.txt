@@ -36,10 +36,19 @@ Leftovers:
 - Improve tacking view - Doron & Tomer
 - Tracking slider should work in touch - Doron
 - Add tracking graph (HighChart) - Doron
-- Our slides with pictures - Meir
-- Strings - Meir
 - Designers feedback - DONE
-- Polish design
 - Splash screen with logo and slogan - DONE
 - Bullets for the first section - DONE
+- Re-style funds cards - Tomer
+- Layout glitches - Tomer
+- Summary page animation (when moving to tracking) - Tomer
+- Move the total portfolio details to the top (in the tracking page) - Doron
+- Fix slider in balance page - Doron
+- Strings - Meir
+- Our slides with pictures - Meir
+- Font
+- Polish design
+
+Only if there is time left:
 - facebook like cards
+- Horizontal scroll
