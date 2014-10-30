@@ -589,6 +589,7 @@ input[type="range"]::-ms-thumb {
     left: 0;
 }
 
+.back.selected,
 .front.selected {
     background-color: #89d86b;
 }
