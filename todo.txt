@@ -38,7 +38,8 @@ Leftovers:
 - Add tracking graph (HighChart) - Doron
 - Our slides with pictures - Meir
 - Strings - Meir
-- Designers feedback
+- Designers feedback - DONE
 - Polish design
 - Splash screen with logo and slogan - DONE
 - Bullets for the first section - DONE
+- facebook like cards

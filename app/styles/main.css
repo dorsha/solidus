@@ -278,41 +278,71 @@ input[type="range"]::-ms-thumb {
 }
 
 @media (max-width: 800px) {
+    .main-nav .invest {
+        font-size: 20px;
+    }
+
     .main-nav .menuitem,
     .notificationBar {
-        font-size: 20px;
+        font-size: 24px;
     }
 }
 
 @media (max-width: 720px) {
+    .main-nav .invest {
+        font-size: 20px;
+    }
+
+    .main-nav .menuitem,
+    .notificationBar {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 650px) {
+    .main-nav .invest {
+        font-size: 16px;
+    }
+
     .main-nav .menuitem,
     .notificationBar {
         font-size: 20px;
     }
 }
 
-@media (max-width: 650px) {
-    .main-nav .menuitem,
-    .notificationBar {
-        font-size: 16px;
+@media (max-width: 463px) {
+    .main-nav .invest {
+        font-size: 18px !important;
+    }
+}
+
+@media (max-width: 427px) {
+    .main-nav .invest {
+        font-size: 17px !important;
+    }
+}
+
+@media (max-width: 410px) {
+    .main-nav .invest {
+        font-size: 16px !important;
     }
 }
 
 @media (max-width: 392px) {
-    .main-nav .menuitem {
-        font-size: 14px;
+    .main-nav .invest {
+        font-size: 14px !important;
     }
 }
 
 @media (max-width: 350px) {
-    .main-nav .menuitem {
-        font-size: 13px;
+    .main-nav .invest {
+        font-size: 13px !important;
     }
 }
 
 @media (max-width: 350px) {
-    .main-nav .menuitem {
-        font-size: 12px;
+    .main-nav .invest {
+        font-size: 12px !important;
     }
 }
 
