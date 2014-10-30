@@ -559,6 +559,7 @@ input[type="range"]::-ms-thumb {
 .fundStatus {
     color: green;
     font-size: 22px;
+    font-weight: bold;
 }
 
 /*** FUND CARD ANIMATION ***/
@@ -590,7 +591,7 @@ input[type="range"]::-ms-thumb {
 }
 
 .front.selected {
-    background-color: #89d86b;
+    background-color: #d3b5ff;
 }
 
 .front.recommended:before {
@@ -607,7 +608,7 @@ input[type="range"]::-ms-thumb {
 
 /* front pane, placed above back */
 .front {
-    background-color: #fbe2ba;
+    background-color: #e6e6e6;
     z-index: 2;
     /* for firefox 31 */
     transform: rotateY(0deg);
@@ -617,7 +618,7 @@ input[type="range"]::-ms-thumb {
 /* back, initially hidden pane */
 .back {
     transform: rotateY(180deg);
-    background: #f8f8f8;
+    background-color: #e6e6e6;
     width: 100%;
 }
 
