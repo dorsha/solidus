@@ -26,9 +26,10 @@
     <div class="header">
         <div class="main-nav">
             <div class="row">
-                <div ng-click="itemSelected(item)" ng-repeat="item in toolbarItems.slice().reverse()"
-                     ng-class="{ active: $root.selected.id == item.id }" class="col-xs-6 col-sm-4 menuitem">
-                    <a ng-cloak ng-href="/#/{{item.id}}">{{item.title}}</a>
+                <div ng-switch="!!$root.investMode" ng-click="itemSelected(item)" ng-repeat="item in toolbarItems.slice().reverse()"
+                     ng-class="{ active: $root.selected.id == item.id, invest: $root.investMode, done: item.passed }" class="col-xs-6 col-sm-4 menuitem">
+                    <a ng-cloak ng-href="/#/{{item.id}}" ng-switch-when="false">{{item.title}}</a>
+                    <a ng-cloak ng-click="$root.investToolbarClick(item)" ng-switch-when="true">{{item.title}}</a>
                 </div>
             </div>
         </div>

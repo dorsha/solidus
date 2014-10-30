@@ -10,23 +10,28 @@ angular.module('solidusApp')
             investHeader: 'השקעה',
             trackHeader: 'מעקב',
             balance: 'איזון',
-            welcomeInvest: '%s, ברשותך %s ש"ח. לא מעט כסף, בוא נשקיע אותו בחוכמה.',
+            welcomeInvest: '%s, ברשותך %s ש"ח. לא מעט כסף, בוא נבנה תיק השקעות סולידי.',
             welcomeMorning: 'בוקר טוב',
             welcomeNoon: 'צהריים טובים',
             welcomeAfternoon: 'אחר הצהריים טובים',
             welcomeEvening: 'ערב טוב',
             welcomeNight: 'לילה טוב',
+            whySolidus: 'למה סולידוס?',
             bulletDiscount: 'דמי ניהול נמוכים',
             bulletAutoBalance: 'איזון אוטומטי',
             bulletSpread: 'פיזור השקעות',
             chooseAmount: 'בחר סכום להשקעה:',
             chooseFund: 'בחר קרן נאמנות:',
             submitAmountSection: 'בוא נשקיע',
-            submitFundCoinSection: 'בוא נמשיך',
-            submitFundGoldSection: 'בוא נמשיך',
-            submitFundStockSection: 'בוא נמשיך',
-            submitFundDebentureSection: 'בוא נראה מה יש לנו',
+            submitFundCoinSection: 'נמשיך לאפיק הסחורות',
+            submitFundGoldSection: 'נעבור לאפיק המנייתי',
+            submitFundStockSection: 'נסיים עם אגרות החוב',
+            submitFundDebentureSection: 'סיכום התיק',
             submitSummary: 'מאשר רכישה',
+            fundCoinToolbarItem: 'קרן כספית',
+            fundGoldToolbarItem: 'קרן סחורות',
+            fundStockToolbarItem: 'קרן מניות',
+            fundDebentureToolbarItem: 'קרן אג"ח',
             fundCoinSectionHeader: 'קרן כספית',
             fundGoldSectionHeader: 'קרן סחורות',
             fundStockSectionHeader: 'קרן מניות',
@@ -294,22 +299,37 @@ angular.module('solidusApp')
         $scope.selectedFunds.push($rootScope.funds.fundsDebenture.fundDebenture1);
 
         // toolbar
-        $scope.toolbarItems = [
+        var mainToolbar = [
             { id: 'invest', title: $rootScope.appmessages.investHeader },
             { id: 'track', title: $rootScope.appmessages.trackHeader },
             { id: 'balance', title: $rootScope.appmessages.balance }
         ];
-        var elementPos = $scope.toolbarItems.map(function(x) {
+
+        if (!$scope.loaded) {
+            $scope.loaded = true;
+            $rootScope.toolbarItems = mainToolbar;
+        }
+
+        var elementPos = $rootScope.toolbarItems.map(function(x) {
             return x.id;
         }).indexOf(window.location.hash.substring(2));
 
-        $rootScope.selected = $scope.toolbarItems[elementPos];
+        $rootScope.selected = $rootScope.toolbarItems[elementPos];
         if (elementPos === -1) {
-            $rootScope.selected = $scope.toolbarItems[0];
+            $rootScope.selected = $rootScope.toolbarItems[0];
         }
 
         $rootScope.itemSelected = function(item) {
-            $rootScope.selected = item;
+            var elementPos = $rootScope.toolbarItems.map(function(x) {
+                return x.id;
+            }).indexOf(item.id);
+            if (!$rootScope.investMode || $rootScope.investMode && item.passed || $rootScope.toolbarItems[elementPos - 1].passed) {
+                $rootScope.selected = item;
+            }
+        };
+
+        $rootScope.revertToolbar = function () {
+            $rootScope.toolbarItems = mainToolbar;
         };
 
         $scope.scrollTo = function(id) {
@@ -336,7 +356,7 @@ angular.module('solidusApp')
             $timeout(function () {
                 close.close();
                 $rootScope.splashed = false;
-            }, 2500);
+            }, 3500);
         }
         document.body.addEventListener('touchmove', function(e) {
             if ($rootScope.splashed) {

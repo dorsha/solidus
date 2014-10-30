@@ -14,13 +14,35 @@ angular.module('solidusApp')
         $scope.currentSection = $scope.sections[0];
         $scope.moveToNextSection = function(section) {
             if (!section.passed) {
+                if (section.id === $scope.sections[0].id) {
+                    $rootScope.investMode = true;
+                    // invest toolbar
+                    $rootScope.toolbarItems = [
+                        { id: 'fundCoin', title: $rootScope.appmessages.fundCoinToolbarItem, passed: false },
+                        { id: 'fundGold', title: $rootScope.appmessages.fundGoldToolbarItem, passed: false },
+                        { id: 'fundStock', title: $rootScope.appmessages.fundStockToolbarItem, passed: false },
+                        { id: 'fundDebenture', title: $rootScope.appmessages.fundDebentureToolbarItem, passed: false }
+                    ];
+                }
+
                 section.passed = true;
                 $scope.previousSection = $scope.currentSection;
                 var nextPosition = section.position + 1;
                 if (nextPosition < $scope.sections.length) {
                     $scope.currentSection = $scope.sections[nextPosition];
                 }
+
+                if (section.id !== $scope.sections[5].id) {
+                    if (section.position > 0) {
+                        $rootScope.toolbarItems[section.position - 1].passed = true;
+                    }
+                    $rootScope.selected = $rootScope.toolbarItems[section.position];
+                }
             }
+        };
+
+        $rootScope.investToolbarClick = function (item) {
+            $scope.scrollToElement(item.id);
         };
 
         $scope.getTotalFees = function () {
@@ -35,6 +57,17 @@ angular.module('solidusApp')
         $scope.submit = function() {
             $rootScope.invested = true;
             $rootScope.selectedAmount = parseInt($scope.amount);
+            $rootScope.investMode = false;
+            $rootScope.revertToolbar();
+        };
+
+        $scope.scrollToElement = function (elementId) {
+            var element = $('#' + elementId);
+            if (element.length) {
+                $('html, body').animate({
+                    scrollTop: element.offset().top - 100
+                }, 750, 'easeOutExpo');
+            }
         };
     }).directive('scrollToSection', ['$timeout', function($timeout) {
         return {
@@ -43,12 +76,7 @@ angular.module('solidusApp')
             link: function(scope, element) {
                 element.click(function() {
                     function animateToNextSection() {
-                        var element = $('#' + scope.currentSection.id);
-                        if (element.length) {
-                            $('html, body').animate({
-                                scrollTop: element.offset().top - 100
-                            }, 750, 'easeOutExpo');
-                        }
+                        scope.scrollToElement(scope.currentSection.id);
                     }
 
                     scope.$emit('showNotificationBar', {

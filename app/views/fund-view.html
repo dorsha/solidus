@@ -6,7 +6,7 @@
             <div class="fundViewSub">{{$root.appmessages.nis}}{{$root.appmessages.summarySectionCommissionTitle}} {{'%.2f'.format(fund.commission / 1000 * amount)}}</div>
             <div class="fundInfoIcon fundIcon" ng-click="flipCard($event)"></div>
         </div>
-        <div class="back">
+        <div class="back" ng-class="{'selected': fund.selected }" ng-click="toggleSelected()">
             <div class="backImage"></div>
             <div class="fundStatus">+1.14%</div>
             <div class="flipBackInfo fundIcon" ng-click="flipCard($event)"></div>
