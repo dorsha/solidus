@@ -625,7 +625,7 @@ input[type="range"]::-ms-thumb {
 
 .cardsContainer {
     margin-top: 25px;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 }
 
 .fundIcon {
@@ -818,13 +818,7 @@ input[type="range"]::-ms-thumb {
     }
 }
 
-@media (max-width: 415px) {
-    .bullet {
-        margin: 6px;
-    }
-}
-
-@media (max-width: 382px) {
+@media (max-width: 628px) {
     .bullets {
         margin-top: 0;
     }
@@ -834,10 +828,17 @@ input[type="range"]::-ms-thumb {
     }
 }
 
-@media (max-width: 349px) {
+@media (max-width: 381px) {
     .bullet {
         width: 103px;
         margin: 6px;
+    }
+}
+
+@media (max-width: 331px) {
+    .bullet {
+        width: 98px;
+        margin: 2px;
     }
 }
 

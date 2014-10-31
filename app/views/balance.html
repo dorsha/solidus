@@ -13,7 +13,7 @@
             <p class="h2" dir="rtl">{{$root.appmessages.balanceDateTitle}}</p>
             <p class="h3" dir="rtl">{{$root.appmessages.balanceDate}}</p>
             <div class="balancePeriodPicker">
-                <div ng-repeat="period in periodOptions" class="balancePeriodButton"
+                <div ng-repeat="period in periodOptions.slice().reverse()" class="balancePeriodButton"
                      ng-class="{ 'selected': $root.selectedPeriodId === period.id }" ng-click="periodSelected(period)" ng-cloak>
                     <p dir="rtl">{{period.title}}</p>
                 </div>
