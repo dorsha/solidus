@@ -15,17 +15,17 @@
         </div>
         <a class="btn btn-primary btn-centered btn-lg" scroll-to-section data-vx-common-prevent-default=""
            ng-click="moveToNextSection(sections[0])">{{$root.appmessages.submitAmountSection}}</a>
+        <p ng-cloak class="h2 text-center" id="whySolidusTitle" dir="rtl">{{$root.appmessages.whySolidus}}</p>
         <div class="bullets">
-            <p ng-cloak class="h2" dir="rtl">{{$root.appmessages.whySolidus}}</p>
-            <div class="bullet">
-                <img src="images/icons/Discount-128.png">
+            <div class="bullet col-md-4">
+                <img class="text-center" src="images/icons/Discount-128.png">
                 <p dir="rtl">{{$root.appmessages.bulletDiscount}}</p>
             </div>
-            <div class="bullet">
+            <div class="bullet col-md-4">
                 <img src="images/icons/Scale-128.png">
                 <p dir="rtl">{{$root.appmessages.bulletAutoBalance}}</p>
             </div>
-            <div class="bullet">
+            <div class="bullet col-md-4">
                 <img src="images/icons/Equalizer-128.png">
                 <p dir="rtl">{{$root.appmessages.bulletSpread}}</p>
             </div>
