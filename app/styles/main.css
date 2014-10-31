@@ -688,19 +688,22 @@ input[type="range"]::-ms-thumb {
     position: absolute;
     top: 0;
     left: 0;
+
+    border: 10px solid transparent;
 }
 
 .back.selected,
 .front.selected {
     background-color: #d3b5ff;
+    border: 10px solid #8E5094;
 }
 
 .front.recommended:before {
     background-color: yellow;
     content: 'המומלצת שלנו';
     position: absolute;
-    top: 5px;
-    right: -18px;
+    top: -2px;
+    right: -25px;
     -webkit-transform: rotate(30deg);
     -moz-transform: rotate(30deg);
     -ms-transform: rotate(30deg);
