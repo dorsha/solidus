@@ -38,7 +38,7 @@ General
 - Polish design - DONE
 
 Leftovers:
-- Summary page animation (when moving to tracking) and apply new style to the cards - Tomer
+- Summary page animation (when moving to tracking) and apply new style to the cards - DONE
 
 Only if there is time left (after tagging):
 - facebook like cards (horizontal scroll) - Tomer
@@ -46,10 +46,9 @@ Only if there is time left (after tagging):
 - Add tracking graph (HighChart) - Doron
 
 Submit:
+- Attach screenshots for all screens - DONE
+- Slides with everything include pictures and our logo! - DONE
+- our photos for the ppt - DONE
+- Make sure the ppt is perfect and contains everything, also we should fill the "our experience" section = DONE
 - Short Movie with steps
-- Attach Logo
-- Attach screenshots for all screens
-- Slides with everything include pictures and our logo!
-- our photos for the ppt
-- Make sure the ppt is perfect and contains everything, also we should fill the "our experience" section
-- Our slides with pictures
+- Attach Logo,screenshots and explanation to submit
