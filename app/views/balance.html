@@ -1,10 +1,10 @@
 <div ng-controller="BalanceCtrl">
-    <div ng-if="!$root.invested">
+    <div ng-show="!$root.invested">
         <p class="h2" dir="rtl">{{$root.welcomeTrackNotInvested}}</p>
         <a class="btn btn-primary btn-centered btn-lg" data-vx-common-prevent-default=""
            ng-click="itemSelected(toolbarItems[0])" ng-href="/#/{{toolbarItems[0].id}}">{{$root.appmessages.buttonMoveToInvest}}</a>
     </div>
-    <div ng-if="$root.invested">
+    <div ng-show="$root.invested">
         <p class="h2" dir="rtl">{{$root.appmessages.welcomeBalance}}</p>
         <p class="h3" dir="rtl">{{$root.appmessages.balanceExplanation}}</p>
 
