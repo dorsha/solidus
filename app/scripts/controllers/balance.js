@@ -10,13 +10,13 @@ angular.module('solidusApp')
             { id: 'twoYears', title: $scope.appmessages.balanceTwoYears }
         ];
 
-        $rootScope.selectedPeriodId = $scope.periodOptions[2].id;
-
         $scope.periodSelected = function(period) {
             $rootScope.selectedPeriodId = period.id;
         };
 
-        if (!$rootScope.periodSliderValues) {
+        if (!$rootScope.balanceInit) {
+            $rootScope.balanceInit = true;
+            $rootScope.selectedPeriodId = $scope.periodOptions[2].id;
             $rootScope.periodSliderValues = [-5, 5];
         }
     });
