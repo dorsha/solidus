@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 angular.module('solidusApp')
-    .controller('MainCtrl', function ($scope, $rootScope, BankService, $splash, $timeout) {
+    .controller('MainCtrl', function ($window, $scope, $rootScope, BankService, $splash, $timeout) {
 
         // App labels
         $rootScope.appmessages = {
@@ -348,8 +348,30 @@ angular.module('solidusApp')
             return parts.join('.');
         };
 
+        function shouldShowSplash() {
+          var isMobile = (function detectmob() {
+            if(navigator.userAgent.match(/Android/i)
+              || navigator.userAgent.match(/webOS/i)
+              || navigator.userAgent.match(/iPhone/i)
+              || navigator.userAgent.match(/iPad/i)
+              || navigator.userAgent.match(/iPod/i)
+              || navigator.userAgent.match(/BlackBerry/i)
+              || navigator.userAgent.match(/Windows Phone/i)
+              ){
+              return true;
+            }
+            else {
+              return false;
+            }
+          })();
+
+          return !$rootScope.splashed && isMobile;
+        }
+
+        var shouldShowSplash = shouldShowSplash();
+
         // open splash screen
-        if (!$rootScope.splashed) {
+        if (shouldShowSplash) {
             $rootScope.splashed = true;
             var close = $splash.open({
                 title: 'Solid and Easy investing for everyone'

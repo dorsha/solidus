@@ -97,8 +97,8 @@
 
         <div class="row selectedFundsContainer center-block">
             <div ng-repeat="fund in selectedFunds" class="selectedFundBox col-xs-12 col-sm-12" ng-cloak>
-                <div>
-                    <p class="h2" dir="rtl">{{$root.formatNumberRgx(amount / 4)}} {{$root.appmessages.nis}}</p>
+                <div class="summaryFundContent">
+                    <p class="h1" dir="rtl">{{$root.formatNumberRgx(amount / 4)}} {{$root.appmessages.nis}}</p>
                     <p class="h2" dir="rtl">{{fund.name}}</p>
                     <p class="h3" dir="rtl">{{$root.appmessages.summarySectionMgmtFeeTitle}} {{'%.2f'.format(fund.mgmtFee / 1000 * amount)}} {{$root.appmessages.nis}}</p>
                     <p class="h3" dir="rtl">{{$root.appmessages.summarySectionCommissionTitle}} {{'%.2f'.format(fund.commission / 1000 * amount)}} {{$root.appmessages.nis}}</p>
