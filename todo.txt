@@ -43,7 +43,8 @@ Leftovers:
 - Re-style funds cards - Tomer
 - Summary page animation (when moving to tracking) - Tomer
 - Strings - Meir
-- Our slides with pictures - Meir
+- Our slides with pictures + logo - Meir
+- Font
 - Polish design
 
 Only if there is time left (after tagging):
