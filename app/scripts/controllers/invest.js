@@ -75,24 +75,29 @@ angular.module('solidusApp')
                 }, 750, 'easeOutExpo');
             }
         };
+
+        $scope.scrollTo = function ($timeout) {
+            function animateToNextSection() {
+                $scope.scrollToElement($scope.currentSection.id);
+            }
+
+            $scope.$emit('showNotificationBar', {
+                title: $scope.previousSection.notificationTitle,
+                duration: 2500
+            });
+
+            $timeout(function () {
+                $scope.$apply(animateToNextSection);
+            }, 1500);
+        }
+
     }).directive('scrollToSection', ['$timeout', function($timeout) {
         return {
             restrict: 'A',
             priority: 100,
             link: function(scope, element) {
                 element.click(function() {
-                    function animateToNextSection() {
-                        scope.scrollToElement(scope.currentSection.id);
-                    }
-
-                    scope.$emit('showNotificationBar', {
-                        title: scope.previousSection.notificationTitle,
-                        duration: 2500
-                    });
-
-                    $timeout(function () {
-                        scope.$apply(animateToNextSection);
-                    }, 1500);
+                    scope.scrollTo($timeout);
                 });
             }
         };
@@ -166,34 +171,34 @@ angular.module('solidusApp')
                 };
             }
         };
-    }]).directive('progressButton', function () {
-      return {
-        restrict: 'AE',
-        replace: true,
-        template: '<button data-style="shrink" data-horizontal class="col-lg-1 col-centered progress-button btn btn-primary btn-centered btn-lg lastBtn" scroll-to-section data-vx-common-prevent-default="">{{$root.appmessages.submitSummary}}</button>',
-        link: function (scope, el) {
-          new ProgressButton(el.get(0), {
-            callback: function (instance) {
-              var progress = 0,
-                interval = setInterval(function () {
-                  progress = Math.min(progress + Math.random() * 0.1, 1);
-                  instance._setProgress(progress);
+    }]).directive('progressButton', ['$timeout', function ($timeout) {
+        return {
+            restrict : 'AE',
+            replace : true,
+            template : '<button data-style="shrink" data-horizontal class="progress-button btn btn-primary btn-centered btn-lg lastBtn" data-vx-common-prevent-default="">מאשר רכישה</button>',
+            link : function (scope, el) {
+                new ProgressButton(el.get(0), {
+                    callback : function (instance) {
+                        var progress = 0;
+                        var interval = setInterval(function () {
+                            progress = Math.min(progress + Math.random() * 0.16, 1);
+                            instance._setProgress(progress);
 
-                  if (progress === 1) {
-                    instance._stop(1);
-                    clearInterval(interval);
+                            if (progress === 1) {
+                                instance._stop(1);
+                                clearInterval(interval);
 
-                    setTimeout(function () {
-                      scope.moveToNextSection(scope.sections[5]);
-                      scope.submit();
-                      scope.itemSelected(scope.toolbarItems[1]);
-
-                      window.location.href = "/#/" + scope.toolbarItems[1].id;
-                    }, 100);
-                  }
-                }, 200);
+                                setTimeout(function () {
+                                    scope.submit();
+                                    scope.moveToNextSection(scope.sections[5]);
+                                    scope.scrollTo($timeout);
+                                    scope.itemSelected(scope.toolbarItems[1]);
+                                    window.location.href = '/#/' + scope.toolbarItems[1].id;
+                                }, 100);
+                            }
+                        }, 200);
+                    }
+                });
             }
-          });
-        }
-      }
-    });
+        };
+    }]);
