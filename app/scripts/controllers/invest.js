@@ -166,4 +166,34 @@ angular.module('solidusApp')
                 };
             }
         };
-    }]);
+    }]).directive('progressButton', function () {
+      return {
+        restrict: 'AE',
+        replace: true,
+        template: '<button data-style="shrink" data-horizontal class="col-lg-1 col-centered progress-button btn btn-primary btn-centered btn-lg lastBtn" scroll-to-section data-vx-common-prevent-default="">{{$root.appmessages.submitSummary}}</button>',
+        link: function (scope, el) {
+          new ProgressButton(el.get(0), {
+            callback: function (instance) {
+              var progress = 0,
+                interval = setInterval(function () {
+                  progress = Math.min(progress + Math.random() * 0.1, 1);
+                  instance._setProgress(progress);
+
+                  if (progress === 1) {
+                    instance._stop(1);
+                    clearInterval(interval);
+
+                    setTimeout(function () {
+                      scope.moveToNextSection(scope.sections[5]);
+                      scope.submit();
+                      scope.itemSelected(scope.toolbarItems[1]);
+
+                      window.location.href = "/#/" + scope.toolbarItems[1].id;
+                    }, 100);
+                  }
+                }, 200);
+            }
+          });
+        }
+      }
+    });
