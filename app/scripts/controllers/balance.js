@@ -9,6 +9,9 @@ angular.module('solidusApp')
             { id: 'year', title: $scope.appmessages.balanceYear },
             { id: 'twoYears', title: $scope.appmessages.balanceTwoYears }
         ];
+
+        $rootScope.selectedPeriodId = $scope.periodOptions[2].id;
+
         $scope.periodSelected = function(period) {
             $rootScope.selectedPeriodId = period.id;
         };
