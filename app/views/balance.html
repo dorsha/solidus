@@ -10,6 +10,7 @@
 
         <div class="balanceOptions">
             <p class="h2" dir="rtl">{{$root.appmessages.balanceOptions}}</p>
+            <p class="h2" dir="rtl">{{$root.appmessages.balanceDateTitle}}</p>
             <p class="h3" dir="rtl">{{$root.appmessages.balanceDate}}</p>
             <div class="balancePeriodPicker">
                 <div ng-repeat="period in periodOptions" class="balancePeriodButton"
@@ -18,6 +19,7 @@
                 </div>
             </div>
 
+            <p class="h2" dir="rtl">{{$root.appmessages.balancePercentageTitle}}</p>
             <p class="h3" dir="rtl">{{$root.appmessages.balancePercentage}}</p>
             <div class="balancePercentageSlider">
                 <div ui-slider="{range: true}" min="-40.00" max="40.00" step="1.00" use-decimals ng-model="$root.periodSliderValues"></div>

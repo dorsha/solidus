@@ -31,12 +31,18 @@ angular.module('solidusApp')
                 if (nextPosition < $scope.sections.length) {
                     $scope.currentSection = $scope.sections[nextPosition];
                 }
+            }
 
+            if (_.every($rootScope.toolbarItems, { 'passed': true })) {
+                $rootScope.selected = { id: 'dummy', title: '', passed: true };
+            } else {
                 if (section.id !== $scope.sections[5].id) {
                     if (section.position > 0) {
                         $rootScope.toolbarItems[section.position - 1].passed = true;
                     }
-                    $rootScope.selected = $rootScope.toolbarItems[section.position];
+                    $rootScope.selected = _.find($rootScope.toolbarItems, function(item) {
+                        return !item.passed;
+                    });
                 }
             }
         };

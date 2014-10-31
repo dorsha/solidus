@@ -30,15 +30,31 @@ General
 - Bank Hapoalim Slides DONE
 
 Leftovers:
-- Improve Summary ETF view - Tomer
-- Choose fonts - Tomer
 - Flipping card (invest screen) - DONE
-- Improve tacking view - Doron & Tomer
-- Tracking slider should work in touch - Doron
-- Add tracking graph (HighChart) - Doron
-- Our slides with pictures - Meir
-- Strings - Meir
-- Designers feedback
-- Polish design
+- Designers feedback - DONE
 - Splash screen with logo and slogan - DONE
 - Bullets for the first section - DONE
+- Improve tacking view - DONE
+- Move the total portfolio details to the top (in the tracking page) - DONE
+
+- Tracking slider should work in touch - Doron
+- Improve Summary ETF view - Tomer
+- Choose Fonts - Tomer
+- Re-style funds cards - Tomer
+- Summary page animation (when moving to tracking) - Tomer
+- Strings - Meir
+- Our slides with pictures + logo - Meir
+- Font
+- Polish design
+
+Only if there is time left (after tagging):
+- facebook like cards (horizontal scroll) - Tomer
+- Add tracking graph (HighChart) - Doron
+
+Submit:
+- Short Movie with steps
+- Attach Logo
+- Attach screenshots for all screens
+- Slides with everything include pictures and our logo!
+- our photos for the ppt
+- Make sure the ppt is perfect and contains everything, also we should fill the "our experience" section

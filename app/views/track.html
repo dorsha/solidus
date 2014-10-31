@@ -5,7 +5,16 @@
            ng-click="itemSelected(toolbarItems[0])" ng-href="/#/{{toolbarItems[0].id}}">{{$root.appmessages.buttonMoveToInvest}}</a>
     </div>
     <div ng-if="$root.invested">
-        <p class="h2" dir="rtl">{{$root.welcomeTrack}} {{currentDate}}</p>
+        <div class="trackingTopPane">
+            <p class="h2" dir="rtl">{{$root.welcomeTrack}} {{currentDate}}</p>
+            <div class="fundsSummary">
+                <div class="profit">
+                    <p class="h3" dir="rtl">{{$root.appmessages.foundDetailsTotalProfitTitle}}</p>
+                    <p class="h3" ng-class="{ up: totalProfitUp, down: !totalProfitUp }" dir="rtl">{{totalProfitPercentage}}% ({{totalProfitCash}} {{$root.appmessages.nis}})</p>
+                </div>
+                <p class="h3" dir="rtl">{{$root.appmessages.foundDetailsTotalPortfolioCashTitle}} {{totalPortfolioCash}} {{$root.appmessages.nis}}</p>
+            </div>
+        </div>
         <highchart chart='pie' id="highchart"></highchart>
         <div id="fundDetailsContainer" class="fundDetailsContainer">
             <a class="graphButton" data-vx-common-prevent-default="highchart" ng-click="scrollTo('highchart')"></a>
@@ -24,13 +33,6 @@
                     <p class="h3 col-xs-12 col-sm-8" ng-class="{ up: direction === '+', down: direction === '-' }" dir="rtl">{{$root.appmessages.foundDetailsChangedValuePercentageTitle}} {{changedValuePercentage}}%{{direction}}</p>
                     <p class="h3 col-xs-12 col-sm-4" ng-class="{ up: direction === '+', down: direction === '-' }" dir="rtl">{{$root.appmessages.foundDetailsChangedValueCashTitle}} {{changedValueCash}}{{direction}} {{$root.appmessages.nis}}</p>
                 </div>
-            </div>
-        </div>
-        <div class="fundsSummary">
-            <div class="row">
-                <p class="h3 col-xs-12 col-sm-4" ng-class="{ up: totalProfitUp, down: !totalProfitUp }" dir="rtl">{{$root.appmessages.foundDetailsTotalProfitPercentageTitle}} {{totalProfitPercentage}}%</p>
-                <p class="h3 col-xs-12 col-sm-4" ng-class="{ up: totalProfitUp, down: !totalProfitUp }" dir="rtl">{{$root.appmessages.foundDetailsTotalProfitCashTitle}} {{totalProfitCash}} {{$root.appmessages.nis}}</p>
-                <p class="h3 col-xs-12 col-sm-4" dir="rtl">{{$root.appmessages.foundDetailsTotalPortfolioCashTitle}} {{totalPortfolioCash}} {{$root.appmessages.nis}}</p>
             </div>
         </div>
     </div>
