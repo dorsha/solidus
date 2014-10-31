@@ -48,6 +48,11 @@ angular.module('solidusApp')
             summarySectionTotalCommission: 'סה"כ עמלות קניה: ',
             summarySectionPastYieldTitle: 'בשנה האחרונה התיק שבחרת הניב תשואה של: ',
             summarySaving: 'בקניה זו חסכת ',
+            buttonMoveToTracking: 'חזרה למעקב',
+            welcomeInvestNotInvested1: 'תיק השקעות קיים במערכת.',
+            welcomeInvestNotInvested2: 'כרגע אנחנו מגבילים לתיק השקעות אחד בלבד.',
+            welcomeInvestNotInvested3: 'בעתיד נתמוך במספר תיקי השקעות במקביל.',
+            welcomeInvestNotInvested4: 'תודה על שהשקעת עם סולידוס.',
 
             // Notification strings
             amountNotification: 'מעולה, בוא נדאג לעתיד שלך.',

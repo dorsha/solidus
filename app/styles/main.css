@@ -927,3 +927,11 @@ input[type="range"]::-ms-thumb {
 .summaryFundContent {
     padding-top: 15px;
 }
+
+.notInvested > p {
+    line-height: 45px;
+}
+
+.notInvested > p > span {
+    display: block;
+}
