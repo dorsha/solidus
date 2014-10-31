@@ -47,6 +47,7 @@ angular.module('solidusApp')
             summarySectionTotalMgmtFee: 'סה"כ דמי ניהול רבעוניים: ',
             summarySectionTotalCommission: 'סה"כ עמלות קניה: ',
             summarySectionPastYieldTitle: 'בשנה האחרונה התיק שבחרת הניב תשואה של: ',
+            summarySaving: 'בקניה זו חסכת ',
 
             // Notification strings
             amountNotification: 'מעולה, בוא נדאג לעתיד שלך.',

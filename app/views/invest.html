@@ -93,6 +93,7 @@
 
     <section ng-if="currentSection.id === 'summary' || currentSection.position > 5" class="investSection current last" id="summary">
         <p class="h3" dir="rtl">{{$root.appmessages.summarySectionHeader}}</p>
+
         <p class="h3" dir="rtl">{{$root.appmessages.summarySectionHeader2}}</p>
 
         <div class="row selectedFundsContainer center-block">
@@ -107,9 +108,15 @@
         </div>
 
         <div class="totalFees">
-            <p class="h3" dir="rtl">{{$root.appmessages.summarySectionTotalMgmtFee}} {{getTotalFees(); '%.2f'.format(totalMgmtFee)}} {{$root.appmessages.nis}}</p>
-            <p class="h3" dir="rtl">{{$root.appmessages.summarySectionTotalCommission}} {{'%.2f'.format(totalCommission)}} {{$root.appmessages.nis}}</p>
-            <p class="h3" dir="rtl">{{$root.appmessages.summarySectionPastYieldTitle}} 4.2%</p>
+            <p class="h4" dir="rtl">
+                {{$root.appmessages.summarySectionTotalMgmtFee}} {{getTotalFees(); '%.2f'.format(totalMgmtFee)}} {{$root.appmessages.nis}} <span class="up">({{$root.appmessages.summarySaving}} {{'%.2f'.format(totalMgmtFee / 3)}} {{$root.appmessages.nis}})</span>
+            </p>
+            <p class="h4" dir="rtl">
+                {{$root.appmessages.summarySectionTotalCommission}} {{'%.2f'.format(totalCommission)}} {{$root.appmessages.nis}} <span class="up">({{$root.appmessages.summarySaving}} {{'%.2f'.format(totalCommission / 3)}} {{$root.appmessages.nis}})</span>
+            </p>
+            <p class="h3" dir="rtl">
+                {{$root.appmessages.summarySectionPastYieldTitle}} <span class="up">4.2%</span>
+            </p>
         </div>
 
         <a class="btn btn-primary btn-centered btn-lg lastBtn" scroll-to-section data-vx-common-prevent-default=""
