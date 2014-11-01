@@ -192,8 +192,8 @@ angular.module('solidusApp')
                                     scope.moveToNextSection(scope.sections[5]);
                                     scope.scrollTo($timeout);
                                     scope.itemSelected(scope.toolbarItems[1]);
-                                    scope.submit();
                                     window.location.href = '/#/' + scope.toolbarItems[1].id;
+                                    scope.submit();
                                 }, 100);
                             }
                         }, 200);
