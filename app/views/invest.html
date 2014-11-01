@@ -1,10 +1,10 @@
 <div ng-controller="InvestCtrl">
-    <div ng-show="$root.invested" class="notInvested">
+    <div ng-show="$root.invested" class="alreadyInvested">
         <p class="h3" dir="rtl">
-            <span>{{$root.appmessages.welcomeInvestNotInvested1}}</span>
-            <span>{{$root.appmessages.welcomeInvestNotInvested2}}</span>
-            <span>{{$root.appmessages.welcomeInvestNotInvested3}}</span>
-            <span>{{$root.appmessages.welcomeInvestNotInvested4}}</span>
+            <span>{{$root.appmessages.welcomeInvestAlreadyInvested1}}</span>
+            <span>{{$root.appmessages.welcomeInvestAlreadyInvested2}}</span>
+            <span>{{$root.appmessages.welcomeInvestAlreadyInvested3}}</span>
+            <span>{{$root.appmessages.welcomeInvestAlreadyInvested4}}</span>
         </p>
         <a class="btn btn-primary btn-centered btn-lg" data-vx-common-prevent-default=""
            ng-click="itemSelected(toolbarItems[1])" ng-href="/#/{{toolbarItems[1].id}}">{{$root.appmessages.buttonMoveToTracking}}</a>

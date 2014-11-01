@@ -928,10 +928,16 @@ input[type="range"]::-ms-thumb {
     padding-top: 15px;
 }
 
-.notInvested > p {
+.alreadyInvested > p {
     line-height: 45px;
 }
 
-.notInvested > p > span {
+.alreadyInvested > p > span {
     display: block;
+}
+
+@media (max-width: 400px)  {
+    .alreadyInvested .h3 {
+        font-size: 16px;
+    }
 }
