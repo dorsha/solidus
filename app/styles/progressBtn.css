@@ -39,7 +39,7 @@
 	opacity: 0;
 	-webkit-transition: opacity 0.3s 0.3s;
 	transition: opacity 0.3s 0.3s;
-    padding-top: 5px;
+    padding-top: 3px;
 }
 
 .progress-button .content::before {

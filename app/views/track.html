@@ -8,11 +8,13 @@
         <div class="trackingTopPane">
             <p class="h2" dir="rtl">{{$root.welcomeTrack}} {{currentDate}}</p>
             <div class="fundsSummary">
-                <div class="profit">
+                <div class="fundsProfitSummary">
                     <p class="h3" dir="rtl">{{$root.appmessages.foundDetailsTotalProfitTitle}}</p>
                     <p class="h3" ng-class="{ up: totalProfitUp, down: !totalProfitUp }" dir="rtl">{{totalProfitPercentage}}% ({{totalProfitCash}} {{$root.appmessages.nis}})</p>
                 </div>
-                <p class="h3" dir="rtl">{{$root.appmessages.foundDetailsTotalPortfolioCashTitle}} {{totalPortfolioCash}} {{$root.appmessages.nis}}</p>
+                <div class="total">
+                    <p class="h3" dir="rtl">{{$root.appmessages.foundDetailsTotalPortfolioCashTitle}} {{totalPortfolioCash}} {{$root.appmessages.nis}}</p>
+                </div>
             </div>
         </div>
         <highchart chart='pie' id="highchart"></highchart>

@@ -226,13 +226,25 @@ input[type="range"]::-ms-thumb {
     text-align: right;
 }
 
-.fundsSummary {
+.fundsProfitSummary {
     margin-top: 10px;
     display: inline-table;
 }
 
+.fundsProfitSummary p {
+    float: right;
+}
+
+.fundsProfitSummary p:nth-child(2) {
+    margin-right: 7px;
+}
+
 .fundsSummary p {
     font-weight: bold;
+}
+
+.fundsSummary .total {
+    margin-top: -15px;
 }
 
 @media (max-width: 400px) {
