@@ -168,6 +168,7 @@ angular.module('solidusApp')
         }
 
         if ($rootScope.invested) {
+            $rootScope.canShowInvestPage = false;
             init();
         }
 

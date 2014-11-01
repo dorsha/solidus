@@ -296,6 +296,7 @@ angular.module('solidusApp')
         });
 
         $rootScope.invested = false;
+        $rootScope.canShowInvestPage = true;
         $rootScope.amount = 100;
 
         // selected funds
