@@ -71,7 +71,7 @@ angular.module('solidusApp')
                     }
                 },
                 legend: {
-                    rtl: true
+                    rtl: $scope.rightToLeftLegend
                 },
                 series: [{
                     type: 'pie',
@@ -164,6 +164,7 @@ angular.module('solidusApp')
             $scope.totalProfitUp = $scope.totalProfitCash >= 0;
             $scope.totalProfitCash = $rootScope.formatNumberRgx(parseFloat('%.2f'.format($scope.totalProfitCash)));
 
+            $scope.rightToLeftLegend = window.navigator.userAgent.indexOf("MSIE ") <= 0; // if not IE
             $scope.pie = getPieChart();
         }
 
