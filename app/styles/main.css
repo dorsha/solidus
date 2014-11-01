@@ -231,14 +231,6 @@ input[type="range"]::-ms-thumb {
     display: inline-table;
 }
 
-.fundsSummary .profit p {
-    float: right;
-}
-
-.fundsSummary .profit p:nth-child(2) {
-    margin-right: 7px;
-}
-
 .fundsSummary p {
     font-weight: bold;
 }
