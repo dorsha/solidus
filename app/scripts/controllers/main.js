@@ -355,7 +355,7 @@ angular.module('solidusApp')
             return parts.join('.');
         };
 
-        $rootScope.isIE = window.navigator.userAgent.indexOf("MSIE ") > 0;
+        $rootScope.isIE = window.navigator.userAgent.indexOf("MSIE ") > 0 || window.navigator.userAgent.indexOf("Trident/") > 0;
 
         function shouldShowSplash() {
           var isMobile = (function detectmob() {
