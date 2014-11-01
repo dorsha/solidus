@@ -1,3 +1,14 @@
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon/icomoon.eot');
+    src:url('../fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon/icomoon.woff') format('woff'),
+    url('../fonts/icomoon/icomoon.svg#icomoon') format('svg');
+}
+
 /* General styles for all types of buttons */
 .progress-button {
 	position: relative;
@@ -24,9 +35,11 @@
 	position: absolute;
 	right: 20px;
 	color: #7b4397;
+    font-family: "icomoon";
 	opacity: 0;
 	-webkit-transition: opacity 0.3s 0.3s;
 	transition: opacity 0.3s 0.3s;
+    padding-top: 5px;
 }
 
 .progress-button .content::before {
@@ -109,8 +122,8 @@
 
 .progress-button[data-style="shrink"][data-horizontal].state-success .content,
 .progress-button[data-style="shrink"][data-horizontal].state-error .content {
-	-webkit-transform: translateY(-100%);
-	transform: translateY(-100%);
+	-webkit-transform: translateY(-120%);
+	transform: translateY(-120%);
 }
 
 .progressButtonContainer {
