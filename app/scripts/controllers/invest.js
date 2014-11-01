@@ -189,10 +189,10 @@ angular.module('solidusApp')
                                 clearInterval(interval);
 
                                 setTimeout(function () {
+                                    window.location.href = '/#/' + scope.toolbarItems[1].id;
                                     scope.moveToNextSection(scope.sections[5]);
                                     scope.scrollTo($timeout);
                                     scope.itemSelected(scope.toolbarItems[1]);
-                                    window.location.href = '/#/' + scope.toolbarItems[1].id;
                                     scope.submit();
                                 }, 100);
                             }
