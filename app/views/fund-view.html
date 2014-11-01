@@ -4,7 +4,7 @@
             <h2 class="fundViewTitle">{{fund.name}}</h2>
             <div class="fundViewSub">{{$root.appmessages.summarySectionMgmtFeeTitle}} {{'%.3f'.format(fund.mgmtFee)}}%</div>
             <div class="fundViewSub">{{$root.appmessages.nis}} {{$root.appmessages.summarySectionCommissionTitle}} {{'%.2f'.format(fund.commission / 1000 * amount)}}</div>
-            <div class="fundInfoIcon fundIcon" ng-click="flipCard($event)"></div>
+            <div ng-hide="$root.isIE" class="fundInfoIcon fundIcon" ng-click="flipCard($event)"></div>
         </div>
         <div class="back" ng-class="{'selected': fund.selected }" ng-click="toggleSelected()">
             <div class="backImage"></div>

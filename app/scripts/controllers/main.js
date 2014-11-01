@@ -355,6 +355,8 @@ angular.module('solidusApp')
             return parts.join('.');
         };
 
+        $rootScope.isIE = window.navigator.userAgent.indexOf("MSIE ") > 0;
+
         function shouldShowSplash() {
           var isMobile = (function detectmob() {
             if(navigator.userAgent.match(/Android/i)
