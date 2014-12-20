@@ -255,6 +255,12 @@ angular.module('solidusApp')
             }
         };
 
+        $rootScope.formatNumberRgx = function(num) {
+          var parts = num.toString().split('.');
+          parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+          return parts.join('.');
+        };
+
         function calculateWelcomeLabels() {
             var hour = new Date().getHours();
             var prefix;
@@ -279,16 +285,19 @@ angular.module('solidusApp')
             $rootScope.welcomeTrackNotInvested = $rootScope.welcomeTrackNotInvested.format($rootScope.username);
         }
 
-        BankService.getTotalCash(function (data) {
-            if (!$rootScope.receivedBankData) {
-                $rootScope.totalCash = parseInt(data.nisBalance.substring(2, data.nisBalance.length -3).replace(',', ''));
-                BankService.getUsername(function (data) {
-                    $rootScope.username = data.customerName;
-                    calculateWelcomeLabels();
-                    $rootScope.receivedBankData = true;
-                });
-            }
-        });
+        $rootScope.totalCash = 123456;
+        $rootScope.username = 'משה';
+        calculateWelcomeLabels();
+        //BankService.getTotalCash(function (data) {
+        //    if (!$rootScope.receivedBankData) {
+        //        $rootScope.totalCash = parseInt(data.nisBalance.substring(2, data.nisBalance.length -3).replace(',', ''));
+        //        BankService.getUsername(function (data) {
+        //            $rootScope.username = data.customerName;
+        //            calculateWelcomeLabels();
+        //            $rootScope.receivedBankData = true;
+        //        });
+        //    }
+        //});
 
         $rootScope.invested = false;
         $rootScope.amount = 100;
@@ -341,12 +350,6 @@ angular.module('solidusApp')
                     scrollTop : element.offset().top - 140
                 }, 750, 'easeOutExpo');
             }
-        };
-
-        $rootScope.formatNumberRgx = function(num) {
-            var parts = num.toString().split('.');
-            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-            return parts.join('.');
         };
 
         function shouldShowSplash() {
