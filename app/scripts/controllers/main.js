@@ -48,6 +48,11 @@ angular.module('solidusApp')
             summarySectionTotalCommission: 'סה"כ עמלות קניה: ',
             summarySectionPastYieldTitle: 'בשנה האחרונה התיק שבחרת הניב תשואה של: ',
             summarySaving: 'בקניה זו חסכת ',
+            buttonMoveToTracking: 'חזרה למעקב',
+            welcomeInvestAlreadyInvested1: 'תיק השקעות קיים במערכת.',
+            welcomeInvestAlreadyInvested2: 'כרגע אנחנו מגבילים לתיק השקעות אחד בלבד.',
+            welcomeInvestAlreadyInvested3: 'בעתיד נתמוך במספר תיקי השקעות במקביל.',
+            welcomeInvestAlreadyInvested4: 'תודה על שהשקעת עם סולידוס.',
 
             // Notification strings
             amountNotification: 'מעולה, בוא נדאג לעתיד שלך.',
@@ -300,6 +305,7 @@ angular.module('solidusApp')
         //});
 
         $rootScope.invested = false;
+        $rootScope.canShowInvestPage = true;
         $rootScope.amount = 100;
 
         // selected funds
@@ -351,6 +357,8 @@ angular.module('solidusApp')
                 }, 750, 'easeOutExpo');
             }
         };
+
+        $rootScope.isIE = window.navigator.userAgent.indexOf("MSIE ") > 0 || window.navigator.userAgent.indexOf("Trident/") > 0;
 
         function shouldShowSplash() {
           var isMobile = (function detectmob() {

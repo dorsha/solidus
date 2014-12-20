@@ -28,33 +28,27 @@ General
 - Favicon DONE
 - App logo DONE
 - Bank Hapoalim Slides DONE
-
-Leftovers:
 - Flipping card (invest screen) - DONE
 - Designers feedback - DONE
 - Splash screen with logo and slogan - DONE
 - Bullets for the first section - DONE
 - Improve tacking view - DONE
 - Move the total portfolio details to the top (in the tracking page) - DONE
+- Re-style funds cards - DONE
+- Polish design - DONE
 
-- Tracking slider should work in touch - Doron
-- Improve Summary ETF view - Tomer
-- Choose Fonts - Tomer
-- Re-style funds cards - Tomer
-- Summary page animation (when moving to tracking) - Tomer
-- Strings - Meir
-- Our slides with pictures + logo - Meir
-- Font
-- Polish design
+Leftovers:
+- Summary page animation (when moving to tracking) and apply new style to the cards - DONE
 
 Only if there is time left (after tagging):
 - facebook like cards (horizontal scroll) - Tomer
+- Balancing slider should work in touch - Doron
 - Add tracking graph (HighChart) - Doron
 
 Submit:
+- Attach screenshots for all screens - DONE
+- Slides with everything include pictures and our logo! - DONE
+- our photos for the ppt - DONE
+- Make sure the ppt is perfect and contains everything, also we should fill the "our experience" section = DONE
 - Short Movie with steps
-- Attach Logo
-- Attach screenshots for all screens
-- Slides with everything include pictures and our logo!
-- our photos for the ppt
-- Make sure the ppt is perfect and contains everything, also we should fill the "our experience" section
+- Attach Logo,screenshots and explanation to submit

@@ -16,8 +16,6 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/progressBtn.css">
     <!-- endbuild -->
-
-    <script src="scripts/lib/modernizr.custom.js"></script>
 </head>
 <body ng-app="solidusApp">
 <!--[if lt IE 7]>
@@ -38,7 +36,7 @@
         </div>
     </div>
     <notification-bar></notification-bar>
-    <div class="content" ng-view data-autoscroll="true"></div>
+    <div class="siteContent" ng-view data-autoscroll="true"></div>
 </div>
 
 
@@ -49,7 +47,7 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-XXXXX-X');
+    ga('create', 'UA-56156223-1', 'auto');
     ga('send', 'pageview');
 </script>
 
@@ -62,6 +60,7 @@
 
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
+<script src="bower_components/modernizr/modernizr.js"></script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -80,13 +79,12 @@
 <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
 <script src="bower_components/angular-ui-slider/src/slider.js"></script>
 <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+<script src="bower_components/classie/classie.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
-<script src="scripts/lib/classie.js"></script>
-<script src="scripts/lib/progressButton.js"></script>
-
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/lib/progressButton.js"></script>
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/invest.js"></script>

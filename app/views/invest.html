@@ -1,4 +1,15 @@
 <div ng-controller="InvestCtrl">
+    <div ng-show="!$root.canShowInvestPage" class="alreadyInvested">
+        <p class="h3" dir="rtl">
+            <span>{{$root.appmessages.welcomeInvestAlreadyInvested1}}</span>
+            <span>{{$root.appmessages.welcomeInvestAlreadyInvested2}}</span>
+            <span>{{$root.appmessages.welcomeInvestAlreadyInvested3}}</span>
+            <span>{{$root.appmessages.welcomeInvestAlreadyInvested4}}</span>
+        </p>
+        <a class="btn btn-primary btn-centered btn-lg" data-vx-common-prevent-default=""
+           ng-click="itemSelected(toolbarItems[1])" ng-href="/#/{{toolbarItems[1].id}}">{{$root.appmessages.buttonMoveToTracking}}</a>
+    </div>
+    <div ng-show="$root.canShowInvestPage">
     <section id="amount" class="investSection first" ng-class="{'current': currentSection.id === 'amount'}">
         <p ng-cloak class="h3" dir="rtl">{{$root.welcomeInvest}}</p>
         <p class="h3" dir="rtl">{{$root.appmessages.chooseAmount}}</p>
@@ -119,6 +130,9 @@
             </p>
         </div>
 
-        <progress-button></progress-button>
+        <div class="progressButtonContainer">
+            <progress-button></progress-button>
+        </div>
     </section>
+    </div>
 </div>
