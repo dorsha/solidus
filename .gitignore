@@ -9,4 +9,4 @@ logs/*
 tmp
 .DS_Store
 .idea
-*/components
+*/components.divshot-cache
